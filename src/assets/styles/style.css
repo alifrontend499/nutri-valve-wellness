@@ -1,0 +1,24 @@
+@import "components/_reset.css";
+@import "components/_fonts.css";
+@import "components/_variables.css";
+@import "components/_common.css";
+@import "components/_colors.css";
+@import "components/_buttons.css";
+@import "components/_headings.css";
+@import "components/_text.css";
+
+/* google fonts */
+/* font-family: 'Lato', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
+/* MAIN STYLES STARTS */
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* app root */
+.app-root {
+}

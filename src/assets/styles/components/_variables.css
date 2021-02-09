@@ -1,0 +1,28 @@
+:root {
+    --primaryColor: #149159;
+    --secondaryColor: #a7d433;
+
+    --primaryDarkColor: #127b4c;
+
+    /* --textLightColor: #333; */
+    --textLightColor: #444;
+    --textDarkColor: #000;
+
+    --lightBgColor: #efefef;
+
+    --borderGrayColor: #c6c6c6;
+
+    --defaultTransitionTiming: 0.2s;
+
+    --media-breakpoint-sm-min: 576px;
+    --media-breakpoint-sm-max: 575px;
+
+    --media-breakpoint-md-min: 768px;
+    --media-breakpoint-md-max: 767px;
+
+    --media-breakpoint-lg-min: 992px;
+    --media-breakpoint-lg-max: 991px;
+
+    --media-breakpoint-xl-min: 1200px;
+    --media-breakpoint-xl-max: 1199px;
+}

@@ -1,0 +1,25 @@
+/* colors */
+.st-text-primary {
+    color: var(--primaryColor) !important;
+}
+.st-text-secondary {
+    color: var(--secondaryColor) !important;
+}
+
+.st-text-gray {
+    color: gray !important;
+}
+.st-text-light {
+    color: var(--textLightColor) !important;
+}
+.st-text-dark {
+    color: var(--textDarkColor) !important;
+}
+
+/* bg colors */
+.st-bg-primary {
+    background-color: var(--primaryColor) !important;
+}
+.st-bg-secondary {
+    background-color: var(--secondaryColor) !important;
+}
