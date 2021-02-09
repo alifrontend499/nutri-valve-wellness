@@ -32,7 +32,7 @@ export default class HomeDailyTips extends Component {
                                 <p className="desc st-text-light mb-3">
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit commodi veritatis quasi at dolor corporis ea earum doloribus esse nostrum. Est deserunt ex dolor sapiente fugiat assumenda unde reprehenderit at?
                                 </p>
-                                <a href="#" class="btn st-btn st-btn-secondary font-size-13 font-weight-800 text-uppercase mt-3">Learn more</a>
+                                <a href="#" className="btn st-btn st-btn-secondary font-size-13 font-weight-800 text-uppercase mt-3">Learn more</a>
                             </div>
                         </Col>
 

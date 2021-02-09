@@ -1,3 +1,30 @@
+.st-round-icon-btn {
+    height: 40px;
+    width: 40px;
+    transition: var(--defaultTransitionTiming);
+    background-color: var(--textLightColor);
+    color: #fff;
+}
+.st-round-icon-btn {
+}
+/* primary btn */
+.st-round-icon-btn.st-btn-primary {
+    background-color: var(--primaryColor);
+}
+.st-round-icon-btn.st-btn-primary:hover,
+.st-round-icon-btn.st-btn-primary:active {
+    background-color: var(--primaryDarkColor);
+}
+/* secondary btn */
+.st-round-icon-btn.st-btn-secondary {
+    background-color: var(--secondaryColor);
+}
+.st-round-icon-btn.st-btn-secondary:hover,
+.st-round-icon-btn.st-btn-secondary:active {
+    background-color: var(--primaryColor);
+}
+
+/* btn main */
 .st-btn {
     background-color: var(--textLightColor);
     color: #fff;

@@ -93,9 +93,20 @@
 }
 
 /* TEXT COLOR CLASSES */
-a.st-text-light {
-    transition: --defaultTransitionTiming;
+a.st-text-light,
+a.st-text-secondary,
+a.st-text-primary {
+    transition: var(--defaultTransitionTiming);
 }
+
 a.st-text-light:hover {
     color: var(--textDarkColor) !important;
+}
+
+a.st-text-primary:hover {
+    color: var(--primaryDarkColor) !important;
+}
+
+a.st-text-secondary:hover {
+    color: var(--primaryColor) !important;
 }

@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 
 // header style
 import '../styles/header-styles.css'
-import {
-    appTheme_secondaryColor,
-} from 'assets/styles/styleVars'
 
 // bootstrap
 import {
@@ -13,6 +10,7 @@ import {
 
 // icons : feather
 import FeatherIcon from 'feather-icons-react';
+
 // icons : fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -31,7 +29,7 @@ export default class HeaderTopSec extends Component {
     render() {
         return (
             <Container>
-                <div className="header-top-sec border-bottom st-border-gray d-flex align-items-center">
+                <div className="header-top-sec border-bottom st-border-gray d-flex flex-wrap align-items-center">
                     {/* lt-sec */}
                     <div className="lt-sec">
                         <div className="inner d-flex flex-wrap">
@@ -40,10 +38,9 @@ export default class HeaderTopSec extends Component {
                                 className="ht-link-call link-with-icon d-flex align-items-center text-decoration-none st-text-light font-size-15 mr-3 mr-lg-5"
                                 title="Call To: +91 816 9771 597">
                                 <FeatherIcon
-                                    icon="mail"
-                                    color={appTheme_secondaryColor}
+                                    icon="phone-call"
                                     size="18"
-                                    className="mr-2" />
+                                    className="mr-2 st-text-secondary" />
                                 <span>+91 816 9771 597</span>
                             </a>
 
@@ -53,9 +50,8 @@ export default class HeaderTopSec extends Component {
                                 title="Mail To: info@nutrivaluewellnes.com">
                                 <FeatherIcon
                                     icon="mail"
-                                    color={appTheme_secondaryColor}
                                     size="18"
-                                    className="mr-2" />
+                                    className="mr-2 st-text-secondary" />
                                 <span>info@nutrivaluewellnes.com</span>
                             </a>
                         </div>
@@ -127,9 +123,8 @@ export default class HeaderTopSec extends Component {
                                 className="ht-link-login-and-register link-with-icon d-flex align-items-center font-size-15">
                                 <FeatherIcon
                                     icon="lock"
-                                    color={appTheme_secondaryColor}
                                     size="18"
-                                    className="mr-2" />
+                                    className="mr-2 st-text-secondary" />
                                 <Link to="/home" className="st-text-light">Login</Link>
                                 <Link to="/home" className="st-text-light">Register</Link>
                             </div>

@@ -1,0 +1,88 @@
+/* FOOTER : TOP SEC */
+#footer-top-sec {
+}
+.footer-top-sec {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (min-width: 992px) {
+    .footer-top-sec {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+.footer-top-sec .send-message-btn {
+    right: 0;
+    bottom: 100%;
+    border-radius: var(--appDefaultBorderRadius) var(--appDefaultBorderRadius)
+        0px 0px;
+    transition: var(--defaultTransitionTiming);
+}
+.footer-top-sec .send-message-btn:hover {
+    opacity: 0.8;
+}
+.footer-top-sec .send-message-btn:active {
+    opacity: 1;
+}
+@media screen and (min-width: 768px) {
+    .footer-top-sec .send-message-btn {
+        width: 200px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .footer-top-sec .send-message-btn {
+        width: 300px;
+    }
+}
+
+/* FOOTER : BOTTOM SEC */
+#footer-bottom-sec {
+}
+.footer-bottom-sec {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media screen and (min-width: 992px) {
+    .footer-bottom-sec {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+.footer-bottom-sec .logo-footer {
+    width: 200px;
+}
+
+.footer-links > a {
+    color: #bebebe;
+    transition: var(--defaultTransitionTiming);
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links > a::before {
+    content: "";
+    height: 1px;
+    width: 8px;
+    background-color: var(--secondaryColor);
+    position: absolute;
+    top: 9px;
+    left: 0;
+    transition: var(--defaultTransitionTiming);
+}
+
+.footer-links > a:hover {
+    color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+    .footer-links > a:hover {
+        padding-left: 20px;
+    }
+    .footer-links > a:hover::before {
+        width: 13px;
+    }
+}

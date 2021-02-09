@@ -23,3 +23,12 @@
 .st-bg-secondary {
     background-color: var(--secondaryColor) !important;
 }
+.st-bg-slate {
+    background-color: var(--slateBgColor) !important;
+}
+.st-bg-outer-space {
+    background-color: var(--bgOuterSpace) !important;
+}
+.st-bg-outer-space-light {
+    background-color: var(--bgOuterSpaceLight) !important;
+}

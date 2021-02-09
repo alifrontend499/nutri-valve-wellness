@@ -2,6 +2,9 @@
 .st-border-gray {
     border-color: var(--borderGrayColor) !important;
 }
+.st-border-outer-space {
+    border-color: var(--borderOuterSpaceColor) !important;
+}
 
 /* SOCIAL LINKS ICONS */
 .social-links-icons {
