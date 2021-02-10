@@ -66,17 +66,27 @@ export default class WhatWeOffer extends Component {
             nextArrow: <SliderPrevArrow />,
             responsive: [
                 {
-                    breakpoint: 567,
+                    breakpoint: 1200,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
+                        slidesToShow: 5
                     }
                 },
                 {
-                    breakpoint: 0,
+                    breakpoint: 992,
                     settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 567,
+                    settings: {
+                        slidesToShow: 1
                     }
                 },
             ]
@@ -100,9 +110,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg1} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -128,9 +138,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg2} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -156,9 +166,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg3} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -184,9 +194,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg4} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -212,9 +222,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg5} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -240,9 +250,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg1} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -268,9 +278,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg2} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -296,9 +306,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg3} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -324,9 +334,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg4} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
@@ -352,9 +362,9 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <div className="img-sec d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3 mb-lg-4">
+                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg5} fluid className="img-fluid-height" />
-                                        </div>
+                                        </a>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">

@@ -61,7 +61,7 @@ export default class HeaderTopSec extends Component {
                     <div className="rt-sec ml-auto">
                         <div className="inner d-flex flex-wrap">
                             {/* social icons */}
-                            <ul className="social-links-icons d-flex align-items-center mr-3 mr-lg-5">
+                            <ul className="social-links-icons d-flex align-items-center mr-3 mr-lg-4">
                                 <li>
                                     <a
                                         href="#"
@@ -126,7 +126,7 @@ export default class HeaderTopSec extends Component {
                                     size="18"
                                     className="mr-2 st-text-secondary" />
                                 <Link to="/home" className="st-text-light">Login</Link>
-                                <Link to="/home" className="st-text-light">Register</Link>
+                                {/* <Link to="/home" className="st-text-light">Register</Link> */}
                             </div>
                         </div>
                     </div>

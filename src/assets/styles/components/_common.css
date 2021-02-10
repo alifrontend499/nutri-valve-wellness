@@ -95,10 +95,9 @@
 
 /* UNDERLINE IT */
 .underline-it {
-    
 }
 .underline-it::after {
-    content: '';
+    content: "";
     display: block;
     height: 3px;
     width: 100%;
@@ -109,5 +108,40 @@
     background-color: var(--textLightColor);
 }
 .underline-it.underline-secondary::after {
+    background-color: var(--secondaryColor);
+}
+.underline-it.underline-primary::after {
+    background-color: var(--primaryColor);
+}
+
+/* ST BREADCRUMBS */
+.st-breadcrumbs {
+}
+.st-breadcrumbs > li:not(:last-child)::after {
+    content: ">";
+    margin: 0 5px;
+    font-weight: 600;
+    color: var(--textDarkColor);
+}
+
+.st-breadcrumbs > li > a:hover {
+    color: var(--primaryColor) !important;
+}
+
+/* ST PROGRESS */
+.st-progress {
+    height: 14px;
+    border-radius: 20px;
+}
+.st-progress.progress-success {
+    background-color: var(--colorGray1);
+}
+.st-progress.progress-success > .progress-bar {
+    background-color: var(--colorSuccess);
+}
+.st-progress.progress-primary > .progress-bar {
+    background-color: var(--primaryColor);
+}
+.st-progress.progress-secondary > .progress-bar {
     background-color: var(--secondaryColor);
 }

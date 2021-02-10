@@ -1,0 +1,16 @@
+/* PAGE BANNER */
+#page-banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.page-banner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    .page-banner {
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+}

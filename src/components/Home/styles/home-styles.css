@@ -6,10 +6,14 @@
 .home-slider .slider-item-inner {
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 170px;
-    padding-bottom: 170px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
-.home-slider .slider-item-inner {
+@media screen and (min-width: 768px) {
+    .home-slider .slider-item-inner {
+        padding-top: 170px;
+        padding-bottom: 170px;
+    }
 }
 
 /* WHAT WE OFFER */
@@ -22,9 +26,17 @@
 }
 
 .what-we-offer .slider-item .img-sec {
-    height: 180px;
-    width: 180px;
+    height: 170px;
+    width: 170px;
     background-color: var(--lightBgColor);
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 1200px) {
+    .what-we-offer .slider-item .img-sec {
+        height: 200px;
+        width: 200px;
+    }
 }
 
 .what-we-offer .slick-arrow {
@@ -45,10 +57,18 @@
     color: var(--primaryColor);
 }
 .what-we-offer .slick-prev {
-    left: -15px;
+    left: 0;
 }
 .what-we-offer .slick-next {
-    right: -15px;
+    right: 0;
+}
+@media screen and (min-width: 768px) {
+    .what-we-offer .slick-prev {
+        left: -15px;
+    }
+    .what-we-offer .slick-next {
+        right: -15px;
+    }
 }
 
 /* STORY OF SUCESS */

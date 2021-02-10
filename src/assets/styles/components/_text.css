@@ -94,6 +94,7 @@
 
 /* TEXT COLOR CLASSES */
 a.st-text-light,
+a.st-text-dark,
 a.st-text-secondary,
 a.st-text-primary {
     transition: var(--defaultTransitionTiming);

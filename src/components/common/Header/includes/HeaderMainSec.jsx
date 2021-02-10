@@ -106,7 +106,7 @@ export default class HeaderMainSec extends Component {
                                 {/* link */}
                                 <Nav.Link
                                     as={Link}
-                                    to="/home"
+                                    to="/blogs"
                                     className="font-weight-700"
                                 >Blogs</Nav.Link>
 
@@ -120,7 +120,7 @@ export default class HeaderMainSec extends Component {
                                 {/* link */}
                                 <Nav.Link
                                     as={Link}
-                                    to="/home"
+                                    to="/about-us"
                                     className="font-weight-700"
                                 >About Us</Nav.Link>
 

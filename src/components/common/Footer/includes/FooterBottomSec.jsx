@@ -27,6 +27,9 @@ import {
 // footer logo
 import logoFooter from 'assets/images/logo-footer.png'
 
+// router
+import { Link } from 'react-router-dom';
+
 export default class FooterBottomSec extends Component {
     render() {
         return (
@@ -168,7 +171,7 @@ export default class FooterBottomSec extends Component {
 
                                 {/* footer links */}
                                 <div className="footer-links">
-                                    <a href="#" className="d-block mb-2 font-size-14">About Us</a>
+                                    <Link to="/about-us" className="d-block mb-2 font-size-14">About Us</Link>
                                     <a href="#" className="d-block mb-2 font-size-14">Our Journey</a>
                                     <a href="#" className="d-block mb-2 font-size-14">How We Work</a>
                                     <a href="#" className="d-block mb-2 font-size-14">Arogya</a>

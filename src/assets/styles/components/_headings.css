@@ -17,6 +17,10 @@
 .st-line-heading.line-secondary::after {
     background-color: var(--secondaryColor);
 }
+/* line primary */
+.st-line-heading.line-primary::after {
+    background-color: var(--primaryColor);
+}
 
 /* st heading */
 .st-heading {
@@ -40,6 +44,6 @@
 
 @media screen and (min-width: 992px) {
     .st-heading.heading-sm {
-        font-size: 45px;
+        font-size: 40px;
     }
 }

@@ -27,7 +27,7 @@ export default class Home extends Component {
 
                     <HomeDailyTips />
 
-                    <OurBlogs />
+                    <OurBlogs includeHeading={true} limit={3} />
 
                     <Footer />
                 </section>
