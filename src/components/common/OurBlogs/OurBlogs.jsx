@@ -20,6 +20,9 @@ import blogImg1 from 'assets/images/our-blogs/img1.jpg'
 import blogImg2 from 'assets/images/our-blogs/img2.jpg'
 import blogImg3 from 'assets/images/our-blogs/img3.jpg'
 
+// router
+import { Link } from 'react-router-dom';
+
 export default class OurBlogs extends Component {
 
     constructor(props) {
@@ -210,11 +213,11 @@ export default class OurBlogs extends Component {
                                     this.state.allBlogs.map(item => (
                                         <Col xs={12} sm={6} lg={4} key={item.id} className="blog-item mb-3 mb-lg-5">
                                             <div className="blog-item-inner bg-white">
-                                                {/* img sec */}
-                                                <a href="" className="img-sec d-block position-relative">
+                                                {/* IMG SEC */}
+                                                <Link to="/blog-details" className="img-sec d-block position-relative">
                                                     <Image src={item.blogImg} fluid />
                                                     {/* caption */}
-                                                    <div className="caption position-absolute">
+                                                    <div className="caption position-absolute blog-date-caption">
                                                         <div className="caption-inner">
                                                             <p className="text-center text-white">
                                                                 <span className="d-block date font-size-19 mb-1">{item.blogDate}</span>
@@ -222,29 +225,29 @@ export default class OurBlogs extends Component {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </Link>
 
                                                 {/* text sec */}
                                                 <div className="text-sec mt-3">
-                                                    <a href="#" className="head font-size-20 font-family-secondary-medium st-text-light text-decoration-none d-inline-block border-bottom st-border-gray pb-3 mb-3">
+                                                    <Link to="/blog-details" className="head font-size-20 font-family-secondary-medium st-text-light text-decoration-none d-inline-block border-bottom st-border-gray pb-3 mb-3">
                                                         {item.blogHeading}
-                                                    </a>
+                                                    </Link>
 
                                                     <div className="links d-flex mb-2">
-                                                        <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13 mr-3">
+                                                        <Link to="/blog-details" className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13 mr-3">
                                                             <FeatherIcon
                                                                 icon="message-circle"
                                                                 size="15"
                                                             />
                                                             <span className="ml-2">{item.blogCommentCount} comments</span>
-                                                        </a>
-                                                        <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13">
+                                                        </Link>
+                                                        <Link to="/blog-details" className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13">
                                                             <FeatherIcon
                                                                 icon="user"
                                                                 size="15"
                                                             />
                                                             <span className="ml-2">{item.blogAuther}</span>
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -255,9 +258,9 @@ export default class OurBlogs extends Component {
 
                         {
                             /* button */
-                            limit &&
+                            (limit && !this.state.loading) &&
                             <Col xs={12} className="btns text-center mt-3">
-                                <a href="#" className="btn st-btn st-btn-primary font-weight-700">View All</a>
+                                <Link to="/blogs" className="btn st-btn st-btn-primary font-weight-700">View All</Link>
                             </Col>
                         }
                     </Row>

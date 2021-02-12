@@ -1,0 +1,29 @@
+.st-form {
+}
+.st-form input:not([type="radio"]):not([type="checkbox"]),
+.st-form select {
+    height: 42px;
+}
+
+.st-form input:not([type="radio"]):not([type="checkbox"]),
+.st-form select,
+.st-form textarea {
+    box-shadow: none;
+}
+
+.st-form input:not([type="radio"]):not([type="checkbox"]):focus,
+.st-form select:focus,
+.st-form textarea:focus {
+    box-shadow: none;
+    border-color: var(--textLightColor) !important;
+}
+
+
+.st-form.three-in-one-line {
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .st-form.three-in-one-line {
+        width: 33.3%;
+    }
+}

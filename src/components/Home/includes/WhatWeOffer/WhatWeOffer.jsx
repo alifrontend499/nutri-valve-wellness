@@ -55,10 +55,10 @@ export default class WhatWeOffer extends Component {
         // settings for slider
         const settings = {
             infinite: true,
-            autoplay: false,
-            // fade: true,
+            autoplay: true,
+            pauseOnHover: true,
             speed: 500,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 2500,
             slidesToShow: 5,
             slidesToScroll: 1,
             swipeToSlide: true,
@@ -107,7 +107,7 @@ export default class WhatWeOffer extends Component {
                         <div className="slider-container px-lg-2">
                             <Slider {...settings}>
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -135,7 +135,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -163,7 +163,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -191,7 +191,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -219,7 +219,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -247,7 +247,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -275,7 +275,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -303,7 +303,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -331,7 +331,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
@@ -359,7 +359,7 @@ export default class WhatWeOffer extends Component {
                                 </div>
 
                                 {/* slider-item */}
-                                <div className="slider-item">
+                                <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
                                         <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">

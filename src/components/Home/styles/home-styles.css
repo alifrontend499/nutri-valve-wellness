@@ -93,3 +93,12 @@
     font-size: 12px;
     color: var(--secondaryColor);
 }
+
+/* home daily tips */
+#home-daily-tips {
+}
+.home-daily-tips {
+}
+.home-daily-tips .rt-sec > .inner {
+    margin-bottom: -3px;
+}

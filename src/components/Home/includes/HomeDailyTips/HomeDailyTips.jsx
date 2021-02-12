@@ -20,9 +20,9 @@ import FeatherIcon from 'feather-icons-react';
 export default class HomeDailyTips extends Component {
     render() {
         return (
-            <div id="home-about-us" className="ST_def-pad-T">
+            <div id="home-daily-tips" className="ST_def-pad-T">
                 <Container>
-                    <Row className="home-about-us align-items-center">
+                    <Row className="home-daily-tips align-items-center">
                         {/* lt-sec */}
                         <Col xs={12} md={6} className="lt-sec">
                             <div className="inner text-center">
@@ -32,7 +32,7 @@ export default class HomeDailyTips extends Component {
                                 <p className="desc st-text-light mb-3">
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit commodi veritatis quasi at dolor corporis ea earum doloribus esse nostrum. Est deserunt ex dolor sapiente fugiat assumenda unde reprehenderit at?
                                 </p>
-                                <a href="#" className="btn st-btn st-btn-secondary font-size-13 font-weight-800 text-uppercase mt-3">Learn more</a>
+                                <a href="#" className="btn st-btn st-btn-primary font-size-13 font-weight-800 text-uppercase mt-3">Learn more</a>
                             </div>
                         </Col>
 
