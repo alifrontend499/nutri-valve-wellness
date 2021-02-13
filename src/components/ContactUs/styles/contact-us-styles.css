@@ -1,0 +1,26 @@
+/* contact us css */
+#contact-us {
+}
+.contact-us .desc {
+    line-height: 25px;
+}
+@media screen and (min-width: 992px) {
+    .contact-us .desc {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+.contact-us .contact-item .icon {
+    height: 80px;
+    width: 80px;
+    background-color: var(--primaryLightestColor);
+    color: var(--primaryColor);
+    transition: var(--defaultTransitionTiming);
+}
+.contact-us .contact-item:hover .icon {
+    background-color: var(--secondaryColor);
+    color: #fff;
+}
+.contact-us .text p {
+    line-height: 30px;
+}

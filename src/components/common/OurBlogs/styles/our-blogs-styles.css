@@ -44,3 +44,19 @@
 .blog-details-sec-two {
     line-height: 28px;
 }
+
+/* categories list item */
+.categories-list-item {
+}
+.categories-list-item-inner p {
+    padding-left: 20px;
+}
+.categories-list-item-inner p::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 1px;
+    width: 9px;
+    background-color: #333;
+}

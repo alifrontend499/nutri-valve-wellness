@@ -145,3 +145,14 @@
 .st-progress.progress-secondary > .progress-bar {
     background-color: var(--secondaryColor);
 }
+
+/* ST-BADGE */
+.st-badge {
+    height: 20px;
+    width: 20px;
+    background-color: #333;
+    color: #fff;
+}
+.st-badge.st-badge-secondary {
+    background-color: var(--secondaryColor);
+}

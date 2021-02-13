@@ -23,7 +23,30 @@
     width: 100%;
 }
 @media screen and (min-width: 768px) {
+    .st-form.three-in-one-line.center {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .st-form.three-in-one-line {
         width: 33.3%;
     }
+}
+
+/* WITH ICON */
+.st-form.with-icon-left .icon,
+.st-form.with-icon-right .icon {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.st-form.with-icon-left .icon {
+    left: 10px;
+}
+.st-form.with-icon-right .icon {
+    right: 10px;
+}
+.st-form.with-icon-left input {
+    padding-left: 35px;
+}
+.st-form.with-icon-right input {
+    padding-right: 35px;
 }

@@ -20,6 +20,7 @@ import PageBanner from 'components/common/PageBanner/PageBanner'
 import blogBigImg from 'assets/images/our-blogs/blog-big-img.jpg'
 import blogImgdescription from 'assets/images/our-blogs/banner-description-img.jpg'
 import userImg from 'assets/images/our-blogs/user-img.jpg'
+import blogPageAd from 'assets/images/our-blogs/blog-page-ad.png'
 
 // icons : feather
 import FeatherIcon from 'feather-icons-react';
@@ -51,7 +52,7 @@ export default class BlogDetails extends Component {
                                     <div className="inner">
                                         {/* IMG SEC */}
                                         <div className="blog-details-img position-relative">
-                                            <Image src={blogBigImg} fluid />
+                                            <Image src={blogBigImg} fluid className="w-100" />
                                             <div className="caption position-absolute blog-date-caption">
                                                 <div className="caption-inner">
                                                     <p className="text-center text-white">
@@ -197,13 +198,13 @@ export default class BlogDetails extends Component {
                                                         <textarea rows="10" className="form-control font-size-14 border rounded-0" placeholder="Comment"></textarea>
                                                     </div>
                                                     {/* input field */}
-                                                    <div className="st-form form-group three-in-one-line">
+                                                    <div className="st-form form-group three-in-one-line left">
                                                         <input type="text" className="form-control font-size-14 border rounded-0" placeholder="Name (Required)" />
                                                     </div>
-                                                    <div className="st-form form-group three-in-one-line px-2">
+                                                    <div className="st-form form-group three-in-one-line center">
                                                         <input type="text" className="form-control font-size-14 border rounded-0" placeholder="Email (Required)" />
                                                     </div>
-                                                    <div className="st-form form-group three-in-one-line">
+                                                    <div className="st-form form-group three-in-one-line right">
                                                         <input type="text" className="form-control font-size-14 border rounded-0" placeholder="Website" />
                                                     </div>
                                                     <label className="st-form form-group w-100">
@@ -217,17 +218,153 @@ export default class BlogDetails extends Component {
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                         </div>
-
                                     </div>
                                 </Col>
 
                                 {/* rt-sec */}
                                 <Col xs={12} md={4} lg={3} className="rt-sec">
                                     <div className="inner">
+                                        {/* FRAC 1 */}
+                                        <div className="frac mb-3 mb-lg-4">
+                                            <div className="frac-inner st-bg-slate p-4">
+                                                {/* FIELD */}
+                                                <div className="st-form with-icon-right position-relative mb-3 mb-lg-4">
+                                                    <input type="text" className="form-control" placeholder="Search.." />
+                                                    <div className="icon position-absolute">
+                                                        <FeatherIcon
+                                                            icon="search"
+                                                            size="20"
+                                                        />
+                                                    </div>
+                                                </div>
 
+                                                {/* latest news list */}
+                                                <div className="latest-news-list">
+                                                    <p className="st-heading heading-underline heading-xs font-weight-500 position-relative mb-3 mb-lg-4">
+                                                        Latest News
+                                                    </p>
+
+                                                    {/* news item */}
+                                                    <div className="latest-news-list-item mb-3 mb-lg-4">
+                                                        <a href="#" className="latest-news-list-item-inner d-flex text-decoration-none st-text-dark">
+                                                            <div className="img-sec" style={{ width: 55 }}>
+                                                                <Image src={blogImgdescription} fluid />
+                                                            </div>
+                                                            <div className="text-sec media-body pl-3">
+                                                                <p className="date d-flex font-size-13 st-text-gray mb-1">
+                                                                    <FeatherIcon
+                                                                        icon="calendar"
+                                                                        size="15"
+                                                                        className="st-text-secondary"
+                                                                    />
+                                                                    <span className="ml-1">20 April, 2008</span>
+                                                                </p>
+                                                                <p className="desc font-size-15">
+                                                                    How much you really need to eat a day?
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+
+                                                    {/* news item */}
+                                                    <div className="latest-news-list-item mb-3 mb-lg-4">
+                                                        <a href="#" className="latest-news-list-item-inner d-flex text-decoration-none st-text-dark">
+                                                            <div className="img-sec" style={{ width: 55 }}>
+                                                                <Image src={blogImgdescription} fluid />
+                                                            </div>
+                                                            <div className="text-sec media-body pl-3">
+                                                                <p className="date d-flex font-size-13 st-text-gray mb-1">
+                                                                    <FeatherIcon
+                                                                        icon="calendar"
+                                                                        size="15"
+                                                                        className="st-text-secondary"
+                                                                    />
+                                                                    <span className="ml-1">20 April, 2008</span>
+                                                                </p>
+                                                                <p className="desc font-size-15">
+                                                                    7 Simple and Healthy gluten free cookie
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+
+                                                    {/* news item */}
+                                                    <div className="latest-news-list-item mb-3 mb-lg-4">
+                                                        <a href="#" className="latest-news-list-item-inner d-flex text-decoration-none st-text-dark">
+                                                            <div className="img-sec" style={{ width: 55 }}>
+                                                                <Image src={blogImgdescription} fluid />
+                                                            </div>
+                                                            <div className="text-sec media-body pl-3">
+                                                                <p className="date d-flex font-size-13 st-text-gray mb-1">
+                                                                    <FeatherIcon
+                                                                        icon="calendar"
+                                                                        size="15"
+                                                                        className="st-text-secondary"
+                                                                    />
+                                                                    <span className="ml-1">14 Mar, 2008</span>
+                                                                </p>
+                                                                <p className="desc font-size-15">
+                                                                    7 Simple and Healthy gluten free cookie
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                {/* categories list*/}
+                                                <div className="categories-list">
+                                                    <p className="st-heading heading-underline heading-xs font-weight-500 position-relative mb-3 mb-lg-4">
+                                                        Categories
+                                                    </p>
+                                                    {/* item */}
+                                                    <div className="categories-list-item">
+                                                        <a href="#" className="d-flex align-items-center text-decoration-none categories-list-item-inner st-text-dark font-size-14 border-bottom pb-2 mb-2">
+                                                            <p className="position-relative">Diet</p>
+                                                            <span className="badge st-badge st-badge-secondary rounded-circle d-flex align-items-center justify-content-center ml-auto">1</span>
+                                                        </a>
+                                                    </div>
+                                                    {/* item */}
+                                                    <div className="categories-list-item">
+                                                        <a href="#" className="d-flex align-items-center text-decoration-none categories-list-item-inner st-text-dark font-size-14 border-bottom pb-2 mb-2">
+                                                            <p className="position-relative">Fitness</p>
+                                                            <span className="badge st-badge st-badge-secondary rounded-circle d-flex align-items-center justify-content-center ml-auto">1</span>
+                                                        </a>
+                                                    </div>
+                                                    {/* item */}
+                                                    <div className="categories-list-item">
+                                                        <a href="#" className="d-flex align-items-center text-decoration-none categories-list-item-inner st-text-dark font-size-14 border-bottom pb-2 mb-2">
+                                                            <p className="position-relative">Health</p>
+                                                            <span className="badge st-badge st-badge-secondary rounded-circle d-flex align-items-center justify-content-center ml-auto">1</span>
+                                                        </a>
+                                                    </div>
+                                                    {/* item */}
+                                                    <div className="categories-list-item">
+                                                        <a href="#" className="d-flex align-items-center text-decoration-none categories-list-item-inner st-text-dark font-size-14 border-bottom pb-2 mb-2">
+                                                            <p className="position-relative">Protien</p>
+                                                            <span className="badge st-badge st-badge-secondary rounded-circle d-flex align-items-center justify-content-center ml-auto">1</span>
+                                                        </a>
+                                                    </div>
+                                                    {/* item */}
+                                                    <div className="categories-list-item">
+                                                        <a href="#" className="d-flex align-items-center text-decoration-none categories-list-item-inner st-text-dark font-size-14 border-bottom pb-2 mb-2">
+                                                            <p className="position-relative">Weight Loss</p>
+                                                            <span className="badge st-badge st-badge-secondary rounded-circle d-flex align-items-center justify-content-center ml-auto">1</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        {/* FRAC 1 */}
+                                        <div className="frac mb-3 mb-lg-4">
+                                            <div className="frac-inner">
+                                                <a href="#" className="d-block text-decoration-none">
+                                                    <Image src={blogImgdescription} fluid />
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </Col>
                             </Row>

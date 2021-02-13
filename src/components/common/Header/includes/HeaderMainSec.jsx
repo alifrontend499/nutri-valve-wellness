@@ -127,7 +127,7 @@ export default class HeaderMainSec extends Component {
                                 {/* link */}
                                 <Nav.Link
                                     as={Link}
-                                    to="/home"
+                                    to="/contact-us"
                                     className="font-weight-700"
                                 >Contact Us</Nav.Link>
                             </Nav>

@@ -47,3 +47,18 @@
         font-size: 40px;
     }
 }
+
+/* heading underline */
+.st-heading.heading-underline {
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--borderGrayColor);
+}
+.st-heading.heading-underline::after {
+    content: '';
+    height: 4px;
+    width: 70px;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--secondaryColor);
+}

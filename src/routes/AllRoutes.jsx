@@ -13,7 +13,10 @@ import About from 'components/About/About'
 import Blogs from 'components/Blogs/Blogs'
 import BlogDetails from 'components/common/OurBlogs/pages/BlogDetails/BlogDetails'
 
+import ContactUs from 'components/ContactUs/ContactUs'
+
 import PageNotFound from 'components/PageNotFound/PageNotFound'
+
 
 export default class AllRoutes extends Component {
     render() {
@@ -26,6 +29,8 @@ export default class AllRoutes extends Component {
 
                 <Route path="/blogs" component={Blogs} />
                 <Route path="/blog-details" component={BlogDetails} />
+
+                <Route path="/contact-us" component={ContactUs} />
 
 
                 <Route path="**" component={PageNotFound} />
