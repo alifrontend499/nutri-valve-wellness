@@ -156,3 +156,8 @@
 .st-badge.st-badge-secondary {
     background-color: var(--secondaryColor);
 }
+
+/* box shadow */
+.st-block-box-shadow {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}

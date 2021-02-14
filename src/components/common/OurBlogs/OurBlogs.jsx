@@ -60,7 +60,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id3',
                             blogImg: blogImg3,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -93,7 +93,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id3',
                             blogImg: blogImg3,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -102,7 +102,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id1',
+                            id: 'blog-id4',
                             blogImg: blogImg1,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -111,7 +111,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id5',
                             blogImg: blogImg2,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -120,7 +120,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id6',
                             blogImg: blogImg3,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -129,7 +129,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id1',
+                            id: 'blog-id7',
                             blogImg: blogImg1,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -138,7 +138,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id8',
                             blogImg: blogImg2,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -147,7 +147,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id9',
                             blogImg: blogImg3,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -156,7 +156,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id1',
+                            id: 'blog-id10',
                             blogImg: blogImg1,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -165,7 +165,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id11',
                             blogImg: blogImg2,
                             blogDate: 14,
                             BlogMonth: 'mar',
@@ -174,7 +174,7 @@ export default class OurBlogs extends Component {
                             blogAuther: 'alex',
                         },
                         {
-                            id: 'blog-id2',
+                            id: 'blog-id12',
                             blogImg: blogImg3,
                             blogDate: 14,
                             BlogMonth: 'mar',

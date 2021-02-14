@@ -92,7 +92,7 @@ export default class HeaderMainSec extends Component {
                                 {/* link */}
                                 <Nav.Link
                                     as={Link}
-                                    to="/home"
+                                    to="/success-story"
                                     className="font-weight-700"
                                 >Success Story</Nav.Link>
 

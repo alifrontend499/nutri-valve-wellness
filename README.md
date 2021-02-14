@@ -67,3 +67,12 @@ https://react-slick.neostack.com/docs/get-started
 npm install react-slick --save
 npm install slick-carousel
 ```
+
+## `6. react-transdition-group`
+for animating effect between pages
+
+https://reactcommunity.org/react-transition-group/
+
+```
+npm install react-transition-group --save
+```

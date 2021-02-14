@@ -15,6 +15,12 @@ import BlogDetails from 'components/common/OurBlogs/pages/BlogDetails/BlogDetail
 
 import ContactUs from 'components/ContactUs/ContactUs'
 
+import Disclaimer from 'components/Disclaimer/Disclaimer'
+
+import TermsAndPrivacyPolicies from 'components/TermsAndPrivacyPolicies/TermsAndPrivacyPolicies'
+
+import SuccessStories from 'components/SuccessStories/SuccessStories'
+
 import PageNotFound from 'components/PageNotFound/PageNotFound'
 
 
@@ -31,6 +37,12 @@ export default class AllRoutes extends Component {
                 <Route path="/blog-details" component={BlogDetails} />
 
                 <Route path="/contact-us" component={ContactUs} />
+
+                <Route path="/disclaimer" component={Disclaimer} />
+
+                <Route path="/tearms-and-privacy-policies" component={TermsAndPrivacyPolicies} />
+
+                <Route path="/success-story" component={SuccessStories} />
 
 
                 <Route path="**" component={PageNotFound} />

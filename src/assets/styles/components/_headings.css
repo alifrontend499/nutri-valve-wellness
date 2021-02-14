@@ -38,8 +38,13 @@
 }
 
 /* heading SM */
+.st-heading.heading-xs2 {
+    font-size: 34px;
+}
+
+/* heading SM */
 .st-heading.heading-sm {
-    font-size: 30px;
+    font-size: 35px;
 }
 
 @media screen and (min-width: 992px) {

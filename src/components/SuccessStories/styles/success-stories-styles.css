@@ -1,0 +1,39 @@
+/* success stories sec1 css */
+#success-stories-sec1 {}
+.success-stories-sec1 {
+    
+}
+.success-stories-sec1 .rt-sec .exp {
+    top: 20px;
+    left: -15px;
+    background: rgba(var(--secondaryColorRgbValue), 0.9);
+    padding: 6px 15px;
+}
+
+/* success stories sec2 css */
+#success-stories-sec2 {}
+.success-stories-sec2 {
+    
+}
+
+.success-stories-sec2 .st-heading-wrapper .desc {
+    line-height: 25px;
+}
+@media screen and (min-width: 992px) {
+    .success-stories-sec2 .st-heading-wrapper .desc {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.success-stories-sec2 .ss2-item .img-sec {
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .success-stories-sec2 .ss2-item .img-sec {
+        width: 270px;
+    }
+}
+.success-stories-sec2 .ss2-item .bottom-sec .desc {
+    line-height: 22px;
+}

@@ -188,10 +188,10 @@ export default class FooterBottomSec extends Component {
                                 {/* footer links */}
                                 <div className="footer-links">
                                     <a href="#" className="d-block mb-2 font-size-14">Help & Legal</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Terms & Privacy Policy</a>
+                                    <Link to="/tearms-and-privacy-policies" className="d-block mb-2 font-size-14">Terms & Privacy Policy</Link>
                                     <a href="#" className="d-block mb-2 font-size-14">Faq’s</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Disclaimer</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Contact Us</a>
+                                    <Link to="/disclaimer" className="d-block mb-2 font-size-14">Disclaimer</Link>
+                                    <Link to="/contact-us" className="d-block mb-2 font-size-14">Contact Us</Link>
                                 </div>
                             </div>
                         </Col>

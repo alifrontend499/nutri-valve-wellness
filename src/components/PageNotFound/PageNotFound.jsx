@@ -27,7 +27,7 @@ export default class PageNotFound extends Component {
                         <Container>
                             <div className="page-not-found text-center">
                                 <Image src={Img404} fluid className="mx-auto mb-4 mb-lg-5" />
-                                <p class="st-heading heading-xs font-family-sec font-family-secondary-bold mb-3">Something is wrong</p>
+                                <p className="st-heading heading-xs font-family-sec font-family-secondary-bold mb-3">Something is wrong</p>
                                 <p className="desc">
                                     Sorry we can't find the page you are looking for but relax, go to home
                                 </p>
