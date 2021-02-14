@@ -9,6 +9,7 @@
 .st-form select,
 .st-form textarea {
     box-shadow: none;
+    border-radius: 0;
 }
 
 .st-form input:not([type="radio"]):not([type="checkbox"]):focus,
