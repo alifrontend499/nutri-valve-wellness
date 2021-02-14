@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 // components
-import Header from 'components/common/Header/Header'
-import Footer from 'components/common/Footer/Footer'
-import PageBanner from 'components/common/PageBanner/PageBanner'
+import Header from 'components/CommonComponents/Header/Header'
+import Footer from 'components/CommonComponents/Footer/Footer'
+import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 // components
 import AboutMain from './includes/AboutMain'

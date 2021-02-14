@@ -125,7 +125,7 @@ export default class HeaderTopSec extends Component {
                                     icon="lock"
                                     size="18"
                                     className="mr-2 st-text-secondary" />
-                                <Link to="/home" className="st-text-light">Login</Link>
+                                <Link to="/auth" className="st-text-light">Login</Link>
                                 {/* <Link to="/home" className="st-text-light">Register</Link> */}
                             </div>
                         </div>

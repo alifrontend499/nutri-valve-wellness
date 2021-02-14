@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 // components
-import Header from 'components/common/Header/Header'
-import Footer from 'components/common/Footer/Footer'
-import PageBanner from 'components/common/PageBanner/PageBanner'
-import OurBlogs from 'components/common/OurBlogs/OurBlogs'
+import Header from 'components/CommonComponents/Header/Header'
+import Footer from 'components/CommonComponents/Footer/Footer'
+import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
+import OurBlogs from 'components/CommonComponents/OurBlogs/OurBlogs'
 
 export default class Blogs extends Component {
     render() {

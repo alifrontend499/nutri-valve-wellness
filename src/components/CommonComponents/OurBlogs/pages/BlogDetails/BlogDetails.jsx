@@ -12,9 +12,9 @@ import {
 } from 'react-bootstrap'
 
 // components
-import Header from 'components/common/Header/Header'
-import Footer from 'components/common/Footer/Footer'
-import PageBanner from 'components/common/PageBanner/PageBanner'
+import Header from 'components/CommonComponents/Header/Header'
+import Footer from 'components/CommonComponents/Footer/Footer'
+import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 // images
 import blogBigImg from 'assets/images/our-blogs/blog-big-img.jpg'
