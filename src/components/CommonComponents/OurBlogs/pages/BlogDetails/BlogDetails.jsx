@@ -20,7 +20,6 @@ import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 import blogBigImg from 'assets/images/our-blogs/blog-big-img.jpg'
 import blogImgdescription from 'assets/images/our-blogs/banner-description-img.jpg'
 import userImg from 'assets/images/our-blogs/user-img.jpg'
-import blogPageAd from 'assets/images/our-blogs/blog-page-ad.png'
 
 // icons : feather
 import FeatherIcon from 'feather-icons-react';

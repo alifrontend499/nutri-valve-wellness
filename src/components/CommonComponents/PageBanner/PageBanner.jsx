@@ -10,7 +10,7 @@ import {
 } from 'react-bootstrap'
 
 // default image
-import defaultPath from 'assets/images/default-page-banner.jpg'
+import defaultPath from 'assets/images/default-page-banner.png'
 
 // router
 import { Link } from 'react-router-dom';

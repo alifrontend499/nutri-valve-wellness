@@ -49,42 +49,42 @@ export default class HeaderMainSec extends Component {
                                     {/* dropdown link */}
                                     <NavDropdown.Item
                                         as={Link}
-                                        to="/home"
+                                        to="/programs"
                                         className=""
                                     >Weight Loss Challenge</NavDropdown.Item>
 
                                     {/* dropdown link */}
                                     <NavDropdown.Item
                                         as={Link}
-                                        to="/home"
+                                        to="/programs"
                                         className=""
                                     >Battle PCOS</NavDropdown.Item>
 
                                     {/* dropdown link */}
                                     <NavDropdown.Item
                                         as={Link}
-                                        to="/home"
+                                        to="/programs"
                                         className=""
                                     >Body Transformation</NavDropdown.Item>
 
                                     {/* dropdown link */}
                                     <NavDropdown.Item
                                         as={Link}
-                                        to="/home"
+                                        to="/programs"
                                         className=""
                                     >Weight Gain</NavDropdown.Item>
 
                                     {/* dropdown link */}
                                     <NavDropdown.Item
                                         as={Link}
-                                        to="/home"
+                                        to="/programs"
                                         className=""
                                     >Pregnancy and Motherhood</NavDropdown.Item>
 
                                     {/* dropdown link */}
                                     <NavDropdown.Item
                                         as={Link}
-                                        to="/home"
+                                        to="/programs"
                                         className=""
                                     >Reshape Intermittent</NavDropdown.Item>
                                 </NavDropdown>
@@ -99,7 +99,7 @@ export default class HeaderMainSec extends Component {
                                 {/* link */}
                                 <Nav.Link
                                     as={Link}
-                                    to="/home"
+                                    to="/recipes"
                                     className="font-weight-700"
                                 >Recipes</Nav.Link>
 

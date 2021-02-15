@@ -22,9 +22,11 @@ import TermsAndPrivacyPolicies from 'components/TermsAndPrivacyPolicies/TermsAnd
 import SuccessStories from 'components/SuccessStories/SuccessStories'
 
 import Authentication from 'components/Authentication/Authentication'
-import Login from 'components/Authentication/includes/Login'
-import Register from 'components/Authentication/includes/Register'
-import ForgotPassword from 'components/Authentication/includes/ForgotPassword'
+
+import Programs from 'components/Programs/Programs'
+
+import Recipes from 'components/Recipes/Recipes'
+import RecipeDetails from 'components/Recipes/pages/RecipeDetails/RecipeDetails'
 
 import PageNotFound from 'components/PageNotFound/PageNotFound'
 
@@ -50,9 +52,11 @@ export default class AllRoutes extends Component {
                 <Route path="/success-story" component={SuccessStories} />
 
                 <Route path="/auth" component={Authentication} />
-                <Route path="/Login" component={Login} />
-                <Route path="/register" component={Register} />
-                <Route path="/forgot-password" component={ForgotPassword} />
+
+                <Route path="/programs" component={Programs} />
+
+                <Route path="/recipes" component={Recipes} />
+                <Route path="/recipe-details" component={RecipeDetails} />
 
 
                 <Route path="**" component={PageNotFound} />

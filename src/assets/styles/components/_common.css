@@ -157,7 +157,26 @@
     background-color: var(--secondaryColor);
 }
 
-/* box shadow */
+/* BOX SHADOW */
 .st-block-box-shadow {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ST SWITCH */
+.st-switch {
+    cursor: pointer;
+}
+.st-switch .bar {
+    width: 32px;
+    height: 18px;
+    background: var(--colorSuccess);
+    border-radius: 20px;
+}
+.st-switch .bar .round {
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
