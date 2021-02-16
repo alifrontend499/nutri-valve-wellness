@@ -100,7 +100,7 @@ export default class AboutSec3 extends Component {
                         {/* rt-sec */}
                         <Col xs={12} md={6} className="rt-sec mt-3 mt-md-0">
                             <div className="inner">
-                                <Image src={AboutSec3RightImg} fluid />
+                                <Image src={AboutSec3RightImg} fluid style={{ verticalAlign: 'bottom' }} />
                             </div>
                         </Col>
 

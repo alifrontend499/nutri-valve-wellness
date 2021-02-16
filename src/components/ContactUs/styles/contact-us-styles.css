@@ -2,7 +2,7 @@
 #contact-us {
 }
 .contact-us .desc {
-    line-height: 25px;
+    /* line-height: 25px; */
 }
 @media screen and (min-width: 992px) {
     .contact-us .desc {
@@ -22,5 +22,5 @@
     color: #fff;
 }
 .contact-us .text p {
-    line-height: 30px;
+    /* line-height: 30px; */
 }

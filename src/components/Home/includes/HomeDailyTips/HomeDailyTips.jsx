@@ -39,7 +39,7 @@ export default class HomeDailyTips extends Component {
                         {/* rt-sec */}
                         <Col xs={12} md={6} className="rt-sec pt-3 pt-md-0">
                             <div className="inner pr-lg-3 text-center">
-                                <Image src={secImg} fluid />
+                                <Image src={secImg} fluid style={{ verticalAlign: 'bottom' }} />
                             </div>
                         </Col>
                     </Row>

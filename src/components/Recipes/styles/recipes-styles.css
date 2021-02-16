@@ -76,7 +76,7 @@
     color: var(--primaryColor);
 }
 
-/* recipe details section */
+/* RECIPE DETAILS SECTION */
 #recipe-details {
 }
 .recipe-details {
@@ -86,4 +86,15 @@
 }
 .recipe-details-img .caption {
     bottom: 15px;
+}
+
+
+/* RECIPE-DETAILS */
+#recipe-details {}
+.recipe-details .img-sec img {
+    width: 100%;
+}
+.recipe-details .img-sec .date {
+    left: 20px;
+    bottom: -8px;
 }

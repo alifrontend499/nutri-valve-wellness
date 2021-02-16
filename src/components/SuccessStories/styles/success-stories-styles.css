@@ -17,7 +17,7 @@
 }
 
 .success-stories-sec2 .st-heading-wrapper .desc {
-    line-height: 25px;
+    /* line-height: 25px; */
 }
 @media screen and (min-width: 992px) {
     .success-stories-sec2 .st-heading-wrapper .desc {
@@ -35,5 +35,5 @@
     }
 }
 .success-stories-sec2 .ss2-item .bottom-sec .desc {
-    line-height: 22px;
+    /* line-height: 22px; */
 }

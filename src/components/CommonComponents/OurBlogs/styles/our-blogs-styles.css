@@ -42,7 +42,7 @@
 }
 
 .blog-details-sec-two {
-    line-height: 28px;
+    /* line-height: 28px; */
 }
 
 /* categories list item */
@@ -54,9 +54,16 @@
 .categories-list-item-inner p::after {
     content: "";
     position: absolute;
-    top: 9px;
+    top: 11px;
     left: 0;
-    height: 1px;
-    width: 9px;
+    height: 2px;
+    width: 8px;
     background-color: #333;
+}
+
+.categories-list-item.item-primary .categories-list-item-inner p::after {
+    background-color: var(--primaryColor);
+}
+.categories-list-item.item-secondary .categories-list-item-inner p::after {
+    background-color: var(--secondaryColor);
 }

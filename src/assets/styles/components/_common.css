@@ -5,6 +5,12 @@
 .st-border-outer-space {
     border-color: var(--borderOuterSpaceColor) !important;
 }
+.st-border-primary {
+    border-color: var(--primaryColor) !important;
+}
+.st-border-secondary {
+    border-color: var(--secondaryColor) !important;
+}
 
 /* SOCIAL LINKS ICONS */
 .social-links-icons {
@@ -179,4 +185,14 @@
     top: 0;
     left: 0;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ST-TAG */
+.st-tag1 {
+    background: transparent url("../../images/icons/tag-bg1.png") no-repeat left
+        center / auto 100%;
+    padding-left: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 31px;
 }

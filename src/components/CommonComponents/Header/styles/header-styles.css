@@ -45,6 +45,7 @@ header {
 }
 #header-nav-navbar .nav-link:hover,
 #header-nav-navbar .nav-link:active,
+#header-nav-navbar .nav-link.active,
 #header-nav-navbar .nav-item.show > .dropdown-toggle.nav-link {
     color: var(--secondaryColor);
     border-bottom-color: var(--secondaryColor);
