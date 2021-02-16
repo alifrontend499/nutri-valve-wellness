@@ -15,7 +15,7 @@ export default class ProgramPlans extends Component {
                         </Col>
 
                         {/* plan item */}
-                        <Col xs={12} md={4} className="plan-item position-relative">
+                        <Col xs={12} md={6} lg={4} className="plan-item position-relative mb-3 mb-lg-0">
                             <div className="inner bg-white p-2 p-lg-4 h-100 position-relative">
                                 <p className="head font-weight-600 text-center font-size-20 my-3 mt-lg-4 mb-lg-5">90 Day Program</p>
 
@@ -78,7 +78,7 @@ export default class ProgramPlans extends Component {
                         </Col>
 
                         {/* plan item */}
-                        <Col xs={12} md={4} className="plan-item position-relative">
+                        <Col xs={12} md={6} lg={4} className="plan-item position-relative mb-3 mb-lg-0">
                             <div className="inner bg-white p-2 p-lg-4 h-100 position-relative">
                                 <p className="head font-weight-600 text-center font-size-20 my-3 mt-lg-4 mb-lg-5">60 Day Program</p>
 
@@ -141,7 +141,7 @@ export default class ProgramPlans extends Component {
                         </Col>
 
                         {/* plan item */}
-                        <Col xs={12} md={4} className="plan-item position-relative">
+                        <Col xs={12} md={6} lg={4} className="plan-item position-relative mb-3 mb-lg-0">
                             <div className="inner bg-white p-2 p-lg-4 h-100 position-relative">
                                 <p className="head font-weight-600 text-center font-size-20 my-3 mt-lg-4 mb-lg-5">30 Day Program</p>
 

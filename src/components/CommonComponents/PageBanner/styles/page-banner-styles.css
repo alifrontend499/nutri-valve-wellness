@@ -4,11 +4,25 @@
     background-size: cover;
 }
 .page-banner {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 @media screen and (min-width: 768px) {
+    .page-banner {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .page-banner {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
     .page-banner {
         padding-top: 130px;
         padding-bottom: 130px;

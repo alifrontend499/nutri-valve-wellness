@@ -24,6 +24,9 @@ import sliderImg3 from 'assets/images/what-we-offer/slider-img3.jpg'
 import sliderImg4 from 'assets/images/what-we-offer/slider-img4.jpg'
 import sliderImg5 from 'assets/images/what-we-offer/slider-img5.jpg'
 
+// router
+import { Link } from 'react-router-dom'
+
 function SliderNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -110,26 +113,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg1} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Personal Coaching
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Picking out the session matches your goals and getting.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -138,26 +141,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg2} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Weight Loss
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Physical exercise is also for your health & beauty.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -166,26 +169,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg3} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Bridal Diet Plan
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Physical exercise is also for your health & beauty.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -194,26 +197,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg4} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Balanced Diet
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Eating habits should be regulated & controlled for body.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -222,26 +225,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg5} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Child Nutrition
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 What better time to take the kids out to the playground.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -250,26 +253,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg1} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Personal Coaching
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Picking out the session matches your goals and getting.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -278,26 +281,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg2} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Weight Loss
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Physical exercise is also for your health & beauty.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -306,26 +309,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg3} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Bridal Diet Plan
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Physical exercise is also for your health & beauty.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -334,26 +337,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg4} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Balanced Diet
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 Eating habits should be regulated & controlled for body.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -362,26 +365,26 @@ export default class WhatWeOffer extends Component {
                                 <div className="slider-item pt-1">
                                     <div className="slider-item-inner px-2 px-lg-3">
                                         {/* img sec */}
-                                        <a href="#" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                             <Image src={sliderImg5} fluid className="img-fluid-height" />
-                                        </a>
+                                        </Link>
 
                                         {/* text sec */}
                                         <div className="text-sec text-center">
-                                            <a href="#" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                 Child Nutrition
-                                            </a>
+                                            </Link>
                                             <p className="desc st-text-gray mb-3">
                                                 What better time to take the kids out to the playground.
                                             </p>
-                                            <a href="#" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                 <span>MORE</span>
                                                 <FeatherIcon
                                                     icon="arrow-right-circle"
                                                     className="ml-2"
                                                     size="18"
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

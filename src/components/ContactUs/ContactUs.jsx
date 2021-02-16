@@ -46,7 +46,7 @@ export default class ContactUs extends Component {
                                 </Col>
 
                                 {/* contact item */}
-                                <Col xs={12} md={4} className="contact-item">
+                                <Col xs={12} lg={4} className="contact-item mb-3 mb-lg-0">
                                     <div className="contact-item-inner bg-white st-block-box-shadow py-4 px-2">
                                         <div className="icon mb-3 text-center d-flex align-items-center justify-content-center mx-auto rounded-circle border">
                                             <FeatherIcon
@@ -61,7 +61,7 @@ export default class ContactUs extends Component {
                                 </Col>
 
                                 {/* contact item */}
-                                <Col xs={12} md={4} className="contact-item">
+                                <Col xs={12} lg={4} className="contact-item mb-3 mb-lg-0">
                                     <div className="contact-item-inner bg-white st-block-box-shadow py-4 px-2">
                                         <div className="icon mb-3 text-center d-flex align-items-center justify-content-center mx-auto rounded-circle border">
                                             <FeatherIcon
@@ -76,7 +76,7 @@ export default class ContactUs extends Component {
                                 </Col>
 
                                 {/* contact item */}
-                                <Col xs={12} md={4} className="contact-item">
+                                <Col xs={12} lg={4} className="contact-item mb-3 mb-lg-0">
                                     <div className="contact-item-inner bg-white st-block-box-shadow py-4 px-2">
                                         <div className="icon mb-3 text-center d-flex align-items-center justify-content-center mx-auto rounded-circle border">
                                             <FeatherIcon

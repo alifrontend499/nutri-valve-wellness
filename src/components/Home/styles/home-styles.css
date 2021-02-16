@@ -11,6 +11,12 @@
 }
 @media screen and (min-width: 768px) {
     .home-slider .slider-item-inner {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .home-slider .slider-item-inner {
         padding-top: 170px;
         padding-bottom: 170px;
     }
@@ -62,7 +68,7 @@
 .what-we-offer .slick-next {
     right: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     .what-we-offer .slick-prev {
         left: -15px;
     }

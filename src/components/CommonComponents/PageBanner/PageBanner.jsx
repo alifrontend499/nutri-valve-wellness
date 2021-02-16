@@ -32,7 +32,7 @@ export default class PageBanner extends Component {
                         <Container>
                             <div className="caption">
                                 <div className="caption-inner text-center">
-                                    <p className="name st-heading st-text-dark heading-sm font-family-secondary-bold mb-3">{pageTitle}</p>
+                                    <p className="name st-heading st-text-dark heading-sm font-family-secondary-bold mb-2 mb-lg-3">{pageTitle}</p>
 
                                     <ul className="st-breadcrumbs list-unstyled d-flex flex-wrap justify-content-center">
                                         <li>

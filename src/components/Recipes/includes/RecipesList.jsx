@@ -20,16 +20,16 @@ export default class RecipesList extends Component {
         return (
             <section id="recipes-list" className="st-bg-slate py-3 py-lg-5">
                 <Container>
-                    <Row className="recipes-list d-flex align-items-center justify-content-center">
+                    <Row className="recipes-list d-flex align-items-start justify-content-center">
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg1} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         body transformation
                                     </p>
@@ -38,14 +38,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg2} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         BREAKFAST
                                     </p>
@@ -54,14 +54,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg3} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         CEREALS AND GRAINS
                                     </p>
@@ -70,14 +70,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg4} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         COOKIES
                                     </p>
@@ -86,14 +86,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg1} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         body transformation
                                     </p>
@@ -102,14 +102,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg2} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         BREAKFAST
                                     </p>
@@ -118,14 +118,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg3} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         CEREALS AND GRAINS
                                     </p>
@@ -134,14 +134,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg4} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         COOKIES
                                     </p>
@@ -150,14 +150,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg2} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         BREAKFAST
                                     </p>
@@ -166,14 +166,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg3} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         CEREALS AND GRAINS
                                     </p>
@@ -182,14 +182,14 @@ export default class RecipesList extends Component {
                         </Col>
 
                         {/* recipe item */}
-                        <Col xs={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
+                        <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                             <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                 {/* img sec */}
                                 <div className="img-sec text-center overflow-hidden">
                                     <Image src={recipeImg4} />
                                 </div>
                                 {/* text sec */}
-                                <div className="text-sec py-3 text-center">
+                                <div className="text-sec py-3 px-1 text-center">
                                     <p className="text-uppercase font-size-17 font-weight-600">
                                         COOKIES
                                     </p>

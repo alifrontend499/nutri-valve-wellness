@@ -53,7 +53,13 @@
 }
 
 .footer-bottom-sec .logo-footer {
-    width: 200px;
+    width: 110px;
+}
+
+@media screen and (min-width: 992px) {
+    .footer-bottom-sec .logo-footer {
+        width: 200px;
+    }
 }
 
 .footer-links > a {

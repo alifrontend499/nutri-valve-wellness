@@ -211,11 +211,11 @@ export default class OurBlogs extends Component {
                             ) : (
                                     /* blog items */
                                     this.state.allBlogs.map(item => (
-                                        <Col xs={12} sm={6} lg={4} key={item.id} className="blog-item mb-3 mb-lg-5">
+                                        <Col xs={12} sm={6} lg={4} key={item.id} className="blog-item mb-3 mb-md-4 mb-lg-5">
                                             <div className="blog-item-inner bg-white">
                                                 {/* IMG SEC */}
                                                 <Link to="/blog-details" className="img-sec d-block position-relative">
-                                                    <Image src={item.blogImg} fluid />
+                                                    <Image src={item.blogImg} fluid className="w-100" />
                                                     {/* caption */}
                                                     <div className="caption position-absolute blog-date-caption">
                                                         <div className="caption-inner">

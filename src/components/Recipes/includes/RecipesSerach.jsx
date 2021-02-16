@@ -15,10 +15,10 @@ export default class RecipesSerach extends Component {
             <section id="recipes-search" className="st-bg-slate py-3 py-lg-5">
                 <Container>
                     <div className="recipes-search d-flex align-items-center justify-content-center">
-                        <div className="recipes-search-main d-inline-flex bg-white pl-2">
+                        <div className="recipes-search-main d-inline-flex flex-wrap bg-white pl-md-2">
                             {/* field 1 */}
-                            <div className="frac py-1 select">
-                                <div className="inner pr-2 mr-2 st-form with-icon-left position-relative">
+                            <div className="frac py-md-1 select">
+                                <div className="inner pr-md-2 mr-md-2 st-form with-icon-left position-relative">
                                     <select className="form-control font-size-15">
                                         <option value="1">Food Group</option>
                                         <option value="2">Name</option>
@@ -35,9 +35,9 @@ export default class RecipesSerach extends Component {
                             </div>
 
                             {/* field 2 */}
-                            <div className="frac py-1 switch">
-                                <div className="inner st-form d-flex align-items-center pr-2 mr-2 position-relative">
-                                    <label className="d-flex st-switch font-size-15 st-text-gray">
+                            <div className="frac py-md-1 switch">
+                                <div className="inner st-form d-flex align-items-center pr-md-2 mr-md-2 position-relative">
+                                    <label className="d-flex align-items-center st-switch font-size-15 st-text-gray">
                                         <input type="checkbox" className="d-none" />
                                         <span className="bar d-block">
                                             <span className="round rounded-circle d-block"></span>
@@ -48,8 +48,8 @@ export default class RecipesSerach extends Component {
                             </div>
 
                             {/* field 3 */}
-                            <div className="frac py-1 input">
-                                <div className="inner pr-2 mr-2 st-form with-icon-left position-relative">
+                            <div className="frac py-md-1 input">
+                                <div className="inner pr-md-2 mr-md-2 st-form with-icon-left position-relative">
                                     <input type="text" className="form-control font-size-15" placeholder="Search Recipe" />
                                     <div className="icon position-absolute">
                                         <FeatherIcon

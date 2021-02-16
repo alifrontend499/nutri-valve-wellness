@@ -54,7 +54,7 @@ export default class Programs extends Component {
                                         </div>
                                     </Col>
                                     {/* rt-sec */}
-                                    <Col xs={12} md={6} className='rt-sec'>
+                                    <Col xs={12} md={6} className='rt-sec my-3 my-md-0'>
                                         <div className="inner">
                                             <p className="st-heading heading-xs font-family-secondary-bold mb-3">Program Features:</p>
                                             <p className="desc st-text-gray mb-2">1. Customised, Easy and Effective Diet Plans </p>

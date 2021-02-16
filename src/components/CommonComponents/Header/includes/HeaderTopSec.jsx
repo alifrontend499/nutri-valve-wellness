@@ -32,7 +32,7 @@ export default class HeaderTopSec extends Component {
                 <div className="header-top-sec border-bottom st-border-gray d-flex flex-wrap align-items-center">
                     {/* lt-sec */}
                     <div className="lt-sec">
-                        <div className="inner d-flex flex-wrap">
+                        <div className="inner d-flex flex-wrap justify-content-between justify-content-md-start">
                             {/* link */}
                             <a href="callto:+91 816 9771 597"
                                 className="ht-link-call link-with-icon d-flex align-items-center text-decoration-none st-text-light font-size-15 mr-3 mr-lg-5"
@@ -40,7 +40,7 @@ export default class HeaderTopSec extends Component {
                                 <FeatherIcon
                                     icon="phone-call"
                                     size="18"
-                                    className="mr-2 st-text-secondary" />
+                                    className="mr-2 st-text-secondary d-none d-sm-block" />
                                 <span>+91 816 9771 597</span>
                             </a>
 
@@ -51,14 +51,14 @@ export default class HeaderTopSec extends Component {
                                 <FeatherIcon
                                     icon="mail"
                                     size="18"
-                                    className="mr-2 st-text-secondary" />
+                                    className="mr-2 st-text-secondary d-none d-sm-block" />
                                 <span>info@nutrivaluewellnes.com</span>
                             </a>
                         </div>
                     </div>
 
                     {/* rt-sec */}
-                    <div className="rt-sec ml-auto">
+                    <div className="rt-sec mt-1 mt-md-0 ml-md-auto">
                         <div className="inner d-flex flex-wrap">
                             {/* social icons */}
                             <ul className="social-links-icons d-flex align-items-center mr-3 mr-lg-4">
@@ -120,7 +120,7 @@ export default class HeaderTopSec extends Component {
 
                             {/* link */}
                             <div
-                                className="ht-link-login-and-register link-with-icon d-flex align-items-center font-size-15">
+                                className="ht-link-login-and-register link-with-icon d-flex align-items-center font-size-15 ml-auto ml-md-0">
                                 <FeatherIcon
                                     icon="lock"
                                     size="18"

@@ -37,7 +37,7 @@ export default class FooterBottomSec extends Component {
                 <Container>
                     <Row className="footer-bottom-sec">
                         {/* footer item : one */}
-                        <Col xs={12} md={4} lg={3} className="footer-item one">
+                        <Col xs={12} lg={3} className="footer-item one">
                             {/* logo */}
                             <div className="img-sec pb-3 mb-3 border-bottom st-border-outer-space">
                                 <Image src={logoFooter} fluid className="logo-footer" />
@@ -69,7 +69,7 @@ export default class FooterBottomSec extends Component {
                             </div>
 
                             {/* social icons */}
-                            <ul className="social-links-icons d-flex align-items-center mt-3 mt-lg-4">
+                            <ul className="social-links-icons d-flex align-items-center mt-3 mt-lg-4 mb-3 mb-lg-0">
                                 <li>
                                     <a
                                         href="#"

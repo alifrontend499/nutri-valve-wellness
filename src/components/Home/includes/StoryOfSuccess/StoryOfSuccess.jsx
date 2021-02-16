@@ -49,13 +49,13 @@ export default class StoryOfSuccess extends Component {
                 className="ST_def-pad-TB"
                 style={{ backgroundImage: `url('${secBg}')` }}>
                 <Container>
-                    <div className="story-of-sucess">
+                    <div className="story-of-sucess overflow-hidden">
                         <Slider {...settings}>
                             {/* slider-item */}
                             <div className="slider-item">
                                 <Row className="slider-item-inner">
                                     {/* lt-sec */}
-                                    <Col xs={12} md={6} className="lt-sec">
+                                    <Col xs={12} lg={6} className="lt-sec">
                                         <div className="inner">
                                             <div className="st-heading-wrapper mb-3 mb-lg-4 pt-md-3">
                                                 <p className="st-heading heading-xs font-family-sec font-family-secondary-bold">Story Of Success</p>
@@ -67,7 +67,7 @@ export default class StoryOfSuccess extends Component {
                                                 She closely worked in the field of food industry & restaurant chains. She has been highly experience in the field of nutrition and dietetics as she had worked with one of the best gym, hospital and chain of clinics and helped countless amount of people to overcome diabetes, infertility and hormonal imbalance in women, pre-natal and post-natal diets, thyroid, kidney & liver diseases, cancer and obesity.
                                             </p>
 
-                                            <Link to="/about-us" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
+                                            <Link to="/success-story" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
                                                 <span>View More</span>
                                                 <FeatherIcon
                                                     icon="chevron-right"
@@ -85,9 +85,9 @@ export default class StoryOfSuccess extends Component {
                                     </Col>
 
                                     {/* rt-sec */}
-                                    <Col xs={12} md={6} className="rt-sec pt-3 pt-md-0">
+                                    <Col xs={12} lg={6} className="rt-sec pt-3 pt-lg-0">
                                         <div className="inner">
-                                            <Image src={secImg1} fluid />
+                                            <Image src={secImg1} fluid className="w-100" />
                                         </div>
                                     </Col>
                                 </Row>
@@ -97,7 +97,7 @@ export default class StoryOfSuccess extends Component {
                             <div className="slider-item">
                                 <Row className="slider-item-inner">
                                     {/* lt-sec */}
-                                    <Col xs={12} md={6} className="lt-sec">
+                                    <Col xs={12} lg={6} className="lt-sec">
                                         <div className="inner">
                                             <div className="st-heading-wrapper mb-3 mb-lg-4 pt-md-3">
                                                 <p className="st-heading heading-xs font-family-sec font-family-secondary-bold">Story Of Success</p>
@@ -108,7 +108,7 @@ export default class StoryOfSuccess extends Component {
                                             <p className="desc st-text-light mb-3">
                                                 She closely worked in the field of food industry & restaurant chains. She has been highly experience in the field of nutrition and dietetics as she had worked with one of the best gym, hospital and chain of clinics and helped countless amount of people to overcome diabetes, infertility and hormonal imbalance in women, pre-natal and post-natal diets, thyroid, kidney & liver diseases, cancer and obesity.
                                                 </p>
-                                            <Link to="/about-us" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
+                                            <Link to="/success-story" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
                                                 <span>View More</span>
                                                 <FeatherIcon
                                                     icon="chevron-right"
@@ -126,9 +126,9 @@ export default class StoryOfSuccess extends Component {
                                     </Col>
 
                                     {/* rt-sec */}
-                                    <Col xs={12} md={6} className="rt-sec pt-3 pt-md-0">
+                                    <Col xs={12} lg={6} className="rt-sec pt-3 pt-lg-0">
                                         <div className="inner">
-                                            <Image src={secImg2} fluid />
+                                            <Image src={secImg2} fluid className="w-100" />
                                         </div>
                                     </Col>
                                 </Row>
@@ -138,7 +138,7 @@ export default class StoryOfSuccess extends Component {
                             <div className="slider-item">
                                 <Row className="slider-item-inner">
                                     {/* lt-sec */}
-                                    <Col xs={12} md={6} className="lt-sec">
+                                    <Col xs={12} lg={6} className="lt-sec">
                                         <div className="inner">
                                             <div className="st-heading-wrapper mb-3 mb-lg-4 pt-md-3">
                                                 <p className="st-heading heading-xs font-family-sec font-family-secondary-bold">Story Of Success</p>
@@ -149,7 +149,7 @@ export default class StoryOfSuccess extends Component {
                                             <p className="desc st-text-light mb-3">
                                                 She closely worked in the field of food industry & restaurant chains. She has been highly experience in the field of nutrition and dietetics as she had worked with one of the best gym, hospital and chain of clinics and helped countless amount of people to overcome diabetes, infertility and hormonal imbalance in women, pre-natal and post-natal diets, thyroid, kidney & liver diseases, cancer and obesity.
                                                 </p>
-                                            <Link to="/about-us" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
+                                            <Link to="/success-story" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
                                                 <span>View More</span>
                                                 <FeatherIcon
                                                     icon="chevron-right"
@@ -167,9 +167,9 @@ export default class StoryOfSuccess extends Component {
                                     </Col>
 
                                     {/* rt-sec */}
-                                    <Col xs={12} md={6} className="rt-sec pt-3 pt-md-0">
+                                    <Col xs={12} lg={6} className="rt-sec pt-3 pt-lg-0">
                                         <div className="inner">
-                                            <Image src={secImg3} fluid />
+                                            <Image src={secImg3} fluid className="w-100" />
                                         </div>
                                     </Col>
                                 </Row>
@@ -179,7 +179,7 @@ export default class StoryOfSuccess extends Component {
                             <div className="slider-item">
                                 <Row className="slider-item-inner">
                                     {/* lt-sec */}
-                                    <Col xs={12} md={6} className="lt-sec">
+                                    <Col xs={12} lg={6} className="lt-sec">
                                         <div className="inner">
                                             <div className="st-heading-wrapper mb-3 mb-lg-4 pt-md-3">
                                                 <p className="st-heading heading-xs font-family-sec font-family-secondary-bold">Story Of Success</p>
@@ -190,7 +190,7 @@ export default class StoryOfSuccess extends Component {
                                             <p className="desc st-text-light mb-3">
                                                 She closely worked in the field of food industry & restaurant chains. She has been highly experience in the field of nutrition and dietetics as she had worked with one of the best gym, hospital and chain of clinics and helped countless amount of people to overcome diabetes, infertility and hormonal imbalance in women, pre-natal and post-natal diets, thyroid, kidney & liver diseases, cancer and obesity.
                                                 </p>
-                                            <Link to="/about-us" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
+                                            <Link to="/success-story" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-15">
                                                 <span>View More</span>
                                                 <FeatherIcon
                                                     icon="chevron-right"
@@ -208,9 +208,9 @@ export default class StoryOfSuccess extends Component {
                                     </Col>
 
                                     {/* rt-sec */}
-                                    <Col xs={12} md={6} className="rt-sec pt-3 pt-md-0">
+                                    <Col xs={12} lg={6} className="rt-sec pt-3 pt-lg-0">
                                         <div className="inner">
-                                            <Image src={secImg4} fluid />
+                                            <Image src={secImg4} fluid className="w-100" />
                                         </div>
                                     </Col>
                                 </Row>

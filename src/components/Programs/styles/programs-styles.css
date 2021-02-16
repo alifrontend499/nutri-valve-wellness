@@ -27,7 +27,7 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     .program-plans .plan-item {
         padding-left: 35px;
         padding-right: 35px;
@@ -48,7 +48,7 @@
 .program-plans .plan-item:nth-child(odd)::after {
     background-color: var(--secondaryColor);
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     .program-plans .plan-item::after {
         left: 35px;
         height: 100%;

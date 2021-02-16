@@ -6,7 +6,14 @@
 
 .recipes-search-main {
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 40px;
+    border-radius: 10px;
+    padding: 15px;
+}
+@media screen and (min-width: 768px) {
+    .recipes-search-main {
+        border-radius: 40px;
+        padding: 0;
+    }
 }
 
 .recipes-search-main input,
@@ -14,21 +21,34 @@
     border: none !important;
     background-color: transparent !important;
 }
-.recipes-search-main .frac.select .st-form::after,
-.recipes-search-main .frac.switch .st-form::after {
-    content: "";
-    width: 1px;
-    height: 25px;
-    background-color: var(--colorGray1);
-    position: absolute;
-    right: 0;
-    top: 10px;
+@media screen and (min-width: 768px) {
+    .recipes-search-main .frac.select .st-form::after,
+    .recipes-search-main .frac.switch .st-form::after {
+        content: "";
+        width: 1px;
+        height: 25px;
+        background-color: var(--colorGray1);
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
 }
 
 .recipes-search-main .frac.switch > .inner {
     height: 42px;
 }
 
+@media screen and (min-width: 768px) {
+    .recipes-search-main .frac.select {
+        width: 170px;
+    }
+    .recipes-search-main .frac.switch {
+        width: 100px;
+    }
+    .recipes-search-main .frac.input {
+        width: 200px;
+    }
+}
 @media screen and (min-width: 992px) {
     .recipes-search-main .frac.select {
         width: 250px;
@@ -41,9 +61,11 @@
     }
 }
 
-.recipes-search-main .btns .st-btn {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+@media screen and (min-width: 768px) {
+    .recipes-search-main .btns .st-btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
 }
 @media screen and (min-width: 992px) {
     .recipes-search-main .btns .st-btn {
@@ -57,10 +79,15 @@
 .recipes-list {
 }
 .recipes-list .recipe-item .img-sec {
-    height: 100px;
+    /* height: 160px; */
     background-color: var(--lightBgColor);
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 575px) {
+    .recipes-list .recipe-item .img-sec img {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 576px) {
     .recipes-list .recipe-item .img-sec {
         height: 160px;
     }
@@ -88,9 +115,9 @@
     bottom: 15px;
 }
 
-
 /* RECIPE-DETAILS */
-#recipe-details {}
+#recipe-details {
+}
 .recipe-details .img-sec img {
     width: 100%;
 }

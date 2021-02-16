@@ -41,7 +41,7 @@ export default class AboutSec3 extends Component {
                     <Row className="page-about-sec3">
                         {/* lt-sec */}
                         <Col xs={12} md={6} className="lt-sec">
-                            <div className="inner">
+                            <div className="inner mb-3">
                                 {/* heading */}
                                 <div className="st-heading-wrapper mb-3 mb-lg-4">
                                     <p className="d-inline-block font-family-primary-bold st-text-primary text-uppercase position-relative mb-2">interesting facts</p>
@@ -98,7 +98,7 @@ export default class AboutSec3 extends Component {
                         </Col>
 
                         {/* rt-sec */}
-                        <Col xs={12} md={6} className="rt-sec mt-3 mt-md-0">
+                        <Col xs={12} md={6} className="rt-sec align-self-end mt-3 mt-md-0">
                             <div className="inner">
                                 <Image src={AboutSec3RightImg} fluid style={{ verticalAlign: 'bottom' }} />
                             </div>
