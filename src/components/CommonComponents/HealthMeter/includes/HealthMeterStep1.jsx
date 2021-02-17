@@ -62,6 +62,7 @@ export default class HealthMeterStep1 extends Component {
                                         <option value="3" >19</option>
                                         <option value="4" >20</option>
                                         <option value="5" >21</option>
+                                        <option value="5" >22</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
