@@ -200,4 +200,38 @@
     padding-right: 31px;
 }
 
+/* st-img-radio */
+.st-img-radio {
+    cursor: pointer;
+}
+.st-img-radio .box {
+    transition: var(--defaultTransitionTiming);
+    border-color: transparent !important;
+    border-radius: var(--appDefaultBorderRadius);
+}
+.st-img-radio > input:checked + .box {
+    border-color: var(--primaryColor) !important;
+}
+.st-img-radio .text {
+}
 
+/* ST-CHECKBOX */
+.st-checkbox {
+    cursor: pointer;
+}
+.st-checkbox .box {
+    height: 20px;
+    width: 20px;
+    background-color: #ddd;
+    color: #ddd;
+    transition: var(--defaultTransitionTiming);
+}
+
+.st-checkbox .text {
+    top: -2px;
+}
+
+.st-checkbox > input:checked + .box {
+    background-color: var(--primaryColor) !important;
+    color: #fff;
+}

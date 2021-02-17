@@ -22,8 +22,7 @@ export default class HealthMeterStep1 extends Component {
                 {/* HEAD SEC */}
                 <div className="st-heading-wrapper pb-3 pb-lg-4">
                     <p className="st-heading heading-sm font-family-secondary-bold border-bottom st-border-default pb-3 pb-lg-4 mb-3 mb-lg-4">
-                        {/* Health Meter */}
-                        1. About You
+                        Health Meter
                     </p>
                     <p className="desc st-text-gray">
                         Know your ideal weight, BMI & a score describing your current health status
@@ -56,13 +55,13 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
                                     <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" selected disabled>Select</option>
-                                        <option value="1" >17</option>
-                                        <option value="2" >18</option>
-                                        <option value="3" >19</option>
-                                        <option value="4" >20</option>
-                                        <option value="5" >21</option>
-                                        <option value="5" >22</option>
+                                        <option value="0" selected disabled>Select Year</option>
+                                        <option value="1" >17 (years)</option>
+                                        <option value="2" >18 (years)</option>
+                                        <option value="3" >19 (years)</option>
+                                        <option value="4" >20 (years)</option>
+                                        <option value="5" >21 (years)</option>
+                                        <option value="5" >22 (years)</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
@@ -71,12 +70,12 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
                                     <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" selected disabled>Select</option>
-                                        <option value="1" >17</option>
-                                        <option value="2" >18</option>
-                                        <option value="3" >19</option>
-                                        <option value="4" >20</option>
-                                        <option value="5" >21</option>
+                                        <option value="0" selected disabled>Select Month</option>
+                                        <option value="1" >8 (months)</option>
+                                        <option value="2" >9 (months)</option>
+                                        <option value="3" >10 (months)</option>
+                                        <option value="4" >11 (months)</option>
+                                        <option value="5" >12 (months)</option>
                                     </select>
                                 </div>
                             </div>

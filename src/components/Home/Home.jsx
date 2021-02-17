@@ -38,7 +38,7 @@ export default class Home extends Component {
                         style={{ backgroundImage: `url("${healthMeterBg}")` }}>
                         <Container>
                             <Row className="home-health-meter">
-                                <Col xs={12} md={8} lg={6} className="ml-auto">
+                                <Col xs={12} md={8} lg={7} className="ml-auto">
                                     <div className="inner">
                                         <HealthMeter />
                                     </div>

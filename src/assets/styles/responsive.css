@@ -28,7 +28,7 @@
     .header-main-sec .menu-btns {
         position: absolute;
         top: 24px;
-        right: calc(40px + 15px);
+        right: 40px;
     }
 }
 
@@ -92,6 +92,5 @@
     }
     .header-main-sec .menu-btns {
         top: 12px;
-        right: calc(40px + 10px);
     }
 }

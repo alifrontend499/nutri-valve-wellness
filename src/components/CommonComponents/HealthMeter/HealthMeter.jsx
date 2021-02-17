@@ -14,6 +14,7 @@ import HealthMeterStep1 from './includes/HealthMeterStep1'
 import HealthMeterStep2 from './includes/HealthMeterStep2'
 import HealthMeterStep3 from './includes/HealthMeterStep3'
 import HealthMeterStep4 from './includes/HealthMeterStep4'
+import HealthMeterStep5 from './includes/HealthMeterStep5'
 
 export default class HealthMeter extends Component {
 
@@ -25,12 +26,14 @@ export default class HealthMeter extends Component {
         this.step2Ref = React.createRef()
         this.step3Ref = React.createRef()
         this.step4Ref = React.createRef()
+        this.step5Ref = React.createRef()
 
         // functions binding
         this.openStep1Tab = this.openStep1Tab.bind(this)
         this.openStep2Tab = this.openStep2Tab.bind(this)
         this.openStep3Tab = this.openStep3Tab.bind(this)
         this.openStep4Tab = this.openStep4Tab.bind(this)
+        this.openStep5Tab = this.openStep5Tab.bind(this)
     }
 
     // opening step1 tab
@@ -55,6 +58,12 @@ export default class HealthMeter extends Component {
     openStep4Tab = (ev) => {
         ev.preventDefault()
         this.step4Ref.click()
+    }
+
+    // opening step5 tab
+    openStep5Tab = (ev) => {
+        ev.preventDefault()
+        this.step5Ref.click()
     }
 
     render() {
@@ -88,6 +97,11 @@ export default class HealthMeter extends Component {
                             <Nav.Item>
                                 <Nav.Link eventKey="step4" ref={tab => this.step4Ref = tab}>Step 4</Nav.Link>
                             </Nav.Item>
+
+                            {/* nav item : Step 5 */}
+                            <Nav.Item>
+                                <Nav.Link eventKey="step5" ref={tab => this.step5Ref = tab}>Step 5</Nav.Link>
+                            </Nav.Item>
                         </Nav>
 
                         {/* tab content */}
@@ -99,6 +113,7 @@ export default class HealthMeter extends Component {
                                     openStep2Tab={(ev) => this.openStep2Tab(ev)}
                                     openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                     openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
                                 />
                             </Tab.Pane>
 
@@ -109,6 +124,7 @@ export default class HealthMeter extends Component {
                                     openStep2Tab={(ev) => this.openStep2Tab(ev)}
                                     openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                     openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
                                 />
                             </Tab.Pane>
 
@@ -119,6 +135,7 @@ export default class HealthMeter extends Component {
                                     openStep2Tab={(ev) => this.openStep2Tab(ev)}
                                     openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                     openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
                                 />
                             </Tab.Pane>
 
@@ -129,6 +146,18 @@ export default class HealthMeter extends Component {
                                     openStep2Tab={(ev) => this.openStep2Tab(ev)}
                                     openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                     openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
+                                />
+                            </Tab.Pane>
+
+                            {/* tab page : step5 */}
+                            <Tab.Pane eventKey="step5">
+                                <HealthMeterStep5
+                                    openStep1Tab={(ev) => this.openStep1Tab(ev)}
+                                    openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                    openStep3Tab={(ev) => this.openStep3Tab(ev)}
+                                    openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
                                 />
                             </Tab.Pane>
 

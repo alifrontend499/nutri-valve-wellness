@@ -54,7 +54,7 @@ export default class SuccessStories extends Component {
                     />
 
                     {/* success-stories section 1 */}
-                    <div id="success-stories-sec1" className="ST_def-pad-TB st-bg-slate">
+                    <div id="success-stories-sec1" className="ST_def-pad-TB">
                         <Container>
                             <Row className="success-stories-sec1">
                                 {/* lt-sec */}
@@ -96,7 +96,7 @@ export default class SuccessStories extends Component {
                     </div>
 
                     {/* success-stories section 2 */}
-                    <div id="success-stories-sec2" className="ST_def-pad-B st-bg-slate">
+                    <div id="success-stories-sec2" className="ST_def-pad-TB st-bg-slate">
                         <Container>
                             <Row className="success-stories-sec2">
                                 <Col xs={12} className="st-heading-wrapper text-center mb-3 mb-lg-5">
