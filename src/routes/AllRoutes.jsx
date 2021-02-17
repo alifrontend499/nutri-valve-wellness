@@ -28,6 +28,8 @@ import Programs from 'components/Programs/Programs'
 import Recipes from 'components/Recipes/Recipes'
 import RecipeDetails from 'components/Recipes/pages/RecipeDetails/RecipeDetails'
 
+import HealthMeterPage from 'components/HealthMeterPage/HealthMeterPage'
+
 import PageNotFound from 'components/PageNotFound/PageNotFound'
 
 
@@ -57,6 +59,8 @@ export default class AllRoutes extends Component {
 
                 <Route path="/recipes" component={Recipes} />
                 <Route path="/recipe-details" component={RecipeDetails} />
+
+                <Route path="/health-meter" component={HealthMeterPage} />
 
 
                 <Route path="**" component={PageNotFound} />

@@ -197,6 +197,30 @@ export default class FooterBottomSec extends Component {
                         </Col>
                     </Row>
                 </Container>
+
+                <div id="footer-copyright" className="st-bg-outer-space">
+                    <Container>
+                        <Row className="footer-copyright">
+                            {/* lt-sec */}
+                            <Col xs={12} md={6} className="lt-sec">
+                                <div className="inner py-2 py-md-3">
+                                    <p className="text-white">
+                                        &copy; 2021. Nutri Helth Care. All right reserved
+                                    </p>
+                                </div>
+                            </Col>
+                            {/* rt-sec */}
+                            <Col xs={12} md={6} className="rt-sec">
+                                <div className="inner py-2 py-md-3 text-right">
+                                    <p className="text-white">
+                                        Designed By <a href="#" className="st-text-primary">Nutri Health Care</a>
+                                    </p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+
+                </div>
             </>
         )
     }

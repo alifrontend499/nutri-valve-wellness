@@ -27,7 +27,7 @@ export default class RelatedPosts extends Component {
                         </Col>
 
                         {/* item */}
-                        <Col xs={12} md={4} className="item mb-2 mb-md-0">
+                        <Col xs={12} md={4} className="item mb-3 mb-md-2">
                             <a href="#" className="inner text-decoration-none st-text-light">
                                 {/* img sec */}
                                 <div className="img-sec position-relative">
@@ -48,7 +48,7 @@ export default class RelatedPosts extends Component {
                         </Col>
 
                         {/* item */}
-                        <Col xs={12} md={4} className="item mb-2 mb-md-0">
+                        <Col xs={12} md={4} className="item mb-3 mb-md-2">
                             <a href="#" className="inner text-decoration-none st-text-light">
                                 {/* img sec */}
                                 <div className="img-sec position-relative">
@@ -69,7 +69,7 @@ export default class RelatedPosts extends Component {
                         </Col>
 
                         {/* item */}
-                        <Col xs={12} md={4} className="item mb-2 mb-md-0">
+                        <Col xs={12} md={4} className="item mb-3 mb-md-2">
                             <a href="#" className="inner text-decoration-none st-text-light">
                                 {/* img sec */}
                                 <div className="img-sec position-relative">

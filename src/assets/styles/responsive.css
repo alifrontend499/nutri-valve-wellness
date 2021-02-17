@@ -77,6 +77,11 @@
     .recipes-search-main .btns .btn {
         width: 100%;
     }
+
+    /* footer */
+    .footer-copyright .inner {
+        text-align: center !important;
+    }
 }
 
 /* DOWN SM (<) */

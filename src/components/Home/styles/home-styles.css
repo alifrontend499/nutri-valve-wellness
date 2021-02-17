@@ -108,3 +108,12 @@
 .home-daily-tips .rt-sec > .inner {
     /* margin-bottom: -3px; */
 }
+
+/* health meter main */
+#home-health-meter {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+}
+.home-health-meter {
+}

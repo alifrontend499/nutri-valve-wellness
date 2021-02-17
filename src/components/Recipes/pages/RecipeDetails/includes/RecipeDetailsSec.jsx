@@ -46,17 +46,17 @@ export default class RecipeDetailsSec extends Component {
                                 {/* RECIPES DETAILS SEC 1 */}
                                 <div className="recipe-details-sec-1 px-2 mt-3 mt-lg-4">
                                     <p className="name st-heading heading-xs font-family-secondary-medium text-center mb-3 mb-lg-4">Baked Teriyaki Chicken</p>
-                                    <div className="d-flex justify-content-around align-items-center border-top border-bottom st-border-secondary py-3 mb-3 mb-lg-4">
-                                        <div className="item px-2">
+                                    <div className="d-flex flex-wrap align-items-center border-top border-bottom st-border-secondary py-3 mb-3 mb-lg-4">
+                                        <div className="col-6 col-lg-4 item px-2 mb-3 mb-lg-0">
                                             <p className="st-text-primary font-weight-600 font-size-15">Energy (kcal)- 103</p>
                                         </div>
-                                        <div className="item px-2">
+                                        <div className="col-6 col-lg-4 item px-2 mb-3 mb-lg-0">
                                             <p className="st-text-primary font-weight-600 font-size-15">Protein (g) - 11</p>
                                         </div>
-                                        <div className="item px-2">
+                                        <div className="col-6 col-lg-4 item px-2">
                                             <p className="st-text-primary font-weight-600 font-size-15">Carbohydrate (g)- 4</p>
                                         </div>
-                                        <div className="item px-2">
+                                        <div className="col-6 col-lg-4 item px-2">
                                             <p className="st-text-primary font-weight-600 font-size-15">Fat (g) - 6</p>
                                         </div>
                                     </div>
@@ -85,9 +85,9 @@ export default class RecipeDetailsSec extends Component {
 
                                 {/* RECIPES DETAILS SEC 3 */}
                                 <div className="recipe-details-sec-3 px-2 mt-3 mt-lg-4">
-                                    <div className="d-flex">
+                                    <div className="d-flex flex-wrap">
                                         {/* lt-sec */}
-                                        <div className="col-12 col-lg-6 lt-sec pl-0 pr-lg-2">
+                                        <div className="col-12 col-lg-6 lt-sec pl-0 pr-0 pr-lg-2">
                                             <p className="name st-heading heading-xs font-family-secondary-medium mb-3">Ingredients</p>
                                             {/* item */}
                                             <div className="categories-list-item item-primary">
@@ -164,7 +164,7 @@ export default class RecipeDetailsSec extends Component {
                                         </div>
 
                                         {/* rt-sec */}
-                                        <div className="col-12 col-lg-6 rt-sec pr-0 pl-lg-2">
+                                        <div className="col-12 col-lg-6 rt-sec pr-0 pl-0 pl-lg-2">
                                             <p className="name st-heading heading-xs font-family-secondary-medium mb-3">Directions</p>
 
                                             {/* item */}
@@ -320,7 +320,7 @@ export default class RecipeDetailsSec extends Component {
                                             Most Read
                                                 </p>
                                         <a href="#" className="d-block text-decoration-none">
-                                            <Image src={recipeImgdescription} fluid />
+                                            <Image src={recipeImgdescription} fluid className="w-100" />
                                         </a>
                                     </div>
                                 </div>

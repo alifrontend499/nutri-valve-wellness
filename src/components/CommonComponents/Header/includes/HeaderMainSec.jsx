@@ -124,7 +124,7 @@ export default class HeaderMainSec extends Component {
                                 <Nav.Link
                                     as={NavLink}
                                     activeClassName="active"
-                                    to="/home"
+                                    to="/health-meter"
                                     className="font-weight-700"
                                 >Heath Meter</Nav.Link>
 

@@ -11,6 +11,9 @@
 .st-border-secondary {
     border-color: var(--secondaryColor) !important;
 }
+.st-border-default {
+    border-color: var(--borderDefaultColor) !important;
+}
 
 /* SOCIAL LINKS ICONS */
 .social-links-icons {
@@ -196,3 +199,5 @@
     padding-bottom: 3px;
     padding-right: 31px;
 }
+
+
