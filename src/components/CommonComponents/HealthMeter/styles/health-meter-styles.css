@@ -4,12 +4,12 @@
 .health-meter-main-inner {
 }
 
-#health-meter-main .form-container > .st-form:first-child::before {
+#health-meter-main .form-container > .st-form:first-child + .st-form::before {
     content: "";
     width: 1px;
     height: 25px;
     background-color: var(--borderDefaultColor);
     position: absolute;
-    right: 0;
+    left: 0;
     top: 10px;
 }
