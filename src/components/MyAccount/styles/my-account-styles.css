@@ -1,0 +1,20 @@
+/* MY ACCOUNT CSS */
+.account-menu {
+}
+
+.ma-leftbar,
+.ma-content {
+    min-height: 500px;
+}
+.ma-leftbar {
+    width: 285px;
+}
+
+.ma-content {
+    margin-left: 285px;
+    width: calc(100% - 285px);
+}
+
+.ma-leftbar-user-details {
+    box-shadow: 0 1px 2px #c3c3c3;
+}

@@ -29,6 +29,7 @@ import Recipes from 'components/Recipes/Recipes'
 import RecipeDetails from 'components/Recipes/pages/RecipeDetails/RecipeDetails'
 
 import HealthMeterPage from 'components/HealthMeterPage/HealthMeterPage'
+import MyAccount from 'components/MyAccount/MyAccount'
 
 import PageNotFound from 'components/PageNotFound/PageNotFound'
 
@@ -61,6 +62,7 @@ export default class AllRoutes extends Component {
                 <Route path="/recipe-details" component={RecipeDetails} />
 
                 <Route path="/health-meter" component={HealthMeterPage} />
+                <Route path="/my-account" component={MyAccount} />
 
 
                 <Route path="**" component={PageNotFound} />
