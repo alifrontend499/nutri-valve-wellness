@@ -208,6 +208,7 @@
     transition: var(--defaultTransitionTiming);
     border-color: transparent !important;
     border-radius: var(--appDefaultBorderRadius);
+    height: 150px;
 }
 .st-img-radio > input:checked + .box {
     border-color: var(--primaryColor) !important;

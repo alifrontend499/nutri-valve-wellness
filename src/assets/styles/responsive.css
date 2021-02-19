@@ -62,7 +62,7 @@
     .recipes-search-main .frac.switch > .inner {
         padding: 0 10px;
     }
-    
+
     .recipes-search-main .frac.select {
         width: 60%;
     }
@@ -81,6 +81,37 @@
     /* footer */
     .footer-copyright .inner {
         text-align: center !important;
+    }
+
+    /* my account sidevbar */
+    .ma-mobile-icon {
+        top: 9px;
+        left: 17px;
+        cursor: pointer;
+    }
+    .ma-mobile-icon.active {
+        left: 256px;
+    }
+
+    .ma-leftbar {
+        left: calc(-100% - 16px);
+        transition: 0.3s;
+        width: 240px;
+    }
+    .ma-leftbar.active {
+        left: 0;
+        transition: 0.3s;
+    }
+
+    .ma-content {
+        margin-top: 25px;
+        margin-left: 0;
+        width: 100%;
+        transition: .1s;
+    }
+    .ma-content.active {
+        margin-left: 240px;
+        width: calc(100% - 240px);
     }
 }
 

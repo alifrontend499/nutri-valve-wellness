@@ -7,14 +7,33 @@ import '../styles/health-meter-styles.css'
 import { Image } from 'react-bootstrap'
 
 // images
-import menBodyTypeOval from 'assets/images/icons/for-men-body-type-oval.png'
-import menBodyTypeSquare from 'assets/images/icons/for-men-body-type-square.png'
-import menBodyTypeTriangular from 'assets/images/icons/for-men-body-type-triangular.png'
+// import menBodyTypeOval from 'assets/images/icons/for-men-body-type-oval.png'
+// import menBodyTypeSquare from 'assets/images/icons/for-men-body-type-square.png'
+// import menBodyTypeTriangular from 'assets/images/icons/for-men-body-type-triangular.png'
 
-import womenBodyTypeApple from 'assets/images/icons/for-women-body-type-apple.png'
-import womenBodyTypeBanana from 'assets/images/icons/for-women-body-type-banana.png'
-import womenBodyTypeHourglass from 'assets/images/icons/for-women-body-type-hourglass.png'
-import womenBodyTypePear from 'assets/images/icons/for-women-body-type-pear.png'
+// import womenBodyTypeApple from 'assets/images/icons/for-women-body-type-apple.png'
+// import womenBodyTypeBanana from 'assets/images/icons/for-women-body-type-banana.png'
+// import womenBodyTypeHourglass from 'assets/images/icons/for-women-body-type-hourglass.png'
+// import womenBodyTypePear from 'assets/images/icons/for-women-body-type-pear.png'
+
+
+import menTriangle from 'assets/images/icons/man-triangle.jpg'
+import womenTriangle from 'assets/images/icons/woman-triangle.jpg'
+
+import menInvertedTriangle from 'assets/images/icons/men-inverted-triangle.jpg'
+import womenInvertedTriangle from 'assets/images/icons/women-inverted-triangle.jpg'
+
+import menHourglass from 'assets/images/icons/men-hourglass.jpg'
+import womenHourglass from 'assets/images/icons/women-hourglass.jpg'
+
+import menOval from 'assets/images/icons/men-oval.jpg'
+import womenOval from 'assets/images/icons/women-oval.jpg'
+
+import menSquare from 'assets/images/icons/men-square.jpg'
+import womenSquare from 'assets/images/icons/women-square.jpg'
+
+
+
 
 export default class HealthMeterStep2 extends Component {
     constructor(props) {
@@ -38,66 +57,98 @@ export default class HealthMeterStep2 extends Component {
                 <div className="content-sec">
                     {/* FOR MEN */}
                     {/* <div className="for-men d-flex justify-content-center"> */}
-                    <div className="for-men d-none">
+                    <div className="for-men d-none flex-wrap justify-content-center">
                         {/* radio */}
                         <label className="st-img-radio text-center mx-1">
                             <input type="radio" name="body-type" id="" className="d-none" />
                             <span className="box d-block border p-1">
-                                <Image src={menBodyTypeOval} fluid />
-                                <span className="text d-block mt-1">Oval</span>
+                                <Image src={menTriangle} fluid className="img-fluid-height" />
                             </span>
+                            <span className="text d-block mt-1">Triangle</span>
                         </label>
+
                         {/* radio */}
                         <label className="st-img-radio text-center mx-1">
                             <input type="radio" name="body-type" id="" className="d-none" />
                             <span className="box d-block border p-1">
-                                <Image src={menBodyTypeSquare} fluid />
-                                <span className="text d-block mt-1">Trapezoid</span>
+                                <Image src={menInvertedTriangle} fluid className="img-fluid-height" />
                             </span>
+                            <span className="text d-block mt-1">Triangle Inverted</span>
                         </label>
+
                         {/* radio */}
                         <label className="st-img-radio text-center mx-1">
                             <input type="radio" name="body-type" id="" className="d-none" />
                             <span className="box d-block border p-1">
-                                <Image src={menBodyTypeTriangular} fluid />
-                                <span className="text d-block mt-1">Triangular</span>
+                                <Image src={menOval} fluid className="img-fluid-height" />
                             </span>
+                            <span className="text d-block mt-1">Oval</span>
+                        </label>
+
+                        {/* radio */}
+                        <label className="st-img-radio text-center mx-1">
+                            <input type="radio" name="body-type" id="" className="d-none" />
+                            <span className="box d-block border p-1">
+                                <Image src={menHourglass} fluid className="img-fluid-height" />
+                            </span>
+                            <span className="text d-block mt-1">Hour Glass</span>
+                        </label>
+
+                        {/* radio */}
+                        <label className="st-img-radio text-center mx-1">
+                            <input type="radio" name="body-type" id="" className="d-none" />
+                            <span className="box d-block border p-1">
+                                <Image src={menSquare} fluid className="img-fluid-height" />
+                            </span>
+                            <span className="text d-block mt-1">Square</span>
                         </label>
                     </div>
 
                     {/* FOR WOMEN */}
-                    <div className="for-women d-flex justify-content-center">
+                    <div className="for-women d-flex flex-wrap justify-content-center">
                         {/* radio */}
                         <label className="st-img-radio text-center mx-1">
                             <input type="radio" name="body-type" id="" className="d-none" />
                             <span className="box d-block border p-1">
-                                <Image src={womenBodyTypeApple} fluid />
-                                <span className="text d-block mt-1">Apple</span>
+                                <Image src={womenTriangle} fluid className="img-fluid-height" />
                             </span>
+                            <span className="text d-block mt-1">Triangle</span>
                         </label>
+
                         {/* radio */}
                         <label className="st-img-radio text-center mx-1">
                             <input type="radio" name="body-type" id="" className="d-none" />
                             <span className="box d-block border p-1">
-                                <Image src={womenBodyTypeBanana} fluid />
-                                <span className="text d-block mt-1">Banana</span>
+                                <Image src={womenInvertedTriangle} fluid className="img-fluid-height" />
                             </span>
+                            <span className="text d-block mt-1">Triangle Inverted</span>
                         </label>
+
                         {/* radio */}
                         <label className="st-img-radio text-center mx-1">
                             <input type="radio" name="body-type" id="" className="d-none" />
                             <span className="box d-block border p-1">
-                                <Image src={womenBodyTypeHourglass} fluid />
-                                <span className="text d-block mt-1">Hourglass</span>
+                                <Image src={womenOval} fluid className="img-fluid-height" />
                             </span>
+                            <span className="text d-block mt-1">Oval</span>
                         </label>
+
                         {/* radio */}
                         <label className="st-img-radio text-center mx-1">
                             <input type="radio" name="body-type" id="" className="d-none" />
                             <span className="box d-block border p-1">
-                                <Image src={womenBodyTypePear} fluid />
-                                <span className="text d-block mt-1">Pear</span>
+                                <Image src={womenHourglass} fluid className="img-fluid-height" />
                             </span>
+                            <span className="text d-block mt-1">Hour Glass</span>
+                        </label>
+
+                        {/* radio */}
+                        <label className="st-img-radio text-center mx-1">
+                            <input type="radio" name="body-type" id="" className="d-none" />
+                            <span className="box d-block border p-1">
+                                <Image src={womenSquare} fluid className="img-fluid-height" />
+                            </span>
+                            <span className="text d-block mt-1">Square</span>
                         </label>
                     </div>
                 </div>

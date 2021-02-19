@@ -2,19 +2,63 @@
 .account-menu {
 }
 
-.ma-leftbar,
-.ma-content {
+.my-account {
     min-height: 500px;
 }
-.ma-leftbar {
-    width: 285px;
-}
 
-.ma-content {
-    margin-left: 285px;
-    width: calc(100% - 285px);
+@media screen and (min-width: 768px) {
+    .ma-leftbar {
+        width: 285px;
+    }
+    
+    .ma-content {
+        margin-left: 285px;
+        width: calc(100% - 285px);
+    }
 }
 
 .ma-leftbar-user-details {
     box-shadow: 0 1px 2px #c3c3c3;
+}
+
+/* menu */
+.ma-leftbar-menu {
+}
+.ma-leftbar-menu .menu-item {
+}
+.ma-leftbar-menu .menu-link {
+    color: var(--textLightColor);
+    transition: var(--defaultTransitionTiming);
+}
+.ma-leftbar-menu .menu-item.active > .menu-link,
+.ma-leftbar-menu .menu-link.active,
+.ma-leftbar-menu .menu-link:hover {
+    background-color: var(--primaryColor);
+    color: #fff;
+}
+.ma-leftbar-menu .dropdown-menu-item .menu-link {
+    background: #ececec;
+}
+.ma-leftbar-menu .dropdown-menu-item.active > .menu-link,
+.ma-leftbar-menu .dropdown-menu-item > .menu-link.active,
+.ma-leftbar-menu .dropdown-menu-item > .menu-link:hover {
+    background: #c3c3c3;
+    color: var(--textLightColor);
+}
+
+
+/* MA DASHBOARD CONTENT */
+.ma-content.dashboard-content {
+    
+}
+.ma-content.dashboard-content .frac > .inner {
+    transition: var(--defaultTransitionTiming);
+}
+.ma-content.dashboard-content .frac:hover > .inner {
+    border-color: #bebebe !important;
+}
+
+/* MA LOGIN INFORMATION CONTENT */
+.ma-content.login-information-content {
+    
 }
