@@ -14,7 +14,7 @@ export default class PSearch extends Component {
                     <div className="programs-search d-flex justify-content-center align-items-center">
                         <p className="head font-weight-600 mr-3 mr-lg-4">Select Program: </p>
                         <div className="st-form st-form-rounded st-form-has-shadow">
-                            <select className="form-control">
+                            <select className="form-control" defaultValue="1">
                                 <option value="1">Weight Loss chalange</option>
                                 <option value="2">Battle PCOS</option>
                                 <option value="3">Body Transformation</option>

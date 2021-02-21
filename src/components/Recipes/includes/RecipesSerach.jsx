@@ -19,7 +19,7 @@ export default class RecipesSerach extends Component {
                             {/* field 1 */}
                             <div className="frac py-md-1 select">
                                 <div className="inner pr-md-2 mr-md-2 st-form with-icon-left position-relative">
-                                    <select className="form-control font-size-15">
+                                    <select className="form-control font-size-15" defaultValue="1">
                                         <option value="1">Food Group</option>
                                         <option value="2">Name</option>
                                         <option value="3">Cuisines</option>

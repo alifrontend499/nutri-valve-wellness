@@ -37,7 +37,7 @@ export default class HealthMeterStep5 extends Component {
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>Consumption Of Water Per Day:</option>
+                                        <option value="0" disabled>Consumption Of Water Per Day:</option>
                                         <option value="1" >{'< 4 glasses'}</option>
                                         <option value="2" >{'4 - 6 glasses'}</option>
                                     </select>
@@ -53,7 +53,7 @@ export default class HealthMeterStep5 extends Component {
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>Consumption Of Fruits & Vegetables Per Day:</option>
+                                        <option value="0" disabled>Consumption Of Fruits & Vegetables Per Day:</option>
                                         <option value="1" >{'1 - 2 servings'}</option>
                                         <option value="2" >{'3 - 4 servings'}</option>
                                     </select>

@@ -31,7 +31,7 @@ export default class HeaderTopSec extends Component {
             <Container>
                 <div className="header-top-sec border-bottom st-border-gray d-flex flex-wrap align-items-center">
                     {/* lt-sec */}
-                    <div className="lt-sec d-none d-md-block">
+                    <div className="lt-sec">
                         <div className="inner d-flex flex-wrap justify-content-between justify-content-md-start">
                             {/* link */}
                             <a href="callto:+91 816 9771 597"
@@ -58,7 +58,7 @@ export default class HeaderTopSec extends Component {
                     </div>
 
                     {/* rt-sec */}
-                    <div className="rt-sec mt-md-0 ml-md-auto">
+                    <div className="rt-sec mt-md-0 ml-md-auto d-none d-md-block">
                         <div className="inner d-flex flex-wrap">
                             {/* social icons */}
                             <ul className="social-links-icons d-flex align-items-center mr-3 mr-lg-4">

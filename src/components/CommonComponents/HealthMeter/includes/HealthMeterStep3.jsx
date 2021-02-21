@@ -29,7 +29,7 @@ export default class HealthMeterStep3 extends Component {
 
                 {/* CONTENT SEC */}
                 <div className="content-sec">
-                    <div className="d-flex">
+                    <div className="d-flex flex-wrap">
                         {/* lt-sec */}
                         <div className="lt-sec col-12 col-sm-6 px-0">
                             <label className="st-checkbox d-flex mb-2">

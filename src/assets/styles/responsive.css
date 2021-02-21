@@ -24,12 +24,6 @@
 
 /* DOWN XL (<) */
 @media screen and (max-width: 1199px) {
-    /* header */
-    .header-main-sec .menu-btns {
-        position: absolute;
-        top: 24px;
-        right: 40px;
-    }
 }
 
 /* DOWN LG (<) */
@@ -50,6 +44,55 @@
     .header-top-sec > .lt-sec,
     .header-top-sec > .rt-sec {
         width: 100%;
+    }
+    .header-main-sec .navbar-brand {
+        width: 105px;
+    }
+    #header-top-sec {
+        background: #f4f4f4;
+        padding: 5px 0;
+    }
+    .header-main-sec .menu-btns {
+        width: 100%;
+        border-top: 1px solid #dee2e6;
+        padding-top: 10px;
+        margin-top: 15px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    .header-main-sec .navbar-brand {
+        margin-right: 0;
+    }
+    .header-top-sec {
+        border-bottom: none !important;
+    }
+    .header-main-sec .navbar-nav {
+        margin-top: 15px;
+    }
+
+    /* SETTING ORDER FOR HEADER ITEM */
+    .navbar-brand {
+        order: 1;
+    }
+    .navbar-toggler {
+        order: 0;
+        margin-top: 11px;
+    }
+    .navbar-collapse {
+        order: 5;
+    }
+    .ht-link-login-and-register {
+        order: 2;
+        margin-top: 11px;
+    }
+    .menu-btns {
+        order: 4;
+    }
+    #header-nav-navbar .nav-link:hover,
+    #header-nav-navbar .nav-link:active,
+    #header-nav-navbar .nav-link.active,
+    #header-nav-navbar .nav-item.show > .dropdown-toggle.nav-link {
+        background-color: #f4f4f4 !important;
     }
 
     /* RECIPES SEARCH */
@@ -107,21 +150,65 @@
         margin-top: 25px;
         margin-left: 0;
         width: 100%;
-        transition: .1s;
+        transition: 0.1s;
     }
     .ma-content.active {
         margin-left: 240px;
         width: calc(100% - 240px);
     }
+
+    /* header collpase menu */
+    .navbar-collapse {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background: #fff;
+        width: 260px;
+        z-index: 2;
+        height: 100% !important;
+        transition: 0.4s;
+        left: 0;
+    }
+    .collapse:not(.show) {
+        display: block;
+        left: calc(-100% + 10px);
+    }
+    #header-nav-navbar .nav-link {
+        padding: 13px 20px !important;
+    }
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
 }
 
 /* DOWN SM (<) */
 @media screen and (max-width: 575px) {
+}
+
+/* ---------------- MIN TO MAX ---------------- */
+@media screen and (min-width: 0px) and (max-width: 575px) {
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
     /* header */
-    .header-main-sec .navbar-brand {
-        width: 85px;
-    }
     .header-main-sec .menu-btns {
-        top: 12px;
+        position: absolute;
+        top: 22px;
+        right: 40px;
     }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
 }

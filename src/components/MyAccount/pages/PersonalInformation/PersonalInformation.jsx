@@ -193,11 +193,11 @@ export default class PersonalInformation extends Component {
                                         <div className="form-item col-12 col-md-6 pl-0 pr-0 pr-md-2 mb-3">
                                             <div className="st-form">
                                                 <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">Country</label>
-                                                <select className="form-control">
-                                                    <option>India</option>
-                                                    <option>Australia</option>
-                                                    <option>America</option>
-                                                    <option>Canada</option>
+                                                <select className="form-control" defaultValue="1">
+                                                    <option value="1">India</option>
+                                                    <option value="2">Australia</option>
+                                                    <option value="3">America</option>
+                                                    <option value="4">Canada</option>
                                                 </select>
                                             </div>
                                         </div>

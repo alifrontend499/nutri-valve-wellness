@@ -36,7 +36,7 @@ export default class HealthMeterStep4 extends Component {
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>How Often Do You Smoke?</option>
+                                        <option value="0" disabled>How Often Do You Smoke?</option>
                                         <option value="1" >Never</option>
                                         <option value="2" >Quit since 2 years</option>
                                     </select>
@@ -52,7 +52,7 @@ export default class HealthMeterStep4 extends Component {
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>How Often Do You Consume Alcohol?</option>
+                                        <option value="0" disabled>How Often Do You Consume Alcohol?</option>
                                         <option value="1" >Never</option>
                                         <option value="2" >Occasionally</option>
                                     </select>
@@ -71,7 +71,7 @@ export default class HealthMeterStep4 extends Component {
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>Duration Of Sleep:</option>
+                                        <option value="0" disabled>Duration Of Sleep:</option>
                                         <option value="1" >{"<6 Hours"}</option>
                                         <option value="2" >{"6-9 Hours"}</option>
                                     </select>
@@ -87,7 +87,7 @@ export default class HealthMeterStep4 extends Component {
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>Daily Activity Level: </option>
+                                        <option value="0" disabled>Daily Activity Level: </option>
                                         <option value="1" >Sedentary</option>
                                         <option value="2" >Lightly Active</option>
                                     </select>

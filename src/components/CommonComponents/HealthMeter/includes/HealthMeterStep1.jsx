@@ -39,7 +39,7 @@ export default class HealthMeterStep1 extends Component {
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
                                     <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" selected disabled>Select</option>
+                                        <option value="0" disabled>Select</option>
                                         <option value="1" >Male</option>
                                         <option value="2" >Female</option>
                                     </select>
@@ -55,7 +55,7 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
                                     <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" selected disabled>Select Year</option>
+                                        <option value="0" disabled>Select Year</option>
                                         <option value="1" >17 (years)</option>
                                         <option value="2" >18 (years)</option>
                                         <option value="3" >19 (years)</option>
@@ -70,7 +70,7 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
                                     <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" selected disabled>Select Month</option>
+                                        <option value="0" disabled>Select Month</option>
                                         <option value="1" >8 (months)</option>
                                         <option value="2" >9 (months)</option>
                                         <option value="3" >10 (months)</option>
@@ -89,7 +89,7 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
                                     <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" selected disabled>Select</option>
+                                        <option value="0" disabled>Select</option>
                                         <option value="1" >5(ft)</option>
                                         <option value="2" >6(ft)</option>
                                         <option value="3" >7(ft)</option>
@@ -103,7 +103,7 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
                                     <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" selected disabled>Select</option>
+                                        <option value="0" disabled>Select</option>
                                         <option value="1" >5(in)</option>
                                         <option value="2" >6(in)</option>
                                         <option value="3" >7(in)</option>
@@ -119,7 +119,7 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>Kg</option>
+                                        <option value="0" disabled>Kg</option>
                                         <option value="1" >17</option>
                                         <option value="2" >18</option>
                                         <option value="3" >19</option>
@@ -133,7 +133,7 @@ export default class HealthMeterStep1 extends Component {
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
                                     <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" selected disabled>gm</option>
+                                        <option value="0" disabled>gm</option>
                                         <option value="1" >17</option>
                                         <option value="2" >18</option>
                                         <option value="3" >19</option>

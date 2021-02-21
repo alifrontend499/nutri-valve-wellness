@@ -32,12 +32,21 @@ header {
 #header-nav-navbar .nav-link {
     color: var(--textLightColor);
     transition: var(--defaultTransitionTiming);
-    border-bottom: 2px solid transparent;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 5px;
+    
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
+    #header-nav-navbar .nav-link {
+        border-bottom: 2px solid transparent;
+    }
+    #header-nav-navbar .nav-link,
+    #header-nav-navbar .dropdown-toggle.nav-link {
+        margin-right: 15px;
+    }
+}
+@media screen and (min-width: 1200px) {
     #header-nav-navbar .nav-link,
     #header-nav-navbar .dropdown-toggle.nav-link {
         margin-right: 30px;
@@ -67,4 +76,8 @@ header {
 #header-nav-navbar .dropdown-item:hover {
     background-color: var(--primaryColor);
     color: #fff;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: transparent;
 }
