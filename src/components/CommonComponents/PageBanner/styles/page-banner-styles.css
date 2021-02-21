@@ -2,6 +2,7 @@
 #page-banner {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .page-banner {
     padding-top: 30px;

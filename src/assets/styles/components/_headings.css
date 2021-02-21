@@ -24,7 +24,7 @@
 
 /* st heading */
 .st-heading {
-    font-size: 35px;
+    font-size: 31px;
 }
 @media screen and (min-width: 768px) {
     .st-heading {
@@ -50,8 +50,8 @@
 
 /* heading SM */
 .st-heading.heading-sm {
-    font-size: 35px;
-    line-height: 45px;
+    font-size: 31px;
+    line-height: 35px;
 }
 
 @media screen and (min-width: 992px) {

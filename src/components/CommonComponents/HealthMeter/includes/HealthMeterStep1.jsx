@@ -21,7 +21,7 @@ export default class HealthMeterStep1 extends Component {
             <div className="step1">
                 {/* HEAD SEC */}
                 <div className="st-heading-wrapper pb-3 pb-lg-4">
-                    <p className="st-heading heading-sm font-family-secondary-bold border-bottom st-border-default pb-3 pb-lg-4 mb-3 mb-lg-4">
+                    <p className="st-heading heading-sm font-family-secondary-bold border-bottom st-border-default pb-2 pb-lg-4 mb-2 mb-lg-4">
                         Health Meter
                     </p>
                     <p className="desc st-text-gray">
