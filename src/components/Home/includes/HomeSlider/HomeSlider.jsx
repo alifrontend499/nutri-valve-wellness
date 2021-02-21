@@ -44,7 +44,7 @@ export default class HomeSlider extends Component {
                                     <Container>
                                         {/* slider caption */}
                                         <div className="caption">
-                                            <p className="st-line-heading line-secondary font-family-primary-bold st-text-secondary position-relative mb-3">
+                                            <p className="st-line-heading line-secondary font-family-primary-bold st-text-secondary position-relative mb-2 mb-lg-3">
                                                 Welcome to Nutri Valve
                                             </p>
                                             <p className="st-heading font-family-secondary-bold">
