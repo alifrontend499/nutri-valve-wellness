@@ -76,3 +76,12 @@ https://reactcommunity.org/react-transition-group/
 ```
 npm install react-transition-group --save
 ```
+
+## `6. axios`
+for data fetching get and post
+
+https://www.npmjs.com/package/axios/
+
+```
+npm install axios
+```

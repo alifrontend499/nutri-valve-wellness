@@ -20,7 +20,23 @@ import HealthMeter from 'components/CommonComponents/HealthMeter/HealthMeter'
 // images
 import healthMeterBg from 'assets/images/homepage-health-meter-bg.jpg'
 
+// api: common
+import { checkUser } from 'utlis/apis/common'
+
 export default class Home extends Component {
+
+    constructor(props) {
+        super(props)
+    }
+
+    componentDidMount() {
+        // MAKING USER REQUEST
+        console.log('MAKING USER REQUEST')
+        checkUser('sysadmin@admin.com', 'SysAdmin123').then(res => {
+            console.log('res  + ', res)
+        })
+    }
+
     render() {
         return (
             <div>
