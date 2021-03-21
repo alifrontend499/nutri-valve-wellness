@@ -12,9 +12,51 @@ import iconGender from 'assets/images/icons/male-female-icon.png'
 export default class HealthMeterStep4 extends Component {
     constructor(props) {
         super(props)
+
+        // state
+        this.state = {
+            smoking: 'never',
+            alcoholConsumption: 'never',
+            sleepDuration: '<6 hours',
+            dailyActivityLevel: 'sedentary',
+        }
+
+        // functions bindings
+        this.handleSmokingChange = this.handleSmokingChange.bind(this)
+        this.handleAlcoholConsumptionChange = this.handleAlcoholConsumptionChange.bind(this)
+        this.handleSleepDurationChange = this.handleSleepDurationChange.bind(this)
+        this.handleDailyActivityLevelChange = this.handleDailyActivityLevelChange.bind(this)
+
     }
 
+    // setting | smoking
+    handleSmokingChange(event) {
+        // console.log(event)
+        this.setState({ smoking: event.target.value });
+    }
+
+    // setting | alcohol consumption
+    handleAlcoholConsumptionChange(event) {
+        // console.log(event)
+        this.setState({ alcoholConsumption: event.target.value });
+    }
+
+    // setting | sleep duration
+    handleSleepDurationChange(event) {
+        // console.log(event)
+        this.setState({ sleepDuration: event.target.value });
+    }
+
+    // setting | daily activity level
+    handleDailyActivityLevelChange(event) {
+        // console.log(event)
+        this.setState({ dailyActivityLevel: event.target.value });
+    }
+
+
     render() {
+        const state = this.state;
+        const props = this.props;
         return (
             <div className="step4">
                 {/* HEAD SEC */}
@@ -35,10 +77,12 @@ export default class HealthMeterStep4 extends Component {
                             {/* field */}
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
-                                    <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" disabled>How Often Do You Smoke?</option>
-                                        <option value="1" >Never</option>
-                                        <option value="2" >Quit since 2 years</option>
+                                    <select className="form-control border-0"
+                                        defaultValue={state.smoking}
+                                        onChange={this.handleSmokingChange}>
+                                        <option disabled>How Often Do You Smoke?</option>
+                                        <option value="naver" >Never</option>
+                                        <option value="quit since 2 years" >Quit since 2 years</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -51,10 +95,12 @@ export default class HealthMeterStep4 extends Component {
                             {/* field */}
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
-                                    <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" disabled>How Often Do You Consume Alcohol?</option>
-                                        <option value="1" >Never</option>
-                                        <option value="2" >Occasionally</option>
+                                    <select className="form-control border-0"
+                                        defaultValue={state.alcoholConsumption}
+                                        onChange={this.handleSmokingChange}>
+                                        <option disabled>How Often Do You Consume Alcohol?</option>
+                                        <option value="never" >Never</option>
+                                        <option value="occasionally" >Occasionally</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -70,10 +116,12 @@ export default class HealthMeterStep4 extends Component {
                             {/* field */}
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
-                                    <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" disabled>Duration Of Sleep:</option>
-                                        <option value="1" >{"<6 Hours"}</option>
-                                        <option value="2" >{"6-9 Hours"}</option>
+                                    <select className="form-control border-0"
+                                        defaultValue={state.sleepDuration}
+                                        onChange={this.handleSleepDurationChange}>
+                                        <option disabled>Duration Of Sleep:</option>
+                                        <option value="<6 hours" >{"<6 Hours"}</option>
+                                        <option value="6-9 hours" >{"6-9 Hours"}</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -86,10 +134,12 @@ export default class HealthMeterStep4 extends Component {
                             {/* field */}
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
-                                    <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" disabled>Daily Activity Level: </option>
-                                        <option value="1" >Sedentary</option>
-                                        <option value="2" >Lightly Active</option>
+                                    <select className="form-control border-0"
+                                        defaultValue={state.dailyActivityLevel}
+                                        onChange={this.handleDailyActivityLevelChange}>
+                                        <option disabled>Daily Activity Level: </option>
+                                        <option value="sedentary" >Sedentary</option>
+                                        <option value="lightly active" >Lightly Active</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -109,7 +159,13 @@ export default class HealthMeterStep4 extends Component {
 
                     <button
                         className="btn st-btn st-btn-primary text-uppercase font-family-secondary-bold font-size-14"
-                        onClick={ev => this.props.openStep5Tab(ev)}
+                        onClick={ev => {
+                            // sending data to main component
+                            props.gettingDataFromStep4(state)
+
+                            // opening step 2
+                            this.props.openStep5Tab(ev)
+                        }}
                     >Next</button>
                 </div>
             </div>

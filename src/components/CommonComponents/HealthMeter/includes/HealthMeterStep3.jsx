@@ -12,9 +12,44 @@ import FeatherIcon from 'feather-icons-react';
 export default class HealthMeterStep3 extends Component {
     constructor(props) {
         super(props)
+
+        // state
+        this.state = {
+            healthIssue: ['constipation']
+        }
+
+        // functions bindings
+        this.handleHealthIssueChange = this.handleHealthIssueChange.bind(this)
+    }
+
+    // setting health issues
+    handleHealthIssueChange(event) {
+        const selectedIssueVal = event.target.value
+
+        // filtering the health issues array to see if issue already exists in the array
+        const filteredHealthIssues = this.state.healthIssue.find(item => item === selectedIssueVal)
+
+        console.log("filteredHealthIssues ", filteredHealthIssues)
+        if (filteredHealthIssues) {
+            // if same issue is already in the array | then remove the item form the array
+            const arrayAfterSameIssueRemoved = this.state.healthIssue.filter(item => item !== selectedIssueVal)
+            this.setState({ healthIssue: [...arrayAfterSameIssueRemoved] }, () => {
+                console.log("item removed ", this.state.healthIssue)
+            });
+
+        } else {
+            // if same issue is NOT in the array | then add the item to the array
+            this.setState({ healthIssue: [...this.state.healthIssue, event.target.value] }, () => {
+                console.log("item added ", this.state.healthIssue)
+            });
+        }
+
     }
 
     render() {
+        const state = this.state;
+        const props = this.props;
+
         return (
             <div className="step3">
                 {/* HEAD SEC */}
@@ -33,7 +68,11 @@ export default class HealthMeterStep3 extends Component {
                         {/* lt-sec */}
                         <div className="lt-sec col-12 col-sm-6 px-0">
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" id="" className="d-none" />
+                                <input type="checkbox" name="" className="d-none"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation')) ? true : false}
+                                    value="constipation"
+                                    onChange={this.handleHealthIssueChange}
+                                />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
                                     <FeatherIcon
                                         icon="check"
@@ -43,46 +82,62 @@ export default class HealthMeterStep3 extends Component {
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" id="" className="d-none" />
+                                <input type="checkbox" name="" className="d-none"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 2')) ? true : false}
+                                    value="constipation 2"
+                                    onChange={this.handleHealthIssueChange}
+                                />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
                                     <FeatherIcon
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation</span>
+                                <span className="text ml-2 position-relative">Constipation 2</span>
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" id="" className="d-none" />
+                                <input type="checkbox" name="" className="d-none"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 3')) ? true : false}
+                                    value="constipation 3"
+                                    onChange={this.handleHealthIssueChange}
+                                />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
                                     <FeatherIcon
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation</span>
+                                <span className="text ml-2 position-relative">Constipation 3</span>
                             </label>
                         </div>
 
                         {/* rt-sec */}
                         <div className="rt-sec col-12 col-sm-6 px-0">
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" id="" className="d-none" />
+                                <input type="checkbox" name="" className="d-none"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 4')) ? true : false}
+                                    value="constipation 4"
+                                    onChange={this.handleHealthIssueChange}
+                                />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
                                     <FeatherIcon
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation</span>
+                                <span className="text ml-2 position-relative">Constipation 4</span>
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" id="" className="d-none" />
+                                <input type="checkbox" name="" className="d-none"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 5')) ? true : false}
+                                    value="constipation 5"
+                                    onChange={this.handleHealthIssueChange}
+                                />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
                                     <FeatherIcon
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation</span>
+                                <span className="text ml-2 position-relative">Constipation 5</span>
                             </label>
                         </div>
                     </div>
@@ -97,7 +152,13 @@ export default class HealthMeterStep3 extends Component {
 
                     <button
                         className="btn st-btn st-btn-primary text-uppercase font-family-secondary-bold font-size-14"
-                        onClick={ev => this.props.openStep4Tab(ev)}
+                        onClick={ev => {
+                            // sending data to main component
+                            props.gettingDataFromStep3(state)
+
+                            // opening step 4
+                            this.props.openStep4Tab(ev)
+                        }}
                     >next</button>
                 </div>
             </div>
