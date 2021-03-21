@@ -21,6 +21,15 @@ export default class HealthMeter extends Component {
     constructor(props) {
         super(props)
 
+        // state
+        this.state = {
+            step1Data: {},
+            step2Data: {},
+            step3Data: {},
+            step4Data: {},
+            step5Data: {},
+        }
+
         // tabs refs
         this.step1Ref = React.createRef()
         this.step2Ref = React.createRef()
@@ -34,6 +43,9 @@ export default class HealthMeter extends Component {
         this.openStep3Tab = this.openStep3Tab.bind(this)
         this.openStep4Tab = this.openStep4Tab.bind(this)
         this.openStep5Tab = this.openStep5Tab.bind(this)
+
+        // getting data
+        this.gettingDataFromStep1 = this.gettingDataFromStep1.bind(this)
     }
 
     // opening step1 tab
@@ -64,6 +76,18 @@ export default class HealthMeter extends Component {
     openStep5Tab = (ev) => {
         ev.preventDefault()
         this.step5Ref.click()
+    }
+
+
+    // getting data from form step 1
+    gettingDataFromStep1(userData) {
+        if (userData) {
+            this.setState({
+                step1Data: { ...userData }
+            }, () => {
+                console.log(this.state.step1Data)
+            })
+        }
     }
 
     render() {
@@ -114,6 +138,9 @@ export default class HealthMeter extends Component {
                                     openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                     openStep4Tab={(ev) => this.openStep4Tab(ev)}
                                     openStep5Tab={(ev) => this.openStep5Tab(ev)}
+
+                                    // getting data
+                                    gettingDataFromStep1={data => this.gettingDataFromStep1(data)}
                                 />
                             </Tab.Pane>
 

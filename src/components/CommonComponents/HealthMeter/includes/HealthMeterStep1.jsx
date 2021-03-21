@@ -14,9 +14,76 @@ import iconKg from 'assets/images/icons/kg-icon.png'
 export default class HealthMeterStep1 extends Component {
     constructor(props) {
         super(props)
+
+        // state
+        this.state = {
+            gender: 'male',
+            ageYears: '18',
+            ageMonths: '9',
+            heightFt: '6',
+            heightIn: '7',
+            weightKg: '21',
+            weightGm: '18',
+        }
+
+        // functions bindings
+        this.handleGenderChange = this.handleGenderChange.bind(this)
+
+        this.handleAgeYearsChange = this.handleAgeYearsChange.bind(this)
+        this.handleAgeMonthsChange = this.handleAgeMonthsChange.bind(this)
+
+        this.handleHeightFtChange = this.handleHeightFtChange.bind(this)
+        this.handleHeightInChange = this.handleHeightInChange.bind(this)
+
+        this.handleWeightKgChange = this.handleWeightKgChange.bind(this)
+        this.handleWeightGmChange = this.handleWeightGmChange.bind(this)
+    }
+
+    // setting gender
+    handleGenderChange(event) {
+        // console.log(event)
+        this.setState({ gender: event.target.value });
+    }
+
+    // setting age | years
+    handleAgeYearsChange(event) {
+        // console.log(event)
+        this.setState({ ageYears: event.target.value });
+    }
+
+    // setting age | months
+    handleAgeMonthsChange(event) {
+        // console.log(event)
+        this.setState({ ageMonths: event.target.value });
+    }
+
+    // setting height | feet
+    handleHeightFtChange(event) {
+        // console.log(event)
+        this.setState({ heightFt: event.target.value });
+    }
+
+    // setting height | inches
+    handleHeightInChange(event) {
+        // console.log(event)
+        this.setState({ heightIn: event.target.value });
+    }
+
+    // setting weight | kilogram
+    handleWeightKgChange(event) {
+        // console.log(event)
+        this.setState({ weightKg: event.target.value });
+    }
+
+    // setting weight | gram
+    handleWeightGmChange(event) {
+        // console.log(event)
+        this.setState({ weightGm: event.target.value });
     }
 
     render() {
+        const state = this.state;
+        const props = this.props;
         return (
             <div className="step1">
                 {/* HEAD SEC */}
@@ -38,10 +105,12 @@ export default class HealthMeterStep1 extends Component {
                             {/* field */}
                             <div className="form-container border st-border-default">
                                 <div className="st-form position-relative with-icon-left">
-                                    <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" disabled>Select</option>
-                                        <option value="1" >Male</option>
-                                        <option value="2" >Female</option>
+                                    <select name="" id="" className="form-control border-0"
+                                        defaultValue={state.gender}
+                                        onChange={this.handleGenderChange}>
+                                        <option disabled>Select</option>
+                                        <option value="male" >Male</option>
+                                        <option value="female" >Female</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -54,14 +123,16 @@ export default class HealthMeterStep1 extends Component {
                             <div className="form-container d-flex border st-border-default">
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
-                                    <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" disabled>Select Year</option>
-                                        <option value="1" >17 (years)</option>
-                                        <option value="2" >18 (years)</option>
-                                        <option value="3" >19 (years)</option>
-                                        <option value="4" >20 (years)</option>
-                                        <option value="5" >21 (years)</option>
-                                        <option value="5" >22 (years)</option>
+                                    <select name="" id="" className="form-control border-0"
+                                        defaultValue={state.ageYears}
+                                        onChange={this.handleAgeYearsChange}>
+                                        <option disabled>Select Year</option>
+                                        <option value="17" >17 (years)</option>
+                                        <option value="18" >18 (years)</option>
+                                        <option value="19" >19 (years)</option>
+                                        <option value="20" >20 (years)</option>
+                                        <option value="21" >21 (years)</option>
+                                        <option value="22" >22 (years)</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
@@ -69,13 +140,15 @@ export default class HealthMeterStep1 extends Component {
                                 </div>
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
-                                    <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" disabled>Select Month</option>
-                                        <option value="1" >8 (months)</option>
-                                        <option value="2" >9 (months)</option>
-                                        <option value="3" >10 (months)</option>
-                                        <option value="4" >11 (months)</option>
-                                        <option value="5" >12 (months)</option>
+                                    <select name="" id="" className="form-control border-0"
+                                        defaultValue={state.ageMonths}
+                                        onChange={this.handleAgeMonthsChange}>
+                                        <option disabled>Select Month</option>
+                                        <option value="8" >8 (months)</option>
+                                        <option value="9" >9 (months)</option>
+                                        <option value="10" >10 (months)</option>
+                                        <option value="11" >11 (months)</option>
+                                        <option value="12" >12 (months)</option>
                                     </select>
                                 </div>
                             </div>
@@ -88,13 +161,15 @@ export default class HealthMeterStep1 extends Component {
                             <div className="form-container d-flex border st-border-default">
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
-                                    <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" disabled>Select</option>
-                                        <option value="1" >5(ft)</option>
-                                        <option value="2" >6(ft)</option>
-                                        <option value="3" >7(ft)</option>
-                                        <option value="4" >8(ft)</option>
-                                        <option value="5" >9(ft)</option>
+                                    <select name="" id="" className="form-control border-0"
+                                        defaultValue={state.heightFt}
+                                        onChange={this.handleHeightFtChange}>
+                                        <option disabled>Select</option>
+                                        <option value="5" >5(ft)</option>
+                                        <option value="6" >6(ft)</option>
+                                        <option value="7" >7(ft)</option>
+                                        <option value="8" >8(ft)</option>
+                                        <option value="9" >9(ft)</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
@@ -102,13 +177,15 @@ export default class HealthMeterStep1 extends Component {
                                 </div>
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
-                                    <select name="" id="" className="form-control border-0" defaultValue="1">
-                                        <option value="0" disabled>Select</option>
-                                        <option value="1" >5(in)</option>
-                                        <option value="2" >6(in)</option>
-                                        <option value="3" >7(in)</option>
-                                        <option value="4" >8(in)</option>
-                                        <option value="5" >9(in)</option>
+                                    <select name="" id="" className="form-control border-0"
+                                        defaultValue={state.heightIn}
+                                        onChange={this.handleHeightInChange}>
+                                        <option disabled>Select</option>
+                                        <option value="5" >5(in)</option>
+                                        <option value="9" >6(in)</option>
+                                        <option value="7" >7(in)</option>
+                                        <option value="8" >8(in)</option>
+                                        <option value="9" >9(in)</option>
                                     </select>
                                 </div>
                             </div>
@@ -118,13 +195,15 @@ export default class HealthMeterStep1 extends Component {
                             <div className="form-container d-flex border st-border-default">
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
-                                    <select name="" id="" className="form-control border-0" defaultValue="0">
+                                    <select name="" id="" className="form-control border-0"
+                                        defaultValue={state.weightKg}
+                                        onChange={this.handleWeightKgChange}>
                                         <option value="0" disabled>Kg</option>
-                                        <option value="1" >17</option>
-                                        <option value="2" >18</option>
-                                        <option value="3" >19</option>
-                                        <option value="4" >20</option>
-                                        <option value="5" >21</option>
+                                        <option value="17" >17</option>
+                                        <option value="18" >18</option>
+                                        <option value="19" >19</option>
+                                        <option value="20" >20</option>
+                                        <option value="21" >21</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconKg} fluid width={17} />
@@ -132,13 +211,15 @@ export default class HealthMeterStep1 extends Component {
                                 </div>
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
-                                    <select name="" id="" className="form-control border-0" defaultValue="0">
-                                        <option value="0" disabled>gm</option>
-                                        <option value="1" >17</option>
-                                        <option value="2" >18</option>
-                                        <option value="3" >19</option>
-                                        <option value="4" >20</option>
-                                        <option value="5" >21</option>
+                                    <select name="" id="" className="form-control border-0"
+                                        defaultValue={state.weightGm}
+                                        onChange={this.handleWeightGmChange}>
+                                        <option disabled>gm</option>
+                                        <option value="17" >17</option>
+                                        <option value="18" >18</option>
+                                        <option value="19" >19</option>
+                                        <option value="20" >20</option>
+                                        <option value="21" >21</option>
                                     </select>
                                 </div>
                             </div>
@@ -150,7 +231,13 @@ export default class HealthMeterStep1 extends Component {
                 <div className="btn-sec d-flex justify-content-end border-top st-border-default pt-3 pt-lg-4 mt-3 mt-lg-5">
                     <button
                         className="btn st-btn st-btn-primary text-uppercase font-family-secondary-bold font-size-14"
-                        onClick={ev => this.props.openStep2Tab(ev)}
+                        onClick={ev => {
+                            // sending data to main component
+                            props.gettingDataFromStep1(state)
+
+                            // opening step 2
+                            this.props.openStep2Tab(ev)
+                        }}
                     >next</button>
                 </div>
             </div>
