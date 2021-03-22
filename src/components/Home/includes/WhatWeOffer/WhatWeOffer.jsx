@@ -28,6 +28,9 @@ import { getPosts } from 'utlis/apis/common';
 // router
 import { Link } from 'react-router-dom'
 
+// local storage
+import { getItemFromLocalStorage } from 'utlis/localStorage/localStorage'
+
 function SliderNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -58,12 +61,14 @@ function SliderPrevArrow(props) {
 
 export default class WhatWeOffer extends Component {
     componentDidMount() {
-        getPosts(
-            localStorage.getItem('commanToken'),
-            'program'
-        ).then(res => {
-            console.log('res  + ', res)
-        });
+        let commonToken = getItemFromLocalStorage('commanToken')
+        if (commonToken) {
+            getPosts(commonToken, "program").then(res => {
+                console.log('res ', res)
+            });
+        } else {
+            console.log('no token from the local storage')
+        }
     }
     render() {
         // settings for slider

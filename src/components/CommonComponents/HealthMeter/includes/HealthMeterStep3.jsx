@@ -22,28 +22,36 @@ export default class HealthMeterStep3 extends Component {
         this.handleHealthIssueChange = this.handleHealthIssueChange.bind(this)
     }
 
-    // setting health issues
+    // setting health issues | OLD WHEN WE HAD MULTIPLE SELECTIONS
+    // handleHealthIssueChange(event) {
+    //     const selectedIssueVal = event.target.value
+
+    //     // filtering the health issues array to see if issue already exists in the array
+    //     const filteredHealthIssues = this.state.healthIssue.find(item => item === selectedIssueVal)
+
+    //     console.log("filteredHealthIssues ", filteredHealthIssues)
+    //     if (filteredHealthIssues) {
+    //         // if same issue is already in the array | then remove the item form the array
+    //         const arrayAfterSameIssueRemoved = this.state.healthIssue.filter(item => item !== selectedIssueVal)
+    //         this.setState({ healthIssue: [...arrayAfterSameIssueRemoved] }, () => {
+    //             console.log("item removed ", this.state.healthIssue)
+    //         });
+
+    //     } else {
+    //         // if same issue is NOT in the array | then add the item to the array
+    //         this.setState({ healthIssue: [...this.state.healthIssue, event.target.value] }, () => {
+    //             console.log("item added ", this.state.healthIssue)
+    //         });
+    //     }
+
+    // }
+
+    // setting health issues | OLD WHEN WE HAD MULTIPLE SELECTIONS
     handleHealthIssueChange(event) {
         const selectedIssueVal = event.target.value
-
-        // filtering the health issues array to see if issue already exists in the array
-        const filteredHealthIssues = this.state.healthIssue.find(item => item === selectedIssueVal)
-
-        console.log("filteredHealthIssues ", filteredHealthIssues)
-        if (filteredHealthIssues) {
-            // if same issue is already in the array | then remove the item form the array
-            const arrayAfterSameIssueRemoved = this.state.healthIssue.filter(item => item !== selectedIssueVal)
-            this.setState({ healthIssue: [...arrayAfterSameIssueRemoved] }, () => {
-                console.log("item removed ", this.state.healthIssue)
-            });
-
-        } else {
-            // if same issue is NOT in the array | then add the item to the array
-            this.setState({ healthIssue: [...this.state.healthIssue, event.target.value] }, () => {
-                console.log("item added ", this.state.healthIssue)
-            });
-        }
-
+        this.setState({ healthIssue: [selectedIssueVal] }, () => {
+            console.log("item added ", this.state.healthIssue)
+        });
     }
 
     render() {
@@ -68,8 +76,8 @@ export default class HealthMeterStep3 extends Component {
                         {/* lt-sec */}
                         <div className="lt-sec col-12 col-sm-6 px-0">
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation')) ? true : false}
+                                <input type="radio" name="health_issues" className="d-none"
+                                    // checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation')) ? true : false}
                                     value="constipation"
                                     onChange={this.handleHealthIssueChange}
                                 />
@@ -82,8 +90,8 @@ export default class HealthMeterStep3 extends Component {
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'Low Immunity')) ? true : false}
+                                <input type="radio" name="health_issues" className="d-none"
+                                    // checked={(state.healthIssue && state.healthIssue.find(item => item === 'Low Immunity')) ? true : false}
                                     value="low-immunity"
                                     onChange={this.handleHealthIssueChange}
                                 />
@@ -96,8 +104,8 @@ export default class HealthMeterStep3 extends Component {
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'body-aches')) ? true : false}
+                                <input type="radio" name="health_issues" className="d-none"
+                                    // checked={(state.healthIssue && state.healthIssue.find(item => item === 'body-aches')) ? true : false}
                                     value="body-aches"
                                     onChange={this.handleHealthIssueChange}
                                 />
@@ -113,8 +121,8 @@ export default class HealthMeterStep3 extends Component {
                         {/* rt-sec */}
                         <div className="rt-sec col-12 col-sm-6 px-0">
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'diarrhoea')) ? true : false}
+                                <input type="radio" name="health_issues" className="d-none"
+                                    // checked={(state.healthIssue && state.healthIssue.find(item => item === 'diarrhoea')) ? true : false}
                                     value="diarrhoea"
                                     onChange={this.handleHealthIssueChange}
                                 />
@@ -127,8 +135,8 @@ export default class HealthMeterStep3 extends Component {
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
-                                <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'acidity')) ? true : false}
+                                <input type="radio" name="health_issues" className="d-none"
+                                    // checked={(state.healthIssue && state.healthIssue.find(item => item === 'acidity')) ? true : false}
                                     value="acidity"
                                     onChange={this.handleHealthIssueChange}
                                 />
