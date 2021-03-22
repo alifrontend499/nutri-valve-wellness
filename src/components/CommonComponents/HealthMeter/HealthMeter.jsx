@@ -16,11 +16,12 @@ import HealthMeterStep3 from './includes/HealthMeterStep3'
 import HealthMeterStep4 from './includes/HealthMeterStep4'
 import HealthMeterStep5 from './includes/HealthMeterStep5'
 
+import { getBMIResult } from 'utlis/apis/common';
+
 export default class HealthMeter extends Component {
 
     constructor(props) {
         super(props)
-
         // state
         this.state = {
             step1Data: {},
@@ -165,6 +166,18 @@ export default class HealthMeter extends Component {
 
         const step5DataList = this.state.step5Data
         console.log('step5Data -> ', step5DataList)
+
+        
+        getBMIResult(
+            localStorage.getItem('commanToken'),
+            step1DataList.weightKg+'.'+step1DataList.weightGm,
+            step1DataList.heightFt+'.'+step1DataList.heightIn,
+            step2DataList.bodyType,
+            step3DataList.healthIssue,
+            step4DataList.sleepDuration
+            ).then(res => {
+            console.log('res  + ', res)
+        });
     }
 
     render() {

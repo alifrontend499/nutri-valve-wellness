@@ -81,6 +81,15 @@ export default class HealthMeterStep1 extends Component {
         this.setState({ weightGm: event.target.value });
     }
 
+    dropdowNumbers = (n, name='') => {
+        let option = [];
+        for(let i=1; i<=n; i++){
+            option.push(<option value={i} key={i}>{i+' '+name}</option>);
+        }
+        // console.log(option);
+        return option;
+    }
+
     render() {
         const state = this.state;
         const props = this.props;
@@ -127,12 +136,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.ageYears}
                                         onChange={this.handleAgeYearsChange}>
                                         <option disabled>Select Year</option>
-                                        <option value="17" >17 (years)</option>
-                                        <option value="18" >18 (years)</option>
-                                        <option value="19" >19 (years)</option>
-                                        <option value="20" >20 (years)</option>
-                                        <option value="21" >21 (years)</option>
-                                        <option value="22" >22 (years)</option>
+                                        { this.dropdowNumbers(100, "(years)") }
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
@@ -144,11 +148,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.ageMonths}
                                         onChange={this.handleAgeMonthsChange}>
                                         <option disabled>Select Month</option>
-                                        <option value="8" >8 (months)</option>
-                                        <option value="9" >9 (months)</option>
-                                        <option value="10" >10 (months)</option>
-                                        <option value="11" >11 (months)</option>
-                                        <option value="12" >12 (months)</option>
+                                        { this.dropdowNumbers(12, "(months)") }
                                     </select>
                                 </div>
                             </div>
@@ -165,11 +165,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.heightFt}
                                         onChange={this.handleHeightFtChange}>
                                         <option disabled>Select</option>
-                                        <option value="5" >5(ft)</option>
-                                        <option value="6" >6(ft)</option>
-                                        <option value="7" >7(ft)</option>
-                                        <option value="8" >8(ft)</option>
-                                        <option value="9" >9(ft)</option>
+                                        { this.dropdowNumbers(10, "(ft)") }
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
@@ -181,11 +177,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.heightIn}
                                         onChange={this.handleHeightInChange}>
                                         <option disabled>Select</option>
-                                        <option value="5" >5(in)</option>
-                                        <option value="9" >6(in)</option>
-                                        <option value="7" >7(in)</option>
-                                        <option value="8" >8(in)</option>
-                                        <option value="9" >9(in)</option>
+                                        { this.dropdowNumbers(10, "(in)") }
                                     </select>
                                 </div>
                             </div>
@@ -199,11 +191,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.weightKg}
                                         onChange={this.handleWeightKgChange}>
                                         <option value="0" disabled>Kg</option>
-                                        <option value="17" >17</option>
-                                        <option value="18" >18</option>
-                                        <option value="19" >19</option>
-                                        <option value="20" >20</option>
-                                        <option value="21" >21</option>
+                                        { this.dropdowNumbers(150, 'kg') }
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconKg} fluid width={17} />
@@ -215,11 +203,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.weightGm}
                                         onChange={this.handleWeightGmChange}>
                                         <option disabled>gm</option>
-                                        <option value="17" >17</option>
-                                        <option value="18" >18</option>
-                                        <option value="19" >19</option>
-                                        <option value="20" >20</option>
-                                        <option value="21" >21</option>
+                                        { this.dropdowNumbers(100, 'gm') }
                                     </select>
                                 </div>
                             </div>

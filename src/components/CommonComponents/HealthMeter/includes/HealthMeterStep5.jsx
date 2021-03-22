@@ -84,8 +84,8 @@ export default class HealthMeterStep5 extends Component {
                                         defaultValue={state.fruitConsumption}
                                         onChange={this.handleFruitConsumptionChange}>
                                         <option disabled>Consumption Of Fruits & Vegetables Per Day:</option>
-                                        <option value="1 - 2 servings" >{'1 - 2 servings'}</option>
-                                        <option value="3 - 4 servings" >{'3 - 4 servings'}</option>
+                                        <option value="3" >{'NONE to 3 Servings'}</option>
+                                        <option value="4" >{'≥ 4 servings'}</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />

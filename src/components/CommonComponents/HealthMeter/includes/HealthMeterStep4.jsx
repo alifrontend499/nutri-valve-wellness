@@ -17,7 +17,7 @@ export default class HealthMeterStep4 extends Component {
         this.state = {
             smoking: 'never',
             alcoholConsumption: 'never',
-            sleepDuration: '<6 hours',
+            sleepDuration: '6-disturbed',
             dailyActivityLevel: 'sedentary',
         }
 
@@ -101,6 +101,8 @@ export default class HealthMeterStep4 extends Component {
                                         <option disabled>How Often Do You Consume Alcohol?</option>
                                         <option value="never" >Never</option>
                                         <option value="occasionally" >Occasionally</option>
+                                        <option value="year" >Quit Alcohol For A Year</option>
+                                        <option value="Daily" >Daily</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -120,8 +122,10 @@ export default class HealthMeterStep4 extends Component {
                                         defaultValue={state.sleepDuration}
                                         onChange={this.handleSleepDurationChange}>
                                         <option disabled>Duration Of Sleep:</option>
-                                        <option value="<6 hours" >{"<6 Hours"}</option>
-                                        <option value="6-9 hours" >{"6-9 Hours"}</option>
+                                        <option value="6-disturbed" >≤ 6 hours disturbed sleep</option> 
+                                        <option value="6-peaceful" >≤ 6 hours peaceful sleep</option>
+                                        <option value="6-9" >6 – 9 hours</option>
+                                        <option value="10-0" >≥ 10 hours</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />

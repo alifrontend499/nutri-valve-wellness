@@ -24,15 +24,19 @@ import healthMeterBg from 'assets/images/homepage-health-meter-bg.jpg'
 import { checkUser } from 'utlis/apis/common'
 
 export default class Home extends Component {
-
+    // state = {commanToken: ''};
     constructor(props) {
         super(props)
+        this.setState({commanToken:''});
     }
 
     componentDidMount() {
         // MAKING USER REQUEST
         checkUser('sysadmin@admin.com', 'SysAdmin123').then(res => {
-            console.log('res  + ', res)
+            console.log('res  + ', res.data.token)
+            // const {commanToken} = this.state;
+            // this.setState({commanToken: res.data.token});
+            localStorage.setItem('commanToken', res.data.token);
         })
     }
 
