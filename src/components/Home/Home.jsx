@@ -31,7 +31,6 @@ export default class Home extends Component {
 
     componentDidMount() {
         // MAKING USER REQUEST
-        console.log('MAKING USER REQUEST')
         checkUser('sysadmin@admin.com', 'SysAdmin123').then(res => {
             console.log('res  + ', res)
         })
