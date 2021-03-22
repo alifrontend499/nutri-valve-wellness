@@ -23,6 +23,7 @@ import sliderImg2 from 'assets/images/what-we-offer/slider-img2.jpg'
 import sliderImg3 from 'assets/images/what-we-offer/slider-img3.jpg'
 import sliderImg4 from 'assets/images/what-we-offer/slider-img4.jpg'
 import sliderImg5 from 'assets/images/what-we-offer/slider-img5.jpg'
+import { getPosts } from 'utlis/apis/common';
 
 // router
 import { Link } from 'react-router-dom'
@@ -53,7 +54,17 @@ function SliderPrevArrow(props) {
     );
 }
 
+
+
 export default class WhatWeOffer extends Component {
+    componentDidMount() {
+        getPosts(
+            localStorage.getItem('commanToken'),
+            'program'
+        ).then(res => {
+            console.log('res  + ', res)
+        });
+    }
     render() {
         // settings for slider
         const settings = {

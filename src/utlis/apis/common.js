@@ -15,11 +15,19 @@ export async function checkUser(userEmail, userPassword) {
 }
 
 // get posts
-export async function getPosts(token) {
+export async function getPosts(token,type) {
   if (token) {
-    const allPosts = await axios.get(apiUrl + "/getposts/program", {
-      tocken: token,
-    });
+    const allPosts = await axios.get(
+      apiUrl + `/getposts/${type}`,
+      {
+        tocken: token,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     return allPosts;
   }
