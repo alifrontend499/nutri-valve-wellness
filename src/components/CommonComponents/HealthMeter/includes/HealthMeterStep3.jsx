@@ -83,8 +83,8 @@ export default class HealthMeterStep3 extends Component {
 
                             <label className="st-checkbox d-flex mb-2">
                                 <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 2')) ? true : false}
-                                    value="constipation 2"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'Low Immunity')) ? true : false}
+                                    value="low-immunity"
                                     onChange={this.handleHealthIssueChange}
                                 />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
@@ -92,13 +92,13 @@ export default class HealthMeterStep3 extends Component {
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation 2</span>
+                                <span className="text ml-2 position-relative">Low Immunity</span>
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
                                 <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 3')) ? true : false}
-                                    value="constipation 3"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'body-aches')) ? true : false}
+                                    value="body-aches"
                                     onChange={this.handleHealthIssueChange}
                                 />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
@@ -106,7 +106,7 @@ export default class HealthMeterStep3 extends Component {
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation 3</span>
+                                <span className="text ml-2 position-relative">Body Aches</span>
                             </label>
                         </div>
 
@@ -114,8 +114,8 @@ export default class HealthMeterStep3 extends Component {
                         <div className="rt-sec col-12 col-sm-6 px-0">
                             <label className="st-checkbox d-flex mb-2">
                                 <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 4')) ? true : false}
-                                    value="constipation 4"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'diarrhoea')) ? true : false}
+                                    value="diarrhoea"
                                     onChange={this.handleHealthIssueChange}
                                 />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
@@ -123,13 +123,13 @@ export default class HealthMeterStep3 extends Component {
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation 4</span>
+                                <span className="text ml-2 position-relative">Diarrhoea</span>
                             </label>
 
                             <label className="st-checkbox d-flex mb-2">
                                 <input type="checkbox" name="" className="d-none"
-                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'constipation 5')) ? true : false}
-                                    value="constipation 5"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'acidity')) ? true : false}
+                                    value="acidity"
                                     onChange={this.handleHealthIssueChange}
                                 />
                                 <span className="box align-items-center d-flex justify-content-center position-relative">
@@ -137,7 +137,7 @@ export default class HealthMeterStep3 extends Component {
                                         icon="check"
                                         size="15" />
                                 </span>
-                                <span className="text ml-2 position-relative">Constipation 5</span>
+                                <span className="text ml-2 position-relative">Acidity</span>
                             </label>
                         </div>
                     </div>

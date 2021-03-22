@@ -15,8 +15,8 @@ export default class HealthMeterStep5 extends Component {
 
         // state
         this.state = {
-            waterConsumption: '4 - 6 glasses',
-            fruitConsumption: '1 - 2 servings',
+            waterConsumption: '3',
+            fruitConsumption: '3',
         }
 
         // functions bindings

@@ -31,7 +31,7 @@ export default class HealthMeterStep2 extends Component {
 
         // state
         this.state = {
-            bodyType: 'triangle'
+            bodyType: 'apple'
         }
 
         // functions bindings
@@ -70,41 +70,41 @@ export default class HealthMeterStep2 extends Component {
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "triangle"}
-                                        value="triangle"
+                                        checked={state.bodyType == "apple"}
+                                        value="apple"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
                                         <Image src={menTriangle} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Triangle</span>
+                                    <span className="text d-block mt-1">Apple Shaped</span>
                                 </label>
 
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "triangle inverted"}
-                                        value="triangle inverted"
+                                        checked={state.bodyType == "hourglass"}
+                                        value="hourglass"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
                                         <Image src={menInvertedTriangle} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Triangle Inverted</span>
+                                    <span className="text d-block mt-1">Hourglass Shaped</span>
                                 </label>
 
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "oval"}
-                                        value="oval"
+                                        checked={state.bodyType == "pear"}
+                                        value="pear"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
                                         <Image src={menOval} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Oval</span>
+                                    <span className="text d-block mt-1">Pear-Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                {/* <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "Hour Glass"}
                                         value="hour glass"
@@ -113,18 +113,18 @@ export default class HealthMeterStep2 extends Component {
                                         <Image src={menHourglass} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Hour Glass</span>
-                                </label>
+                                </label> */}
 
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "square"}
-                                        value="square"
+                                        checked={state.bodyType == "banana"}
+                                        value="banana"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
                                         <Image src={menSquare} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Square</span>
+                                    <span className="text d-block mt-1">Rectangle/ Banana Shape</span>
                                 </label>
                             </div>
 
@@ -134,44 +134,44 @@ export default class HealthMeterStep2 extends Component {
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "triangle"}
-                                        value="triangle"
+                                        checked={state.bodyType == "apple"}
+                                        value="apple"
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
                                         <Image src={womenTriangle} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Triangle</span>
+                                    <span className="text d-block mt-1">Apple Shaped</span>
                                 </label>
 
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "triangle inverted"}
-                                        value="triangle inverted"
+                                        checked={state.bodyType == "hourglass"}
+                                        value="hourglass"
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
                                         <Image src={womenInvertedTriangle} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Triangle Inverted</span>
+                                    <span className="text d-block mt-1">Hourglass Shaped</span>
                                 </label>
 
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "oval"}
-                                        value="oval"
+                                        checked={state.bodyType == "pear"}
+                                        value="pear"
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
                                         <Image src={womenOval} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Oval</span>
+                                    <span className="text d-block mt-1">Pear-Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                {/* <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "hour glass"}
                                         value="hour glass"
@@ -181,19 +181,19 @@ export default class HealthMeterStep2 extends Component {
                                         <Image src={womenHourglass} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Hour Glass</span>
-                                </label>
+                                </label> */}
 
                                 {/* radio */}
                                 <label className="st-img-radio text-center mx-1">
                                     <input type="radio" name="body_type" className="d-none"
-                                        checked={state.bodyType == "square"}
-                                        value="square"
+                                        checked={state.bodyType == "banana"}
+                                        value="banana"
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
                                         <Image src={womenSquare} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Square</span>
+                                    <span className="text d-block mt-1">Rectangle/ Banana Shape</span>
                                 </label>
                             </div>
 
