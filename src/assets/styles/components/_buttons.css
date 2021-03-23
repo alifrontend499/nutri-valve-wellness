@@ -34,7 +34,8 @@
     font-weight: normal;
     font-size: 16px;
     border: none;
-    padding: 10px 17px 11px;
+    /* padding: 10px 17px 11px; */
+    padding: 11px 17px 10px;
     border-radius: 0;
     min-width: 120px;
 }
@@ -111,4 +112,7 @@
 .st-btn.st-btn-lg {
     padding: 12px 17px 13px;
     min-width: 170px;
+}
+.st-btn.no-min-width {
+    min-width: auto;
 }

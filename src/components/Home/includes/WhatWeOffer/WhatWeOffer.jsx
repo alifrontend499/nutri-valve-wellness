@@ -76,10 +76,10 @@ export default class WhatWeOffer extends Component {
         const { posts } = this.state;
         // settings for slider
         const settings = {
-            infinite: true,
             autoplay: true,
             pauseOnHover: true,
             speed: 500,
+            infinite: (posts && posts.length > 4) ? true : false,
             autoplaySpeed: 2500,
             slidesToShow: 5,
             slidesToScroll: 1,
@@ -88,24 +88,28 @@ export default class WhatWeOffer extends Component {
             nextArrow: <SliderPrevArrow />,
             responsive: [
                 {
+                    infinite: (posts && posts.length > 5) ? true : false,
                     breakpoint: 1200,
                     settings: {
                         slidesToShow: 5
                     }
                 },
                 {
+                    infinite: (posts && posts.length > 2) ? true : false,
                     breakpoint: 992,
                     settings: {
                         slidesToShow: 3
                     }
                 },
                 {
+                    infinite: (posts && posts.length > 1) ? true : false,
                     breakpoint: 768,
                     settings: {
                         slidesToShow: 2
                     }
                 },
                 {
+                    infinite: (posts && posts.length) ? true : false,
                     breakpoint: 567,
                     settings: {
                         slidesToShow: 1
@@ -129,23 +133,23 @@ export default class WhatWeOffer extends Component {
                         <div className="slider-container px-lg-2">
                             <Slider {...settings}>
                                 {/* slider-item */}
-                                {Array.isArray(posts) && posts.map((post,index) =>
+                                {Array.isArray(posts) && posts.map((post, index) =>
                                     <div className="slider-item pt-1" key={index}>
                                         <div className="slider-item-inner px-2 px-lg-3">
                                             {/* img sec */}
                                             <Link to={`/program/${post.slug}`} className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                                
-                                            { post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />): <Image src={blankSpot} fluid className="img-fluid-height" />}                                                
+
+                                                {post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />) : <Image src={blankSpot} fluid className="img-fluid-height" />}
                                             </Link>
 
                                             {/* text sec */}
                                             <div className="text-sec text-center">
                                                 <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                {post.title}
-                                            </Link>
+                                                    {post.title}
+                                                </Link>
                                                 <p className="desc st-text-gray mb-3">
-                                                {HTMLparser(`${post.content.substring(0,250).replace(/(<([^>]+)>)/gi,"")}`)}
-                                            </p>
+                                                    {HTMLparser(`${post.content.substring(0, 250).replace(/(<([^>]+)>)/gi, "")}`)}
+                                                </p>
                                                 <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                     <span>MORE</span>
                                                     <FeatherIcon

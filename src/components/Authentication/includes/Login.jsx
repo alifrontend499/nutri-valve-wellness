@@ -65,12 +65,12 @@ export default class Login extends Component {
                                 <button className="btn btn-block st-btn st-btn-primary st-btn-lg st-btn-rounded-0 font-size-13 text-uppercase">Login</button>
                             </div>
 
-                            <div className="add-data text-center mt-3">
+                            {/* <div className="add-data text-center mt-3">
                                 <a href="#"
                                     className="font-size-14 st-text-dark d-inline-block mb-1"
                                     onClick={(ev) => this.props.openRegisterTab(ev)}
                                 >Create a new Account</a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </Col>

@@ -236,3 +236,8 @@
     background-color: var(--primaryColor) !important;
     color: #fff;
 }
+
+/* MODAL BOOTSTRAP STYLES */
+.modal-content {
+    border-radius: 0;
+}
