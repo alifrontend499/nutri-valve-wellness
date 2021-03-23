@@ -5,6 +5,7 @@ import {
     Container,
     Image
 } from 'react-bootstrap';
+import HTMLparser from "html-react-parser";
 
 // home style
 import '../../styles/home-styles.css'
@@ -18,11 +19,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // slider images
-import sliderImg1 from 'assets/images/what-we-offer/slider-img1.jpg'
-import sliderImg2 from 'assets/images/what-we-offer/slider-img2.jpg'
-import sliderImg3 from 'assets/images/what-we-offer/slider-img3.jpg'
-import sliderImg4 from 'assets/images/what-we-offer/slider-img4.jpg'
-import sliderImg5 from 'assets/images/what-we-offer/slider-img5.jpg'
+import blankSpot from 'assets/images/program-girl-img.png'
+// import sliderImg2 from 'assets/images/what-we-offer/slider-img2.jpg'
+// import sliderImg3 from 'assets/images/what-we-offer/slider-img3.jpg'
+// import sliderImg4 from 'assets/images/what-we-offer/slider-img4.jpg'
+// import sliderImg5 from 'assets/images/what-we-offer/slider-img5.jpg'
 import { getPosts } from 'utlis/apis/common';
 
 // router
@@ -58,19 +59,21 @@ function SliderPrevArrow(props) {
 }
 
 
-
 export default class WhatWeOffer extends Component {
+    state = { posts: {} };
     componentDidMount() {
         let commonToken = getItemFromLocalStorage('commanToken')
         if (commonToken) {
             getPosts(commonToken, "program").then(res => {
-                console.log('res ', res)
+                console.log('res ', res.data)
+                this.setState({ posts: res.data });
             });
         } else {
             console.log('no token from the local storage')
         }
     }
     render() {
+        const { posts } = this.state;
         // settings for slider
         const settings = {
             infinite: true,
@@ -126,284 +129,35 @@ export default class WhatWeOffer extends Component {
                         <div className="slider-container px-lg-2">
                             <Slider {...settings}>
                                 {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg1} fluid className="img-fluid-height" />
-                                        </Link>
+                                {Array.isArray(posts) && posts.map((post,index) =>
+                                    <div className="slider-item pt-1" key={index}>
+                                        <div className="slider-item-inner px-2 px-lg-3">
+                                            {/* img sec */}
+                                            <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                                
+                                            { post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />): <Image src={blankSpot} fluid className="img-fluid-height" />}                                                
+                                            </Link>
 
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Personal Coaching
+                                            {/* text sec */}
+                                            <div className="text-sec text-center">
+                                                <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                                {post.title}
                                             </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Picking out the session matches your goals and getting.
+                                                <p className="desc st-text-gray mb-3">
+                                                {HTMLparser(`${post.content.substring(0,250).replace(/(<([^>]+)>)/gi,"")}`)}
                                             </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
+                                                <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                                    <span>MORE</span>
+                                                    <FeatherIcon
+                                                        icon="arrow-right-circle"
+                                                        className="ml-2"
+                                                        size="18"
+                                                    />
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg2} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Weight Loss
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Physical exercise is also for your health & beauty.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg3} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Bridal Diet Plan
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Physical exercise is also for your health & beauty.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg4} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Balanced Diet
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Eating habits should be regulated & controlled for body.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg5} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Child Nutrition
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                What better time to take the kids out to the playground.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg1} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Personal Coaching
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Picking out the session matches your goals and getting.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg2} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Weight Loss
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Physical exercise is also for your health & beauty.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg3} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Bridal Diet Plan
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Physical exercise is also for your health & beauty.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg4} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Balanced Diet
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                Eating habits should be regulated & controlled for body.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* slider-item */}
-                                <div className="slider-item pt-1">
-                                    <div className="slider-item-inner px-2 px-lg-3">
-                                        {/* img sec */}
-                                        <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-                                            <Image src={sliderImg5} fluid className="img-fluid-height" />
-                                        </Link>
-
-                                        {/* text sec */}
-                                        <div className="text-sec text-center">
-                                            <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                Child Nutrition
-                                            </Link>
-                                            <p className="desc st-text-gray mb-3">
-                                                What better time to take the kids out to the playground.
-                                            </p>
-                                            <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                <span>MORE</span>
-                                                <FeatherIcon
-                                                    icon="arrow-right-circle"
-                                                    className="ml-2"
-                                                    size="18"
-                                                />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
+                                )}
 
                             </Slider>
                         </div>
