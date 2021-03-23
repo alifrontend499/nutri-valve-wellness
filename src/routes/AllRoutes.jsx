@@ -57,6 +57,7 @@ export default class AllRoutes extends Component {
                 <Route path="/auth" component={Authentication} />
 
                 <Route path="/programs" component={Programs} />
+                <Route path="/program/:slug" component={Programs} />
 
                 <Route path="/recipes" component={Recipes} />
                 <Route path="/recipe-details" component={RecipeDetails} />

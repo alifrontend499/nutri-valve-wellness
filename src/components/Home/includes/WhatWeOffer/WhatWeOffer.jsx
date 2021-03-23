@@ -133,7 +133,7 @@ export default class WhatWeOffer extends Component {
                                     <div className="slider-item pt-1" key={index}>
                                         <div className="slider-item-inner px-2 px-lg-3">
                                             {/* img sec */}
-                                            <Link to="/programs" className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                                            <Link to={`/program/${post.slug}`} className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
                                                 
                                             { post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />): <Image src={blankSpot} fluid className="img-fluid-height" />}                                                
                                             </Link>

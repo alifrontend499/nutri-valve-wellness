@@ -5,6 +5,7 @@ import './styles/programs-styles.css'
 
 // bootstrap
 import { Container, Row, Col, Image } from 'react-bootstrap'
+import HTMLparser from "html-react-parser";
 
 // components
 import Header from 'components/CommonComponents/Header/Header'
@@ -14,11 +15,30 @@ import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 import ProgramsSearch from './includes/ProgramsSearch'
 import ProgramPlans from './includes/ProgramPlans'
 
+// api: common
+import { getPost } from 'utlis/apis/common'
+// local storage
+import { getItemFromLocalStorage } from 'utlis/localStorage/localStorage'
+
 // images
 import programGirl from 'assets/images/program-girl-img.png'
 
 export default class Programs extends Component {
+    state = {post: []};
+    componentDidMount() {
+        const { slug } = this.props.match.params;
+        console.log(slug);
+        // MAKING USER REQUEST
+        getPost(            
+            localStorage.getItem('commanToken'),
+            slug
+        ).then(res => {
+            this.setState({ post: res.data });
+            console.log('res  + ', res)
+        });
+    }
     render() {
+        const {post} = this.state;
         return (
             <>
                 <Header />
@@ -39,9 +59,9 @@ export default class Programs extends Component {
                             <Row className="program-weight-loss-challenge">
                                 {/* header */}
                                 <Col xs={12} className="st-heading-wrapper text-center mb-3 mb-lg-4">
-                                    <p className="st-heading heading-xs font-family-secondary-bold mb-3 mb-lg-4">Weight Loss Chalange</p>
+                                    <p className="st-heading heading-xs font-family-secondary-bold mb-3 mb-lg-4">{post.title}</p>
                                     <p className="desc font-size-15 st-text-gray">
-                                        An excellent program for one who has sedentary lifestyle, desk job and post pregnancy weight issues and wants to lose weight, inch loss, fat loss. The program does not include any artificial supplements and can be easily followed with no crash meals.
+                                    {HTMLparser(`${post.content}`)}
                                     </p>
                                 </Col>
 

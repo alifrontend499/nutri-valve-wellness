@@ -25,6 +25,17 @@ export async function getPosts(token, type) {
 		return allPosts;
 	}
 }
+// get Single Post
+export async function getPost(token, slug) {
+	if (token) {
+		const post = await axios.get(apiUrl + `/getpost/${slug}`, {
+			headers: {
+				'Authorization': `Bearer ${token}`,
+			},
+		});
+		return post;
+	}
+}
 
 // get BMI result
 export async function getBMIResult(token, kg, height, body, health, sleep) {
