@@ -186,6 +186,21 @@ export default class HealthMeter extends Component {
         });
     }
 
+    meter = () =>{
+        const { result } = this.state;
+        if(result.body){
+            if(result.weight.kg<18.5){
+                return 'Red';
+            } else if(result.weight.kg>=18.5 && result.weight.kg<=24.9){
+                return "Green";
+            } else if(result.weight.kg>=25 && result.weight.kg<=29.9){
+                return "Yellow";
+            } else if(result.weight.kg>=30){
+                return "Red";
+            }
+        }
+    }
+
     render() {
         const state = this.state;
         const props = this.props;
@@ -195,6 +210,9 @@ export default class HealthMeter extends Component {
                 <div className="health-meter-main-inner bg-white px-3 px-lg-4 py-4 py-lg-5">
                     {(result.body) ? <div>
                         <Table>
+                            <tr>
+                                <td>{this.meter()}</td>
+                            </tr>
                             <tr>
                                 <td>{result.weight.message}</td>
                             </tr>
