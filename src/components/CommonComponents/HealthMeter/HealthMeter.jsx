@@ -177,7 +177,9 @@ export default class HealthMeter extends Component {
             step1DataList.heightFt + '.' + step1DataList.heightIn,
             step2DataList.bodyType,
             step3DataList.healthIssue,
-            step4DataList.sleepDuration
+            step4DataList.sleepDuration,
+            step4DataList.alcoholConsumption,
+            step5DataList.fruitConsumption,
         ).then(res => {
             this.setState({ result: res.data });
             console.log('res  + ', res)
@@ -205,6 +207,13 @@ export default class HealthMeter extends Component {
                             <tr>
                                 <td>{result.sleep}</td>
                             </tr>
+                            <tr>
+                                <td>{result.alcohol}</td>
+                            </tr>
+                            <tr>
+                                <td>{result.fruits}</td>
+                            </tr>
+                            
                         </Table>
                     </div>
                         :

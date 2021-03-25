@@ -144,13 +144,13 @@ export default class WhatWeOffer extends Component {
 
                                             {/* text sec */}
                                             <div className="text-sec text-center">
-                                                <Link to="/programs" className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                                <Link to={`/program/${post.slug}`} className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
                                                     {post.title}
                                                 </Link>
                                                 <p className="desc st-text-gray mb-3">
-                                                    {HTMLparser(`${post.content.substring(0, 250).replace(/(<([^>]+)>)/gi, "")}`)}
+                                                    {HTMLparser(`${post.content.substring(0, 100).replace(/(<([^>]+)>)/gi, "")}`)}
                                                 </p>
-                                                <Link to="/programs" className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                                <Link to={`/program/${post.slug}`} className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
                                                     <span>MORE</span>
                                                     <FeatherIcon
                                                         icon="arrow-right-circle"

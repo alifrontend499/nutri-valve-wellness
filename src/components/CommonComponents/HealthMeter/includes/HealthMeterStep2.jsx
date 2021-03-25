@@ -7,17 +7,17 @@ import '../styles/health-meter-styles.css'
 import { Image } from 'react-bootstrap'
 
 
-import menTriangle from 'assets/images/icons/man-triangle.jpg'
-import womenTriangle from 'assets/images/icons/woman-triangle.jpg'
+import appleMen from 'assets/images/icons/apple.jpg'
+import appleWomen from 'assets/images/icons/apple-girl.jpg'
 
-import menInvertedTriangle from 'assets/images/icons/men-inverted-triangle.jpg'
-import womenInvertedTriangle from 'assets/images/icons/women-inverted-triangle.jpg'
+import bananaMen from 'assets/images/icons/banana.jpg'
+import bananaWomen from 'assets/images/icons/banana-girl.jpg'
 
-import menHourglass from 'assets/images/icons/men-hourglass.jpg'
-import womenHourglass from 'assets/images/icons/women-hourglass.jpg'
+import hourglassMen from 'assets/images/icons/hourglass.jpg'
+import hourglassWomen from 'assets/images/icons/hourglass-girl.jpg'
 
-import menOval from 'assets/images/icons/men-oval.jpg'
-import womenOval from 'assets/images/icons/women-oval.jpg'
+import pearMen from 'assets/images/icons/pair.jpg'
+import pearWomen from 'assets/images/icons/pair-girl.jpg'
 
 import menSquare from 'assets/images/icons/men-square.jpg'
 import womenSquare from 'assets/images/icons/women-square.jpg'
@@ -74,7 +74,7 @@ export default class HealthMeterStep2 extends Component {
                                         value="apple"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
-                                        <Image src={menTriangle} fluid className="img-fluid-height" />
+                                        <Image src={appleMen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Apple Shaped</span>
                                 </label>
@@ -86,7 +86,7 @@ export default class HealthMeterStep2 extends Component {
                                         value="hourglass"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
-                                        <Image src={menInvertedTriangle} fluid className="img-fluid-height" />
+                                        <Image src={hourglassMen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Hourglass Shaped</span>
                                 </label>
@@ -98,7 +98,7 @@ export default class HealthMeterStep2 extends Component {
                                         value="pear"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
-                                        <Image src={menOval} fluid className="img-fluid-height" />
+                                        <Image src={pearMen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Pear-Shaped</span>
                                 </label>
@@ -122,7 +122,7 @@ export default class HealthMeterStep2 extends Component {
                                         value="banana"
                                         onChange={this.handleBodyTypeChange} />
                                     <span className="box d-block border p-1">
-                                        <Image src={menSquare} fluid className="img-fluid-height" />
+                                        <Image src={bananaMen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Rectangle/ Banana Shape</span>
                                 </label>
@@ -139,7 +139,7 @@ export default class HealthMeterStep2 extends Component {
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
-                                        <Image src={womenTriangle} fluid className="img-fluid-height" />
+                                        <Image src={appleWomen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Apple Shaped</span>
                                 </label>
@@ -152,7 +152,7 @@ export default class HealthMeterStep2 extends Component {
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
-                                        <Image src={womenInvertedTriangle} fluid className="img-fluid-height" />
+                                        <Image src={hourglassWomen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Hourglass Shaped</span>
                                 </label>
@@ -165,7 +165,7 @@ export default class HealthMeterStep2 extends Component {
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
-                                        <Image src={womenOval} fluid className="img-fluid-height" />
+                                        <Image src={pearWomen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Pear-Shaped</span>
                                 </label>
@@ -191,7 +191,7 @@ export default class HealthMeterStep2 extends Component {
                                         onChange={this.handleBodyTypeChange}
                                     />
                                     <span className="box d-block border p-1">
-                                        <Image src={womenSquare} fluid className="img-fluid-height" />
+                                        <Image src={bananaWomen} fluid className="img-fluid-height" />
                                     </span>
                                     <span className="text d-block mt-1">Rectangle/ Banana Shape</span>
                                 </label>
