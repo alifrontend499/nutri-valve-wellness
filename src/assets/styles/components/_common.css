@@ -215,6 +215,9 @@
 }
 .st-img-radio .text {
 }
+.st-img-radio .text.active {
+    color: var(--primaryColor);
+}
 
 /* ST-CHECKBOX */
 .st-checkbox {

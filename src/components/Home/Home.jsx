@@ -50,43 +50,52 @@ export default class Home extends Component {
         const { loader } = this.state;
         return (
             <div>
-                { (loader) ? (<div className="d-flex justify-content-center"><div className="spinner-grow align-self-center" role="status">
-                    <span className="sr-only">Loading...</span>
-                </div></div>) : (<div>
-                    <Header />
-                    <section id="st-wrapper">
-                        <HomeSlider />
+                {
+                    (loader) ? (
+                        // loading
+                        <div className="d-flex justify-content-center align-items-center position-fixed h-100 w-100" style={{ top: 0, left: 0, zIndex: 99 }}>
+                            <div className="spinner-grow align-self-center" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    ) : (
+                        <div>
+                            <Header />
+                            <section id="st-wrapper">
+                                <HomeSlider />
 
-                        <WhatWeOffer />
+                                <WhatWeOffer />
 
-                        {/* HOME HEALTH METER */}
-                        <section
-                            id="home-health-meter"
-                            className="ST_def-pad-TB"
-                            style={{ backgroundImage: `url("${healthMeterBg}")` }}>
-                            <Container>
-                                <Row className="home-health-meter">
-                                    <Col xs={12} md={8} lg={7} className="ml-auto">
-                                        <div className="inner">
-                                            <HealthMeter />
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </section>
+                                {/* HOME HEALTH METER */}
+                                <section
+                                    id="home-health-meter"
+                                    className="ST_def-pad-TB"
+                                    style={{ backgroundImage: `url("${healthMeterBg}")` }}>
+                                    <Container>
+                                        <Row className="home-health-meter">
+                                            <Col xs={12} className="ml-auto">
+                                                <div className="inner">
+                                                    <HealthMeter fromHeader />
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </section>
 
-                        <HomeAbout />
+                                <HomeAbout />
 
-                        <StoryOfSuccess />
+                                <StoryOfSuccess />
 
-                        <HomeDailyTips />
+                                <HomeDailyTips />
 
-                        <OurBlogs includeHeading={true} limit={3} />
+                                <OurBlogs includeHeading={true} limit={3} />
 
-                        <Footer />
-                    </section>
+                                <Footer />
+                            </section>
 
-                </div>)}
+                        </div>
+                    )
+                }
 
             </div>
         )

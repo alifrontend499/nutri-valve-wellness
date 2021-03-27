@@ -68,63 +68,63 @@ export default class HealthMeterStep2 extends Component {
                             // FOR MALE
                             <div className="for-men d-flex flex-wrap justify-content-center">
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "apple"}
                                         value="apple"
                                         onChange={this.handleBodyTypeChange} />
-                                    <span className="box d-block border p-1">
-                                        <Image src={appleMen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={appleMen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Apple Shaped</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "apple" ? 'active' : ''}`}>Apple Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "hourglass"}
                                         value="hourglass"
                                         onChange={this.handleBodyTypeChange} />
-                                    <span className="box d-block border p-1">
-                                        <Image src={hourglassMen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={hourglassMen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Hourglass Shaped</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "hourglass" ? 'active' : ''}`}>Hourglass Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "pear"}
                                         value="pear"
                                         onChange={this.handleBodyTypeChange} />
-                                    <span className="box d-block border p-1">
-                                        <Image src={pearMen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={pearMen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Pear-Shaped</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "pear" ? 'active' : ''}`}>Pear-Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                {/* <label className="st-img-radio text-center mx-1">
+                                {/* <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "Hour Glass"}
                                         value="hour glass"
                                         onChange={this.handleBodyTypeChange} />
-                                    <span className="box d-block border p-1">
-                                        <Image src={menHourglass} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={menHourglass} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Hour Glass</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "Hour Glass" ? 'active' : ''}`}>Hour Glass</span>
                                 </label> */}
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "banana"}
                                         value="banana"
                                         onChange={this.handleBodyTypeChange} />
-                                    <span className="box d-block border p-1">
-                                        <Image src={bananaMen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={bananaMen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Rectangle/ Banana Shape</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "banana" ? 'active' : ''}`}>Rectangle / Banana Shape</span>
                                 </label>
                             </div>
 
@@ -132,68 +132,68 @@ export default class HealthMeterStep2 extends Component {
                             // FOR FEMALE
                             <div className="for-women d-flex flex-wrap justify-content-center">
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "apple"}
                                         value="apple"
                                         onChange={this.handleBodyTypeChange}
                                     />
-                                    <span className="box d-block border p-1">
-                                        <Image src={appleWomen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={appleWomen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Apple Shaped</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "apple" ? 'active' : ''}`}>Apple Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "hourglass"}
                                         value="hourglass"
                                         onChange={this.handleBodyTypeChange}
                                     />
-                                    <span className="box d-block border p-1">
-                                        <Image src={hourglassWomen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={hourglassWomen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Hourglass Shaped</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "hourglass" ? 'active' : ''}`}>Hourglass Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "pear"}
                                         value="pear"
                                         onChange={this.handleBodyTypeChange}
                                     />
-                                    <span className="box d-block border p-1">
-                                        <Image src={pearWomen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={pearWomen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Pear-Shaped</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "pear" ? 'active' : ''}`}>Pear-Shaped</span>
                                 </label>
 
                                 {/* radio */}
-                                {/* <label className="st-img-radio text-center mx-1">
+                                {/* <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "hour glass"}
                                         value="hour glass"
                                         onChange={this.handleBodyTypeChange}
                                     />
-                                    <span className="box d-block border p-1">
-                                        <Image src={womenHourglass} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={womenHourglass} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Hour Glass</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "hour glass" ? 'active' : ''}`}>Hour Glass</span>
                                 </label> */}
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1">
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "banana"}
                                         value="banana"
                                         onChange={this.handleBodyTypeChange}
                                     />
-                                    <span className="box d-block border p-1">
-                                        <Image src={bananaWomen} fluid className="img-fluid-height" />
+                                    <span className="box d-block border p-1 mx-auto">
+                                        <Image src={bananaWomen} width={70} fluid className="img-fluid-height" />
                                     </span>
-                                    <span className="text d-block mt-1">Rectangle/ Banana Shape</span>
+                                    <span className={`text d-block mt-1 ${state.bodyType == "banana" ? 'active' : ''}`}>Rectangle / Banana Shape</span>
                                 </label>
                             </div>
 

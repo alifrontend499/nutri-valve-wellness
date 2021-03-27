@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-// bootstrap
-import { Col, Container, Row } from 'react-bootstrap'
-
 // components
 import Header from 'components/CommonComponents/Header/Header'
 import Footer from 'components/CommonComponents/Footer/Footer'
@@ -27,14 +24,8 @@ export default class HealthMeterPage extends Component {
                     {/* HEALTH METER SEC */}
                     <section
                         id="page-health-meter"
-                        className="ST_def-pad-TB st-bg-slate">
-                        <Container>
-                            <Row className="page-health-meter">
-                                <Col xs={12} md={10} lg={8} className="mx-auto">
-                                    <HealthMeter />
-                                </Col>
-                            </Row>
-                        </Container>
+                        className="st-bg-slate">
+                        <HealthMeter />
                     </section>
 
                     {/* FOOTER */}

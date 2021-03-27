@@ -13,3 +13,20 @@
     left: 0;
     top: 10px;
 }
+
+
+
+@media screen and (min-width: 768px) {
+    .heath-meter-final-result {
+        width: 90%;
+    }    
+}
+.heath-meter-final-result .item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+@media screen and (min-width: 768px) {
+    .heath-meter-final-result .item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
