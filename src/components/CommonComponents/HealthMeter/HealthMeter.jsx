@@ -7,7 +7,8 @@ import './styles/health-meter-styles.css'
 import {
     Nav,
     Tab,
-    Table
+    Table,
+    Image
 } from 'react-bootstrap'
 
 // includes
@@ -16,6 +17,12 @@ import HealthMeterStep2 from './includes/HealthMeterStep2'
 import HealthMeterStep3 from './includes/HealthMeterStep3'
 import HealthMeterStep4 from './includes/HealthMeterStep4'
 import HealthMeterStep5 from './includes/HealthMeterStep5'
+
+
+import oneMeter from 'assets/images/icons/1.jpg';
+import twoMeter from 'assets/images/icons/2.jpg';
+import threeMeter from 'assets/images/icons/3.jpg';
+import fourMeter from 'assets/images/icons/4.jpg';
 
 import { getBMIResult } from 'utlis/apis/common';
 
@@ -190,13 +197,13 @@ export default class HealthMeter extends Component {
         const { result } = this.state;
         if(result.body){
             if(result.weight.kg<18.5){
-                return 'Red';
+                return oneMeter;
             } else if(result.weight.kg>=18.5 && result.weight.kg<=24.9){
-                return "Green";
+                return twoMeter;
             } else if(result.weight.kg>=25 && result.weight.kg<=29.9){
-                return "Yellow";
+                return threeMeter;
             } else if(result.weight.kg>=30){
-                return "Red";
+                return fourMeter;
             }
         }
     }
@@ -211,7 +218,9 @@ export default class HealthMeter extends Component {
                     {(result.body) ? <div>
                         <Table>
                             <tr>
-                                <td>{this.meter()}</td>
+                                <td>
+                                <Image src={this.meter()} fluid className="img-fluid-height" />
+                                </td>
                             </tr>
                             <tr>
                                 <td>{result.weight.message}</td>
