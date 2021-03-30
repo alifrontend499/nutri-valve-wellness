@@ -66,8 +66,10 @@ export default class HealthMeterStep5 extends Component {
                                         defaultValue={state.waterConsumption}
                                         onChange={this.handleWaterConsumptionChange}>
                                         <option disabled>Consumption Of Water Per Day:</option>
-                                        <option value="< 4 glasses" >{'< 4 glasses'}</option>
-                                        <option value="4 - 6 glasses" >{'4 - 6 glasses'}</option>
+                                        <option value="3" >{'< 4 glasses'}</option>
+                                        <option value="6" >{'4 - 6 glasses'}</option>
+                                        <option value="12" >{'6 - 12 glasses'}</option>
+                                        <option value="13" >{'12 > glasses'}</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -84,8 +86,10 @@ export default class HealthMeterStep5 extends Component {
                                         defaultValue={state.fruitConsumption}
                                         onChange={this.handleFruitConsumptionChange}>
                                         <option disabled>Consumption Of Fruits & Vegetables Per Day:</option>
-                                        <option value="3" >{'NONE to 3 Servings'}</option>
-                                        <option value="4" >{'≥ 4 servings'}</option>
+                                        <option value="none">None</option>
+                                        <option value="2" >{'1- 2 servings'}</option>
+                                        <option value="4" >{'3 - 4 servings'}</option>
+                                        <option value="5" >{'4> servings'}</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />

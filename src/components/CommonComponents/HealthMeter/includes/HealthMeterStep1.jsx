@@ -81,10 +81,10 @@ export default class HealthMeterStep1 extends Component {
         this.setState({ weightGm: event.target.value });
     }
 
-    dropdowNumbers = (n, name='') => {
+    dropdowNumbers = (n, name = '',start = 1) => {
         let option = [];
-        for(let i=1; i<=n; i++){
-            option.push(<option value={i} key={i}>{i+' '+name}</option>);
+        for (let i = start; i <= n; i++) {
+            option.push(<option value={i} key={i}>{i + ' ' + name}</option>);
         }
         // console.log(option);
         return option;
@@ -136,7 +136,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.ageYears}
                                         onChange={this.handleAgeYearsChange}>
                                         <option disabled>Select Year</option>
-                                        { this.dropdowNumbers(100, "(years)") }
+                                        {this.dropdowNumbers(100, "(years)")}
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
@@ -148,7 +148,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.ageMonths}
                                         onChange={this.handleAgeMonthsChange}>
                                         <option disabled>Select Month</option>
-                                        { this.dropdowNumbers(12, "(months)") }
+                                        {this.dropdowNumbers(12, "(months)")}
                                     </select>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.heightFt}
                                         onChange={this.handleHeightFtChange}>
                                         <option disabled>Select</option>
-                                        { this.dropdowNumbers(10, "(ft)") }
+                                        {this.dropdowNumbers(10, "(ft)")}
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconAge} fluid width={17} />
@@ -177,7 +177,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.heightIn}
                                         onChange={this.handleHeightInChange}>
                                         <option disabled>Select</option>
-                                        { this.dropdowNumbers(10, "(in)") }
+                                        {this.dropdowNumbers(10, "(in)",0)}
                                     </select>
                                 </div>
                             </div>
@@ -191,7 +191,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.weightKg}
                                         onChange={this.handleWeightKgChange}>
                                         <option value="0" disabled>Kg</option>
-                                        { this.dropdowNumbers(150, 'kg') }
+                                        {this.dropdowNumbers(150, 'kg')}
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconKg} fluid width={17} />
@@ -203,7 +203,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.weightGm}
                                         onChange={this.handleWeightGmChange}>
                                         <option disabled>gm</option>
-                                        { this.dropdowNumbers(100, 'gm') }
+                                        {this.dropdowNumbers(100, 'gm')}
                                     </select>
                                 </div>
                             </div>

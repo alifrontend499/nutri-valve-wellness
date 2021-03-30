@@ -63,7 +63,7 @@ export default class FinalResult extends Component {
                                         What Your BMI Says About Your Health
                                     </p>
                                     <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                        Your result is 28.39, you fall under the category of “Overweight”. Being overweight may be the result of high levels of triglycerides (Dyslipidaemia), high LDL or low levels of HDL. Overweight can also cause higher risk of heart disease, diabetes, high blood pressure and osteoarthritis.
+                                        {result.weight.message}
                                     </p>
                                 </div>
                             </Col>
@@ -85,7 +85,7 @@ export default class FinalResult extends Component {
                                         What Body Shape Says About Your Health
                                     </p>
                                     <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                        Your result is Apple - shaped, you will tend to carry more weight in the upper torso, waist and abdominal area. Apple shaped type of people are at higher risk of heart disease and diabetes
+                                    {result.body}
                                     </p>
                                 </div>
                             </Col>
@@ -107,7 +107,7 @@ export default class FinalResult extends Component {
                                         Your Health Issues
                                     </p>
                                     <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                        People with frequent muscle fatigue or muscle weakness are prone to body aches. Another reason for sever body aches are common cold and flu viruses that causes infections damaging or pressuring white blood cells to fight low immunity issues causing inflammation, which can leave the muscles in the body feeling achy and stiff.
+                                    {result.health}
                                     </p>
                                 </div>
                             </Col>
@@ -151,7 +151,7 @@ export default class FinalResult extends Component {
                                         Alcohol's Effects on the Body
                                     </p>
                                     <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                        Congratulate your self for taking a step towards healthy lifestyle. Staying away from alcohol consumption can keep you away from indigestion issues. Also you are at lower risk of developing heart diseases, obesity and better cholesterol levels.
+                                    {result.alcohol}
                                     </p>
                                 </div>
                             </Col>
@@ -173,7 +173,7 @@ export default class FinalResult extends Component {
                                         How sleep habits effects on your health
                                     </p>
                                     <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                        Congratulate your self for taking a step towards healthy lifestyle. Staying away from alcohol consumption can keep you away from indigestion issues. Also you are at lower risk of developing heart diseases, obesity and better cholesterol levels.
+                                    {result.sleep}
                                     </p>
                                 </div>
                             </Col>
@@ -239,7 +239,7 @@ export default class FinalResult extends Component {
                                         Consumption of fruit and veg per day
                                     </p>
                                     <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                        Congratulate your self for taking a step towards healthy lifestyle. Staying away from alcohol consumption can keep you away from indigestion issues. Also you are at lower risk of developing heart diseases, obesity and better cholesterol levels.
+                                    {result.fruits}
                                     </p>
                                 </div>
                             </Col>

@@ -15,8 +15,8 @@ export default class HealthMeterStep4 extends Component {
 
         // state
         this.state = {
-            smoking: 'never',
-            alcoholConsumption: 'never',
+            smoking:  -1,
+            alcoholConsumption: -1,
             sleepDuration: '6-disturbed',
             dailyActivityLevel: 'sedentary',
         }
@@ -80,9 +80,11 @@ export default class HealthMeterStep4 extends Component {
                                     <select className="form-control border-0"
                                         defaultValue={state.smoking}
                                         onChange={this.handleSmokingChange}>
-                                        <option disabled>How Often Do You Smoke?</option>
+                                        <option disabled value="-1">How Often Do You Smoke?</option>
                                         <option value="naver" >Never</option>
-                                        <option value="quit since 2 years" >Quit since 2 years</option>
+                                        <option value="quited" >Quited</option>
+                                        <option value="few-week" >A few times a week</option>
+                                        <option value="more-then-2-times-day" >More than 2 times a day</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -98,11 +100,11 @@ export default class HealthMeterStep4 extends Component {
                                     <select className="form-control border-0"
                                         defaultValue={state.alcoholConsumption}
                                         onChange={this.handleSmokingChange}>
-                                        <option disabled>How Often Do You Consume Alcohol?</option>
+                                        <option disabled value="-1">How Often Do You Consume Alcohol?</option>
                                         <option value="never" >Never</option>
+                                        <option value="Daily" >Daily</option> 
                                         <option value="occasionally" >Occasionally</option>
-                                        <option value="year" >Quit Alcohol For A Year</option>
-                                        <option value="Daily" >Daily</option>
+                                        <option value="year" >Quited</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -142,8 +144,11 @@ export default class HealthMeterStep4 extends Component {
                                         defaultValue={state.dailyActivityLevel}
                                         onChange={this.handleDailyActivityLevelChange}>
                                         <option disabled>Daily Activity Level: </option>
+                                        <option value="lightly-active" >Lightly Active</option>
+                                        <option value="moderately-active" >Moderately Active</option>
+                                        <option value="very-active" >Very Active</option>
                                         <option value="sedentary" >Sedentary</option>
-                                        <option value="lightly active" >Lightly Active</option>
+                                        
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />

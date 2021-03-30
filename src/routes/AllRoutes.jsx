@@ -30,7 +30,7 @@ import RecipeDetails from 'components/Recipes/pages/RecipeDetails/RecipeDetails'
 
 import HealthMeterPage from 'components/HealthMeterPage/HealthMeterPage'
 import MyAccount from 'components/MyAccount/MyAccount'
-
+import FinalResult from 'components/CommonComponents/HealthMeter/includes/FinalResult'
 import PageNotFound from 'components/PageNotFound/PageNotFound'
 
 
@@ -63,6 +63,7 @@ export default class AllRoutes extends Component {
                 <Route path="/recipe-details" component={RecipeDetails} />
 
                 <Route path="/health-meter" component={HealthMeterPage} />
+                <Route path="/bmi-result" component={FinalResult} />
                 <Route path="/my-account" component={MyAccount} />
 
 
