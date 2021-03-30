@@ -27,14 +27,14 @@ export default class Programs extends Component {
     state = {post: []};
     componentDidMount() {
         const { slug } = this.props.match.params;
-        console.log(slug);
+        // console.log(slug);
         // MAKING USER REQUEST
         getPost(            
             localStorage.getItem('commanToken'),
             slug
         ).then(res => {
             this.setState({ post: res.data });
-            console.log('res  + ', res)
+            // console.log('res  + ', res)
         });
     }
     render() {

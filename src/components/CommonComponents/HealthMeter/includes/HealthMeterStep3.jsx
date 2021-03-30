@@ -29,18 +29,18 @@ export default class HealthMeterStep3 extends Component {
         // filtering the health issues array to see if issue already exists in the array
         const filteredHealthIssues = this.state.healthIssue.find(item => item === selectedIssueVal)
 
-        console.log("filteredHealthIssues ", filteredHealthIssues)
+        // console.log("filteredHealthIssues ", filteredHealthIssues)
         if (filteredHealthIssues) {
             // if same issue is already in the array | then remove the item form the array
             const arrayAfterSameIssueRemoved = this.state.healthIssue.filter(item => item !== selectedIssueVal)
             this.setState({ healthIssue: [...arrayAfterSameIssueRemoved] }, () => {
-                console.log("item removed ", this.state.healthIssue)
+                // console.log("item removed ", this.state.healthIssue)
             });
 
         } else {
             // if same issue is NOT in the array | then add the item to the array
             this.setState({ healthIssue: [...this.state.healthIssue, event.target.value] }, () => {
-                console.log("item added ", this.state.healthIssue)
+                // console.log("item added ", this.state.healthIssue)
             });
         }
 

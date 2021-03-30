@@ -41,7 +41,7 @@ export default class ProgramPlans extends Component {
 
     // execute when modal closes
     onModalClose = () => {
-        console.log('modal closed')
+        // console.log('modal closed')
         this.setState({
             planModalVisibility: false
         })

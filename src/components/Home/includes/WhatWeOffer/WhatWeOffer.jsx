@@ -65,11 +65,11 @@ export default class WhatWeOffer extends Component {
         let commonToken = getItemFromLocalStorage('commanToken')
         if (commonToken) {
             getPosts(commonToken, "program").then(res => {
-                console.log('res ', res.data)
+                // console.log('res ', res.data)
                 this.setState({ posts: res.data });
             });
         } else {
-            console.log('no token from the local storage')
+            // console.log('no token from the local storage')
         }
     }
     render() {

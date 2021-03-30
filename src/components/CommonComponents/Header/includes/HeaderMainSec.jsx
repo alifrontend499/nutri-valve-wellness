@@ -42,7 +42,7 @@ export default class HeaderMainSec extends Component {
         this.setState({
             menuVisibility: !this.state.menuVisibility
         }, () => {
-            console.log(this.state.menuVisibility);
+            // console.log(this.state.menuVisibility);
         })
     }
 

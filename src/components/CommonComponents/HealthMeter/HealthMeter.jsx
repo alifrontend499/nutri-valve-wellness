@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// REACT ROUTER
+import { Redirect } from 'react-router'
+
 // styles
 import './styles/health-meter-styles.css'
 
@@ -165,19 +168,19 @@ export default class HealthMeter extends Component {
     handleGetResult() {
         this.setState({ result: '' });
         const step1DataList = this.state.step1Data
-        console.log('step1Data -> ', step1DataList)
+        // console.log('step1Data -> ', step1DataList)
 
         const step2DataList = this.state.step2Data
-        console.log('step2Data -> ', step2DataList)
+        // console.log('step2Data -> ', step2DataList)
 
         const step3DataList = this.state.step3Data
-        console.log('step3Data -> ', step3DataList)
+        // console.log('step3Data -> ', step3DataList)
 
         const step4DataList = this.state.step4Data
-        console.log('step4Data -> ', step4DataList)
+        // console.log('step4Data -> ', step4DataList)
 
         const step5DataList = this.state.step5Data
-        console.log('step5Data -> ', step5DataList)
+        // console.log('step5Data -> ', step5DataList)
 
 
         getBMIResult(
@@ -191,8 +194,11 @@ export default class HealthMeter extends Component {
             step5DataList.fruitConsumption,
         ).then(res => {
             this.setState({ result: res.data });
-            console.log('res  + ', res)
-            
+            // console.log('res  + ', res)
+
+
+
+
         });
     }
 
@@ -217,10 +223,14 @@ export default class HealthMeter extends Component {
         const { result } = this.state;
         return (
             (result.body) ? (
-                <FinalResult
-                    meter={this.meter()}
-                    result={result}
-                />
+                // <FinalResult
+                //     meter={this.meter()}
+                //     result={result}
+                // />
+                <Redirect to={{
+                    pathname: '/bmi-result',
+                    state: { result }
+                }} />
             ) : (
                 <Container>
                     <Row className="page-health-meter ST_def-pad-TB">
