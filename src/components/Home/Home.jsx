@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Helmet } from "react-helmet";
 
 // styles
 import './styles/home-styles.css'
@@ -50,6 +51,12 @@ export default class Home extends Component {
         const { loader } = this.state;
         return (
             <div>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Nutri Health Care</title>
+                    <link rel="canonical" href="" />
+                    <meta name="description" content="Nutri Health Care"/>
+                </Helmet>
                 {
                     (loader) ? (
                         // loading

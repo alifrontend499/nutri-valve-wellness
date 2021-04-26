@@ -17,12 +17,19 @@ import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 // icons : feather
 import FeatherIcon from 'feather-icons-react';
+import { Helmet } from 'react-helmet'
 
 
 export default class ContactUs extends Component {
     render() {
         return (
             <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Nutri Health Care | Contact Us</title>
+                <link rel="canonical" href="" />
+                <meta name="description" content="Contact Us" />
+            </Helmet>
                 {/* header */}
                 <Header />
 

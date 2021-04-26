@@ -10,11 +10,19 @@ import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 import RecipesSerach from './includes/RecipesSerach'
 import RecipesList from './includes/RecipesList'
+import { Helmet } from 'react-helmet'
 
 export default class Blogs extends Component {
     render() {
         return (
             <>
+
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Nutri Health Care | Recipes</title>
+                    <link rel="canonical" href="" />
+                    <meta name="description" content="Recipes" />
+                </Helmet>
                 <Header />
 
                 <section id="st-wrapper">

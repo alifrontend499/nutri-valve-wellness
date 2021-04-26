@@ -195,10 +195,6 @@ export default class HealthMeter extends Component {
         ).then(res => {
             this.setState({ result: res.data });
             // console.log('res  + ', res)
-
-
-
-
         });
     }
 

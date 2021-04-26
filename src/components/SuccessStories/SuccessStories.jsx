@@ -36,12 +36,20 @@ import {
 
 // router
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 
 export default class SuccessStories extends Component {
     render() {
         return (
             <>
+
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Nutri Health Care | Success Stories</title>
+                    <link rel="canonical" href="" />
+                    <meta name="description" content="Success Stories" />
+                </Helmet>
                 {/* header */}
                 <Header />
 

@@ -22,6 +22,7 @@ import { getItemFromLocalStorage } from 'utlis/localStorage/localStorage'
 
 // images
 import programGirl from 'assets/images/program-girl-img.png'
+import { Helmet } from 'react-helmet';
 
 export default class Programs extends Component {
     state = {post: []};
@@ -41,6 +42,11 @@ export default class Programs extends Component {
         const {post} = this.state;
         return (
             <>
+            <Helmet>
+                <title>Nutri Health Care | Programs</title>
+                <link rel="canonical" href="" />
+                <meta name="description" content="Programs" />
+            </Helmet>
                 <Header />
 
                 <section id="st-wrapper">
