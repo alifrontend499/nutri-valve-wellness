@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 
 // bootstrap
 import {
@@ -20,7 +20,7 @@ export default class PageNotFound extends Component {
     render() {
         return (
             <div>
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     <section id="page-not-found" className="ST_def-pad-TB st-bg-slate">
@@ -37,7 +37,7 @@ export default class PageNotFound extends Component {
                         </Container>
                     </section>
 
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
 
             </div>

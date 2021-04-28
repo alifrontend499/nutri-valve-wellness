@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 // components
@@ -20,7 +20,7 @@ export default class About extends Component {
                 <link rel="canonical" href="" />
                 <meta name="description" content="About Us" />
             </Helmet>
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     {/* page banner */}
@@ -34,7 +34,7 @@ export default class About extends Component {
 
                     <AboutSec3 />
 
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )

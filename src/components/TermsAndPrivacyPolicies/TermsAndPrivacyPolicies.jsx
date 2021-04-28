@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
+// import Header from 'components/CommonComponents/Header/Header'
 import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
@@ -21,7 +21,7 @@ export default class TermsAndPrivacyPolicies extends Component {
         return (
             <>
                 {/* header */}
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     {/* page banner */}
@@ -239,7 +239,7 @@ export default class TermsAndPrivacyPolicies extends Component {
                     </div>
 
                     {/* footer */}
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )

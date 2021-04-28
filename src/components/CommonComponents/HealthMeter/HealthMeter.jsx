@@ -31,7 +31,10 @@ import fourMeter from 'assets/images/icons/4.jpg';
 import { getBMIResult } from 'utlis/apis/common';
 import FinalResult from './includes/FinalResult'
 
-export default class HealthMeter extends Component {
+// redux
+import { connect } from 'react-redux';
+
+class HealthMeter extends Component {
 
     constructor(props) {
         super(props)
@@ -182,9 +185,10 @@ export default class HealthMeter extends Component {
         const step5DataList = this.state.step5Data
         // console.log('step5Data -> ', step5DataList)
 
-
+        
         getBMIResult(
-            localStorage.getItem('commanToken'),
+            // localStorage.getItem('commanToken'),
+            this.props.commonToken,
             step1DataList.weightKg + '.' + step1DataList.weightGm,
             step1DataList.heightFt + '.' + step1DataList.heightIn,
             step2DataList.bodyType,
@@ -358,3 +362,11 @@ export default class HealthMeter extends Component {
         )
     }
 }
+
+const getDataFromStore = state => {
+    return {
+        commonToken: state.auth.commonToken
+    };
+}
+
+export default connect(getDataFromStore, null)(HealthMeter)

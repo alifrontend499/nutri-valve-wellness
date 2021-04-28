@@ -32,6 +32,9 @@ import { Link } from 'react-router-dom'
 // local storage
 import { getItemFromLocalStorage } from 'utlis/localStorage/localStorage'
 
+// redux
+import { connect } from 'react-redux';
+
 function SliderNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -59,10 +62,11 @@ function SliderPrevArrow(props) {
 }
 
 
-export default class WhatWeOffer extends Component {
+class WhatWeOffer extends Component {
     state = { posts: {} };
     componentDidMount() {
-        let commonToken = getItemFromLocalStorage('commanToken')
+        // let commonToken = getItemFromLocalStorage('commanToken')
+        let commonToken = this.props.commonToken
         if (commonToken) {
             getPosts(commonToken, "program").then(res => {
                 // console.log('res ', res.data)
@@ -171,3 +175,12 @@ export default class WhatWeOffer extends Component {
         )
     }
 }
+
+
+const getDataFromStore = state => {
+    return {
+        commonToken: state.auth.commonToken
+    };
+}
+
+export default connect(getDataFromStore, null)(WhatWeOffer)

@@ -12,8 +12,8 @@ import {
 } from 'react-bootstrap'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 
 // images
 import bgImg from 'assets/images/health-meter-result/bg.jpg'
@@ -58,7 +58,7 @@ export default class FinalResult extends Component {
             <React.Fragment>
                 <div className="bmi-final-result-wrapper" style={{ backgroundImage: `url('${bgImg}')` }}>
                     {/* HEADER */}
-                    <Header />
+                    {/* <Header /> */}
 
                     {/* MAIN CONTENT WRAPPER */}
                     <section id="st-wrapper">
@@ -293,7 +293,7 @@ export default class FinalResult extends Component {
                         </div>
 
                         {/* FOOTER */}
-                        <Footer />
+                        {/* <Footer /> */}
                     </section>
                 </div>
             </React.Fragment>

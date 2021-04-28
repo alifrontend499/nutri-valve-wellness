@@ -12,11 +12,18 @@ import App from './App'
 // router
 import { BrowserRouter as Router } from 'react-router-dom'
 
+// REACT REDUX
+import { Provider } from "react-redux";
+// REDUX STORE
+import appStore from 'redux/store/store'
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <Provider store={appStore}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

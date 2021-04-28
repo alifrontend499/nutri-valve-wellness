@@ -7,7 +7,7 @@ import { Container, Image } from 'react-bootstrap'
 import '../../styles/my-account-styles.css'
 
 // componetns
-import Header from 'components/CommonComponents/Header/Header'
+// import Header from 'components/CommonComponents/Header/Header'
 import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
@@ -50,7 +50,7 @@ export default class Dashboard extends Component {
         return (
             <>
                 {/* HEADER */}
-                <Header />
+                {/* <Header /> */}
 
                 {/* BANNER */}
                 <PageBanner
@@ -162,7 +162,7 @@ export default class Dashboard extends Component {
                     </section>
 
                     {/* FOOTER */}
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )

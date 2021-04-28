@@ -11,8 +11,8 @@ import {
 } from 'react-bootstrap'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 // icons : feather
@@ -31,7 +31,7 @@ export default class ContactUs extends Component {
                 <meta name="description" content="Contact Us" />
             </Helmet>
                 {/* header */}
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     {/* page banner */}
@@ -172,7 +172,7 @@ export default class ContactUs extends Component {
                     </div>
 
                     {/* footer */}
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 import HealthMeter from 'components/CommonComponents/HealthMeter/HealthMeter'
 import { Helmet } from 'react-helmet'
@@ -18,7 +18,7 @@ export default class HealthMeterPage extends Component {
                 <meta name="description" content="BMI Calculator" />
             </Helmet>
                 {/* HEADER */}
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     {/* PAGE BANNER */}
@@ -36,7 +36,7 @@ export default class HealthMeterPage extends Component {
                     </section>
 
                     {/* FOOTER */}
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )

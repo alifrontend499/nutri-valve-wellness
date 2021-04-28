@@ -8,103 +8,65 @@ import './styles/home-styles.css'
 import { Col, Container, Row } from 'react-bootstrap'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 import HomeSlider from './includes/HomeSlider/HomeSlider'
 import WhatWeOffer from './includes/WhatWeOffer/WhatWeOffer'
 import HomeAbout from './includes/HomeAbout/HomeAbout'
 import StoryOfSuccess from './includes/StoryOfSuccess/StoryOfSuccess'
 import HomeDailyTips from './includes/HomeDailyTips/HomeDailyTips'
 import OurBlogs from 'components/CommonComponents/OurBlogs/OurBlogs'
-import Footer from 'components/CommonComponents/Footer/Footer'
 import HealthMeter from 'components/CommonComponents/HealthMeter/HealthMeter'
 
 // images
 import healthMeterBg from 'assets/images/homepage-health-meter-bg.jpg'
 
-// api: common
-import { checkUser } from 'utlis/apis/common'
-
-// local storage
-import { setItemToLocalStorage } from 'utlis/localStorage/localStorage'
-
 export default class Home extends Component {
-    state = { commanToken: '', loader: true };
     constructor(props) {
         super(props)
-        // this.setState({ commanToken: '', loader: true });
-    }
 
-    componentDidMount() {
-        // MAKING USER REQUEST
-        checkUser('sysadmin@admin.com', 'SysAdmin123').then(res => {
-            // console.log('res  + ', res.data.token)
-            // const {commanToken} = this.state;
-            // this.setState({commanToken: res.data.token});
-
-            // localStorage.setItem('commanToken', res.data.token);
-            setItemToLocalStorage('commanToken', res.data.token.toString());
-            this.setState({ loader: false });
-        })
     }
 
     render() {
-        const { loader } = this.state;
         return (
-            <div>
+            <React.Fragment>
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Nutri Health Care</title>
                     <link rel="canonical" href="" />
-                    <meta name="description" content="Nutri Health Care"/>
+                    <meta name="description" content="Nutri Health Care" />
                 </Helmet>
-                {
-                    (loader) ? (
-                        // loading
-                        <div className="d-flex justify-content-center align-items-center position-fixed h-100 w-100" style={{ top: 0, left: 0, zIndex: 99 }}>
-                            <div className="spinner-grow align-self-center" role="status">
-                                <span className="sr-only">Loading...</span>
-                            </div>
-                        </div>
-                    ) : (
-                        <div>
-                            <Header />
-                            <section id="st-wrapper">
-                                <HomeSlider />
 
-                                <WhatWeOffer />
+                <section id="st-wrapper" className="wrapper__homepage">
+                    <HomeSlider />
 
-                                {/* HOME HEALTH METER */}
-                                <section
-                                    id="home-health-meter"
-                                    className="ST_def-pad-TB"
-                                    style={{ backgroundImage: `url("${healthMeterBg}")` }}>
-                                    <Container>
-                                        <Row className="home-health-meter">
-                                            <Col xs={12} className="ml-auto">
-                                                <div className="inner">
-                                                    <HealthMeter fromHeader />
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </section>
+                    <WhatWeOffer />
 
-                                <HomeAbout />
+                    {/* HOME HEALTH METER */}
+                    <section
+                        id="home-health-meter"
+                        className="ST_def-pad-TB"
+                        style={{ backgroundImage: `url("${healthMeterBg}")` }}>
+                        <Container>
+                            <Row className="home-health-meter">
+                                <Col xs={12} className="ml-auto">
+                                    <div className="inner">
+                                        <HealthMeter fromHeader />
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
 
-                                <StoryOfSuccess />
+                    <HomeAbout />
 
-                                <HomeDailyTips />
+                    <StoryOfSuccess />
 
-                                <OurBlogs includeHeading={true} limit={3} />
+                    <HomeDailyTips />
 
-                                <Footer />
-                            </section>
-
-                        </div>
-                    )
-                }
-
-            </div>
+                    <OurBlogs includeHeading={true} limit={3} />
+                </section>
+            </React.Fragment>
         )
     }
 }

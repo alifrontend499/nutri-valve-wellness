@@ -8,8 +8,8 @@ import { Container, Row, Col, Image } from 'react-bootstrap'
 import HTMLparser from "html-react-parser";
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 import ProgramsSearch from './includes/ProgramsSearch'
@@ -24,14 +24,18 @@ import { getItemFromLocalStorage } from 'utlis/localStorage/localStorage'
 import programGirl from 'assets/images/program-girl-img.png'
 import { Helmet } from 'react-helmet';
 
-export default class Programs extends Component {
+// redux
+import { connect } from 'react-redux';
+
+class Programs extends Component {
     state = {post: []};
     componentDidMount() {
         const { slug } = this.props.match.params;
         // console.log(slug);
         // MAKING USER REQUEST
         getPost(            
-            localStorage.getItem('commanToken'),
+            // localStorage.getItem('commanToken'),
+            this.props.commonToken,
             slug
         ).then(res => {
             this.setState({ post: res.data });
@@ -39,6 +43,7 @@ export default class Programs extends Component {
         });
     }
     render() {
+        console.log(this.props.commonToken)
         const {post} = this.state;
         return (
             <>
@@ -47,7 +52,7 @@ export default class Programs extends Component {
                 <link rel="canonical" href="" />
                 <meta name="description" content="Programs" />
             </Helmet>
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     {/* page banner */}
@@ -100,9 +105,17 @@ export default class Programs extends Component {
                     {/* PROGRAM PLANS SECTION */}
                     <ProgramPlans />
 
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )
     }
 }
+
+const getDataFromStore = state => {
+    return {
+        commonToken: state.auth.commonToken
+    };
+}
+
+export default connect(getDataFromStore, null)(Programs)

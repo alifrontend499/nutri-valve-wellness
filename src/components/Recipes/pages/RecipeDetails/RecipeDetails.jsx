@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 import RecipesSerach from '../../includes/RecipesSerach'
@@ -13,7 +13,7 @@ export default class recipes extends Component {
     render() {
         return (
             <>
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     {/* page banner */}
@@ -33,7 +33,7 @@ export default class recipes extends Component {
                     <RelatedPosts />
 
                     {/* FOOTER */}
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )

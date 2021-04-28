@@ -4,8 +4,8 @@ import React, { Component } from 'react'
 import './styles/authentication-styles.css'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 
 
 import LoginTab from './includes/Login'
@@ -76,7 +76,7 @@ export default class Authentication extends Component {
     render() {
         return (
             <>
-                <Header />
+                {/* <Header /> */}
 
                 <section id="st-wrapper">
                     {/* auth container */}
@@ -147,7 +147,7 @@ export default class Authentication extends Component {
                     </section>
 
                     {/* footer */}
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
         )

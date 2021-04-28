@@ -85,3 +85,12 @@ https://www.npmjs.com/package/axios/
 ```
 npm install axios
 ```
+
+## `6. react redux`
+for state management
+
+https://react-redux.js.org/
+
+```
+npm install react-redux
+```

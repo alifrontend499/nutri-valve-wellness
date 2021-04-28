@@ -12,8 +12,8 @@ import {
 } from 'react-bootstrap'
 
 // components
-import Header from 'components/CommonComponents/Header/Header'
-import Footer from 'components/CommonComponents/Footer/Footer'
+// import Header from 'components/CommonComponents/Header/Header'
+// import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 // images
@@ -32,7 +32,7 @@ export default class BlogDetails extends Component {
     render() {
         return (
             <>
-                <Header />
+                {/* <Header /> */}
 
                 {/* site wrapper */}
                 <section id="st-wrapper">
@@ -370,7 +370,7 @@ export default class BlogDetails extends Component {
                         </Container>
                     </section>
 
-                    <Footer />
+                    {/* <Footer /> */}
                 </section>
             </>
 
