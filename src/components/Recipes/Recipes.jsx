@@ -12,8 +12,87 @@ import RecipesSerach from './includes/RecipesSerach'
 import RecipesList from './includes/RecipesList'
 import { Helmet } from 'react-helmet'
 
-export default class Blogs extends Component {
+// redux
+import { connect } from 'react-redux';
+
+// stories api
+import { getRecipes } from 'utlis/apis/API_recipies'
+
+class Recipies extends Component {
+    constructor(props) {
+        super(props)
+
+        // state
+        this.state = {
+            loading: true,
+            currentPage: 1,
+
+            recipies: [],
+            lastPage: null,
+
+            showMoreBtnDisabled: false,
+            showMoreBtnLoading: false,
+            showMoreBtnText: 'show more',
+        }
+
+        // bindings
+        this.getMoreRecipes = this.getMoreRecipes.bind(this)
+    }
+
+    componentDidMount() {
+        // GETTING INITIAL DATA
+        getRecipes(this.props.commonToken, this.state.currentPage).then(res => {
+            console.log('resd ', res)
+            this.setState({
+                lastPage: res.data.lastPage,
+                recipies: [...res.data.items],
+                loading: false
+            })
+        }).catch(err => {
+            console.log('error occured ', err.message)
+        })
+    }
+
+    // GET MORE RECIPIES
+    getMoreRecipes = ev => {
+        ev.preventDefault()
+
+        // button loading action
+        this.setState({
+            showMoreBtnLoading: true,
+        })
+
+        // if more data exist in the database
+        if (this.state.currentPage < this.state.lastPage) {
+            this.setState({
+                showMoreBtnDisabled: true,
+                currentPage: this.state.currentPage + 1
+            }, () => {
+                // GETTING MORE DATA
+                getRecipes(this.props.commonToken, this.state.currentPage).then(res => {
+                    console.log('more data res ', res)
+                    this.setState({
+                        lastPage: res.data.lastPage,
+                        recipies: [...this.state.recipies, ...res.data.items],
+                        showMoreBtnDisabled: false,
+                        showMoreBtnLoading: false
+                    })
+                }).catch(err => {
+                    console.log('error occured ', err.message)
+                })
+            })
+        } else {
+            this.setState({
+                showMoreBtnText: 'end of the data',
+                showMoreBtnDisabled: true,
+                showMoreBtnLoading: false,
+            })
+        }
+
+    }
+
     render() {
+        const state = this.state
         return (
             <>
 
@@ -37,7 +116,17 @@ export default class Blogs extends Component {
                     <RecipesSerach />
 
                     {/* RECIPES LIST */}
-                    <RecipesList />
+                    <RecipesList
+                        loading={state.loading}
+
+                        recipies={state.recipies}
+                        getMoreRecipes={ev => this.getMoreRecipes(ev)}
+
+                        showMoreBtnDisabled={state.showMoreBtnDisabled}
+                        showMoreBtnLoading={state.showMoreBtnLoading}
+                        showMoreBtnText={state.showMoreBtnText}
+
+                    />
 
                     {/* footer */}
                     {/* <Footer /> */}
@@ -46,3 +135,12 @@ export default class Blogs extends Component {
         )
     }
 }
+
+
+const getDataFromStore = state => {
+    return {
+        commonToken: state.auth.commonToken
+    };
+}
+
+export default connect(getDataFromStore, null)(Recipies)

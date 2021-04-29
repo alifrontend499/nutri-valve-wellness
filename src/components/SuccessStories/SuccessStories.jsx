@@ -38,8 +38,32 @@ import {
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
+// redux
+import { connect } from 'react-redux';
+// stories api
+// import { getStories } from 'utlis/apis/API_successStories'
 
-export default class SuccessStories extends Component {
+
+class SuccessStories extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            loading: true,
+            currentPage: 1,
+            stories: []
+        }
+    }
+
+    componentDidMount() {
+        // getStories(this.props.commonToken, this.state.currentPage).then(res => {
+        //     console.log('stories ', res)
+        // }).catch(err => {
+        //     console.log('error occured ', err.message)
+        // })
+    }
+
     render() {
         return (
             <>
@@ -378,3 +402,12 @@ export default class SuccessStories extends Component {
         )
     }
 }
+
+
+const getDataFromStore = state => {
+    return {
+        commonToken: state.auth.commonToken
+    };
+}
+
+export default connect(getDataFromStore, null)(SuccessStories)

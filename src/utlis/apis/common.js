@@ -9,7 +9,7 @@ export async function checkUser(userEmail, userPassword) {
 			username: userEmail,
 			password: userPassword,
 		});
-
+		
 		return user;
 	}
 }
