@@ -15,19 +15,22 @@ import { Helmet } from 'react-helmet'
 // redux
 import { connect } from 'react-redux';
 
-// stories api
-import { getRecipes } from 'utlis/apis/API_recipies'
+// redux actions
+import { addRecipes, updateRecipes } from 'redux/actions/actionRecipes'
 
-class Recipies extends Component {
+// stories api
+import { getRecipes } from 'utlis/apis/API_recipes'
+
+class Recipes extends Component {
     constructor(props) {
         super(props)
 
         // state
         this.state = {
-            loading: true,
+            loading: false,
             currentPage: 1,
 
-            recipies: [],
+            // recipes: [],
             lastPage: null,
 
             showMoreBtnDisabled: false,
@@ -40,20 +43,31 @@ class Recipies extends Component {
     }
 
     componentDidMount() {
-        // GETTING INITIAL DATA
-        getRecipes(this.props.commonToken, this.state.currentPage).then(res => {
-            console.log('resd ', res)
+        // CHECKING IF GLOBAL RECIPES DATA IS EMPTY
+        if (this.props.recipes && this.props.recipes.length === 0) {
             this.setState({
-                lastPage: res.data.lastPage,
-                recipies: [...res.data.items],
-                loading: false
+                loading: true,
             })
-        }).catch(err => {
-            console.log('error occured ', err.message)
-        })
+
+            // GETTING INITIAL DATA
+            getRecipes(this.props.commonToken, this.state.currentPage).then(res => {
+                this.setState({
+                    lastPage: res.data.lastPage,
+                    // recipes: [...res.data.items],
+                    loading: false
+                })
+
+                // adding recipes data to the redux store
+                this.props.addRecipes(res.data.items)
+
+            }).catch(err => {
+                console.log('error occured ', err.message)
+            })
+        }
+
     }
 
-    // GET MORE RECIPIES
+    // GET MORE RECIPES
     getMoreRecipes = ev => {
         ev.preventDefault()
 
@@ -70,13 +84,16 @@ class Recipies extends Component {
             }, () => {
                 // GETTING MORE DATA
                 getRecipes(this.props.commonToken, this.state.currentPage).then(res => {
-                    console.log('more data res ', res)
+                    console.log(res)
                     this.setState({
                         lastPage: res.data.lastPage,
-                        recipies: [...this.state.recipies, ...res.data.items],
+                        // recipes: [...this.state.recipes, ...res.data.items],
                         showMoreBtnDisabled: false,
                         showMoreBtnLoading: false
                     })
+
+                    // updating recipes data to the redux store
+                    this.props.updateRecipes(res.data.items)
                 }).catch(err => {
                     console.log('error occured ', err.message)
                 })
@@ -119,7 +136,7 @@ class Recipies extends Component {
                     <RecipesList
                         loading={state.loading}
 
-                        recipies={state.recipies}
+                        // recipes={this.props.recipes}
                         getMoreRecipes={ev => this.getMoreRecipes(ev)}
 
                         showMoreBtnDisabled={state.showMoreBtnDisabled}
@@ -139,8 +156,16 @@ class Recipies extends Component {
 
 const getDataFromStore = state => {
     return {
-        commonToken: state.auth.commonToken
+        commonToken: state.auth.commonToken,
+        recipes: state.recipes.recipes,
     };
 }
 
-export default connect(getDataFromStore, null)(Recipies)
+const dispatchActionsToProps = dispatch => {
+    return {
+        addRecipes: recipesArray => dispatch(addRecipes(recipesArray)),
+        updateRecipes: updatedRecipesArray => dispatch(updateRecipes(updatedRecipesArray)),
+    }
+}
+
+export default connect(getDataFromStore, dispatchActionsToProps)(Recipes)

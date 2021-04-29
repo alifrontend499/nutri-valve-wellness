@@ -9,7 +9,14 @@ import { Container, Row, Col, Image, Spinner } from 'react-bootstrap'
 // router
 import { Link } from 'react-router-dom'
 
-export default class RecipesList extends Component {
+// redux
+import { connect } from 'react-redux';
+
+// images
+import recipeImg1 from 'assets/images/recipes/recipe-img1.jpg'
+
+
+class RecipesList extends Component {
     constructor(props) {
         super(props)
     }
@@ -26,14 +33,21 @@ export default class RecipesList extends Component {
                             ) : (
                                 <React.Fragment>
                                     {
-                                        (props.recipies && props.recipies.length) ? props.recipies.map((item, key) => (
+                                        (props.recipes && props.recipes.length) ? props.recipes.map((item, key) => (
                                             /* RECIPE ITEM */
-                                            <React.Fragment key={key}>
+                                            <React.Fragment key={item.id}>
                                                 <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
-                                                    <Link to="/recipe-details" className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
+                                                    <Link to={'/recipe-details/' + item.id} className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                                         {/* img sec */}
                                                         <div className="img-sec text-center overflow-hidden">
-                                                            <Image src={item.fullUrlImage} />
+                                                            {
+                                                                (item.coverImage === null) ? (
+                                                                    <Image src={recipeImg1} />
+                                                                ) : (
+                                                                    <Image src={item.fullUrlImage} />
+                                                                )
+                                                            }
+
                                                         </div>
                                                         {/* text sec */}
                                                         <div className="text-sec py-3 px-1 text-center">
@@ -46,7 +60,7 @@ export default class RecipesList extends Component {
                                             </React.Fragment>
                                         )) : (
                                             <React.Fragment>
-                                                <p>No recipies found</p>
+                                                <p>No recipes found</p>
                                             </React.Fragment>
                                         )
                                     }
@@ -74,3 +88,12 @@ export default class RecipesList extends Component {
         )
     }
 }
+
+
+const getDataFromStore = state => {
+    return {
+        recipes: state.recipes.recipes,
+    };
+}
+
+export default connect(getDataFromStore, null)(RecipesList)
