@@ -60,7 +60,7 @@ export default class AllRoutes extends Component {
                 <Route path="/program/:slug" component={Programs} />
 
                 <Route path="/recipes" component={Recipes} />
-                <Route path="/recipe-details" component={RecipeDetails} />
+                <Route path="/recipe-details/:id" component={RecipeDetails} />
 
                 <Route path="/health-meter" component={HealthMeterPage} />
                 <Route path="/bmi-result" component={FinalResult} />

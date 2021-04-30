@@ -38,9 +38,10 @@ class AppRoot extends Component {
         // MAKING USER REQUEST
         checkUser('sysadmin@admin.com', 'SysAdmin123').then(res => {
 
-            // saving token to the store
+            // SAVING TOKEN TO THE STORE
             this.props.saveCommonTokenToStore(res.data.token.toString())
 
+            // LOADING FALSE
             this.setState({ loader: false });
         })
     }

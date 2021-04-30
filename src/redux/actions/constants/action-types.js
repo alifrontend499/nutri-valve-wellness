@@ -1,3 +1,7 @@
 // auth
 export const SAVE_COMMONTOKEN = 'SAVE_COMMONTOKEN'
 export const REMOVE_COMMONTOKEN = 'REMOVE_COMMONTOKEN'
+
+// recipes
+export const ADD_RECIPES = 'ADD_RECIPES'
+export const UPDATE_RECIPES = 'UPDATE_RECIPES'
