@@ -12,12 +12,12 @@ export default class Blogs extends Component {
         return (
             <>
 
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Nutri Health Care | Blogs</title>
-                <link rel="canonical" href="" />
-                <meta name="description" content="Blogs" />
-            </Helmet>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Nutri Health Care | Blogs</title>
+                    <link rel="canonical" href="" />
+                    <meta name="description" content="Blogs" />
+                </Helmet>
                 {/* <Header /> */}
 
                 <section id="st-wrapper">
