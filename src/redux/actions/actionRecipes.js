@@ -1,7 +1,7 @@
 // ACTION CREATORS
 import {
     ADD_RECIPES,
-    UPDATE_RECIPES
+    UPDATE_RECIPES,
 } from "redux/actions/constants/action-types";
 
 // ALL FUNCTIONS

@@ -8,7 +8,8 @@ export async function getStories(token, page) {
     if (token && page) {
         const stories = await axios.get(apiUrl + 'getposts/story?p=' + page, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'contentType': 'application/JSON'
             },
         });
 

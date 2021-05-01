@@ -37,7 +37,7 @@ class RecipesList extends Component {
                                             /* RECIPE ITEM */
                                             <React.Fragment key={item.id}>
                                                 <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
-                                                    <Link to={'/recipe-details/' + item.id} className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
+                                                    <Link to={'/recipe-details/' + item.slug} className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                                         {/* img sec */}
                                                         <div className="img-sec text-center overflow-hidden">
                                                             {
