@@ -8,7 +8,8 @@ import {
     Container,
     Row,
     Col,
-    Image
+    Image,
+    Spinner
 } from 'react-bootstrap'
 
 // components
@@ -40,8 +41,12 @@ import { Helmet } from 'react-helmet'
 
 // redux
 import { connect } from 'react-redux';
+
+// redux actions
+import { addSuccessStories, updateSuccessStories } from 'redux/actions/actionSuccessStories'
+
 // stories api
-// import { getStories } from 'utlis/apis/API_successStories'
+import { getSuccessStories } from 'utlis/apis/API_successStories'
 
 
 class SuccessStories extends Component {
@@ -50,23 +55,92 @@ class SuccessStories extends Component {
         super(props)
 
         this.state = {
-            loading: true,
+            loading: false,
             currentPage: 1,
-            stories: []
+
+            lastPage: null,
+
+            showMoreBtnDisabled: false,
+            showMoreBtnLoading: false,
+            showMoreBtnText: 'show more',
         }
+
+        // bindings
+        this.getMoreSuccessStories = this.getMoreSuccessStories.bind(this)
     }
 
     componentDidMount() {
-        // getStories(this.props.commonToken, this.state.currentPage).then(res => {
-        //     console.log('stories ', res)
-        // }).catch(err => {
-        //     console.log('error occured ', err.message)
-        // })
+        console.log('object')
+        // CHECKING IF GLOBAL RECIPES DATA IS EMPTY
+        if (this.props.successStories && this.props.successStories.length === 0) {
+            this.setState({
+                loading: true,
+            })
+
+            // GETTING INITIAL DATA
+            getSuccessStories(this.props.commonToken, this.state.currentPage).then(res => {
+                console.log('res ', res)
+                this.setState({
+                    lastPage: res.data.lastPage,
+                    loading: false
+                })
+
+                // adding recipes data to the redux store
+                this.props.addSuccessStories(res.data.items)
+
+            }).catch(err => {
+                console.log('error occured ', err.message)
+            })
+        }
+
+    }
+
+    // GET MORE RECIPES
+    getMoreSuccessStories = ev => {
+        ev.preventDefault()
+
+        // button loading action
+        this.setState({
+            showMoreBtnLoading: true,
+        })
+
+        // if more data exist in the database
+        if (this.state.currentPage < this.state.lastPage) {
+            this.setState({
+                showMoreBtnDisabled: true,
+                currentPage: this.state.currentPage + 1
+            }, () => {
+                // GETTING MORE DATA
+                getSuccessStories(this.props.commonToken, this.state.currentPage).then(res => {
+                    console.log(res)
+                    this.setState({
+                        lastPage: res.data.lastPage,
+                        // recipes: [...this.state.recipes, ...res.data.items],
+                        showMoreBtnDisabled: false,
+                        showMoreBtnLoading: false
+                    })
+
+                    // updating recipes data to the redux store
+                    this.props.updateSuccessStories(res.data.items)
+                }).catch(err => {
+                    console.log('error occured ', err.message)
+                })
+            })
+        } else {
+            this.setState({
+                showMoreBtnText: 'end of the data',
+                showMoreBtnDisabled: true,
+                showMoreBtnLoading: false,
+            })
+        }
+
     }
 
     render() {
+        const props = this.props
+        const state = this.state
         return (
-            <>
+            <React.Fragment>
 
                 <Helmet>
                     <meta charSet="utf-8" />
@@ -136,261 +210,126 @@ class SuccessStories extends Component {
                                     <p className="desc font-size-15 st-text-gray">The online customized diet plans, recipes, various guides are being appreciated by all our clients globally and by many institutions.</p>
                                 </Col>
 
-                                {/* ss2 item */}
-                                <Col xs={12} className="ss2-item mb-3 mb-lg-5">
-                                    <div className="inner ss2-item-inner bg-white st-block-box-shadow p-3 d-flex flex-wrap">
-                                        <div className="img-sec">
-                                            <Image src={secImg1} fluid />
-                                        </div>
-                                        <div className="text-sec media-body pl-md-3 pt-3 pt-md-0">
-                                            {/* top sec */}
-                                            <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
-                                                <p className="head font-weight-600 font-size-20">
-                                                    <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
-                                                    Hunter Hobbs
-                                                </p>
-                                                {/* social icons */}
-                                                <ul className="social-links-icons d-flex align-items-center align-self-end ml-auto">
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Facebook">
-                                                            <FontAwesomeIcon icon={faFacebook} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Instagram">
-                                                            <FontAwesomeIcon icon={faInstagram} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Twitter">
-                                                            <FontAwesomeIcon icon={faTwitter} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Youtube">
-                                                            <FontAwesomeIcon icon={faYoutube} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Linkedin">
-                                                            <FontAwesomeIcon icon={faLinkedinIn} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Pinterest">
-                                                            <FontAwesomeIcon icon={faPinterest} />
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                {
+                                    (props.loading) ? (
+                                        <Spinner animation="border" />
+                                    ) : (
+                                        /* ss2 item */
+                                        <React.Fragment>
+                                            {
+                                                (props.successStories && props.successStories.length) ? props.successStories.map((item, key) => (
+                                                    <React.Fragment key={item.id}>
+                                                        <Col xs={12} className="ss2-item mb-3 mb-lg-5">
+                                                            <div className="inner ss2-item-inner bg-white st-block-box-shadow p-3 d-flex flex-wrap">
+                                                                <div className="img-sec">
+                                                                    <Image src={secImg1} fluid />
+                                                                </div>
+                                                                <div className="text-sec media-body pl-md-3 pt-3 pt-md-0">
+                                                                    {/* top sec */}
+                                                                    <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
+                                                                        <p className="head font-weight-600 font-size-20">
+                                                                            <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
+                                                                            Hunter Hobbs
+                                                                        </p>
+                                                                        {/* social icons */}
+                                                                        <ul className="social-links-icons d-flex align-items-center align-self-end ml-auto">
+                                                                            <li>
+                                                                                <a
+                                                                                    href="#"
+                                                                                    target="_blank"
+                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
+                                                                                    title="Facebook">
+                                                                                    <FontAwesomeIcon icon={faFacebook} />
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="#"
+                                                                                    target="_blank"
+                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
+                                                                                    title="Instagram">
+                                                                                    <FontAwesomeIcon icon={faInstagram} />
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="#"
+                                                                                    target="_blank"
+                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
+                                                                                    title="Twitter">
+                                                                                    <FontAwesomeIcon icon={faTwitter} />
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="#"
+                                                                                    target="_blank"
+                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
+                                                                                    title="Youtube">
+                                                                                    <FontAwesomeIcon icon={faYoutube} />
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="#"
+                                                                                    target="_blank"
+                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
+                                                                                    title="Linkedin">
+                                                                                    <FontAwesomeIcon icon={faLinkedinIn} />
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="#"
+                                                                                    target="_blank"
+                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
+                                                                                    title="Pinterest">
+                                                                                    <FontAwesomeIcon icon={faPinterest} />
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
 
-                                            {/* bottom sec */}
-                                            <div className="bottom-sec">
-                                                <div className="inner">
-                                                    <p className="desc st-text-light font-size-15 mb-2">
-                                                        Let me start by saying the overall journey was a  very good experience and the takeaways will stay with me life long. The intiative to join the program was mine after I heard about it from a social contact in Bahrain but all the research whether to join or not and all doubts were raised and cleared by my wife. Once i was into the program initially it was difficult but once u see your efforts and dedication paying off it is worth giving it your best.
-                                                    </p>
-                                                    <a href="#" className="font-weight-600 st-text-light font-size-14">Read More...</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>
+                                                                    {/* bottom sec */}
+                                                                    <div className="bottom-sec">
+                                                                        <div className="inner">
+                                                                            <p className="desc st-text-light font-size-15 mb-2">
+                                                                                Let me start by saying the overall journey was a  very good experience and the takeaways will stay with me life long. The intiative to join the program was mine after I heard about it from a social contact in Bahrain but all the research whether to join or not and all doubts were raised and cleared by my wife. Once i was into the program initially it was difficult but once u see your efforts and dedication paying off it is worth giving it your best.
+                                                                            </p>
+                                                                            <a href="#" className="font-weight-600 st-text-light font-size-14">Read More...</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </Col>
+                                                    </React.Fragment>
+                                                )) : (
+                                                    <Col xs={12} className="no-data-found-p text-center">
+                                                        <p className="st-text-gray font-weight-600">No success stories found</p>
+                                                    </Col>
+                                                )
 
-                                {/* ss2 item */}
-                                <Col xs={12} className="ss2-item mb-3 mb-lg-5">
-                                    <div className="inner ss2-item-inner bg-white st-block-box-shadow p-3 d-flex flex-wrap">
-                                        <div className="img-sec">
-                                            <Image src={secImg2} fluid />
-                                        </div>
-                                        <div className="text-sec media-body pl-md-3 pt-3 pt-md-0">
-                                            {/* top sec */}
-                                            <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
-                                                <p className="head font-weight-600 font-size-20">
-                                                    <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
-                                                    Sumati Aneja
-                                                </p>
-                                                {/* social icons */}
-                                                <ul className="social-links-icons d-flex align-items-center align-self-end ml-auto">
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Facebook">
-                                                            <FontAwesomeIcon icon={faFacebook} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Instagram">
-                                                            <FontAwesomeIcon icon={faInstagram} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Twitter">
-                                                            <FontAwesomeIcon icon={faTwitter} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Youtube">
-                                                            <FontAwesomeIcon icon={faYoutube} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Linkedin">
-                                                            <FontAwesomeIcon icon={faLinkedinIn} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Pinterest">
-                                                            <FontAwesomeIcon icon={faPinterest} />
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            }
+                                        </React.Fragment>
+                                    )
+                                }
 
-                                            {/* bottom sec */}
-                                            <div className="bottom-sec">
-                                                <div className="inner">
-                                                    <p className="desc st-text-light font-size-15 mb-2">
-                                                        Let me start by saying the overall journey was a  very good experience and the takeaways will stay with me life long. The intiative to join the program was mine after I heard about it from a social contact in Bahrain but all the research whether to join or not and all doubts were raised and cleared by my wife. Once i was into the program initially it was difficult but once u see your efforts and dedication paying off it is worth giving it your best.
-                                                    </p>
-                                                    <a href="#" className="font-weight-600 st-text-light font-size-14">Read More...</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>
-
-                                {/* ss2 item */}
-                                <Col xs={12} className="ss2-item mb-3 mb-lg-5">
-                                    <div className="inner ss2-item-inner bg-white st-block-box-shadow p-3 d-flex flex-wrap">
-                                        <div className="img-sec">
-                                            <Image src={secImg3} fluid />
-                                        </div>
-                                        <div className="text-sec media-body pl-md-3 pt-3 pt-md-0">
-                                            {/* top sec */}
-                                            <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
-                                                <p className="head font-weight-600 font-size-20">
-                                                    <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
-                                                    Nishil Nasta
-                                                </p>
-                                                {/* social icons */}
-                                                <ul className="social-links-icons d-flex align-items-center align-self-end ml-auto">
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Facebook">
-                                                            <FontAwesomeIcon icon={faFacebook} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Instagram">
-                                                            <FontAwesomeIcon icon={faInstagram} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Twitter">
-                                                            <FontAwesomeIcon icon={faTwitter} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Youtube">
-                                                            <FontAwesomeIcon icon={faYoutube} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Linkedin">
-                                                            <FontAwesomeIcon icon={faLinkedinIn} />
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            target="_blank"
-                                                            className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                            title="Pinterest">
-                                                            <FontAwesomeIcon icon={faPinterest} />
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            {/* bottom sec */}
-                                            <div className="bottom-sec">
-                                                <div className="inner">
-                                                    <p className="desc st-text-light font-size-15 mb-2">
-                                                        Let me start by saying the overall journey was a  very good experience and the takeaways will stay with me life long. The intiative to join the program was mine after I heard about it from a social contact in Bahrain but all the research whether to join or not and all doubts were raised and cleared by my wife. Once i was into the program initially it was difficult but once u see your efforts and dedication paying off it is worth giving it your best.
-                                                    </p>
-                                                    <a href="#" className="font-weight-600 st-text-light font-size-14">Read More...</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>
-
+                                {
+                                    /* SHOW MORE BTN */
+                                    (props.successStories && props.successStories.length) ?
+                                        <Col xs={12} className="show-more-btn text-center pt-md-4 pt-lg-5">
+                                            <button
+                                                onClick={this.getMoreSuccessStories}
+                                                disabled={state.showMoreBtnDisabled}
+                                                className="btn font-size-17 h-100 st-btn st-btn-lg st-btn-primary text-capitalize">
+                                                {
+                                                    state.showMoreBtnLoading &&
+                                                    <Spinner animation="border" size="sm" className="position-relative mr-2" style={{ top: -2 }} />
+                                                }
+                                                <span>{state.showMoreBtnText}</span>
+                                            </button>
+                                        </Col> : null
+                                }
                             </Row>
                         </Container>
                     </div>
@@ -398,7 +337,7 @@ class SuccessStories extends Component {
                     {/* footer */}
                     {/* <Footer /> */}
                 </section>
-            </>
+            </React.Fragment>
         )
     }
 }
@@ -406,8 +345,16 @@ class SuccessStories extends Component {
 
 const getDataFromStore = state => {
     return {
-        commonToken: state.auth.commonToken
+        commonToken: state.auth.commonToken,
+        successStories: state.successStories.successStories,
     };
 }
 
-export default connect(getDataFromStore, null)(SuccessStories)
+const dispatchActionsToProps = dispatch => {
+    return {
+        addSuccessStories: successStoriesArray => dispatch(addSuccessStories(successStoriesArray)),
+        updateSuccessStories: updatedSuccessStories => dispatch(updateSuccessStories(updatedSuccessStories)),
+    }
+}
+
+export default connect(getDataFromStore, dispatchActionsToProps)(SuccessStories)

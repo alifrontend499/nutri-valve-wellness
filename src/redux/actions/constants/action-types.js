@@ -5,3 +5,11 @@ export const REMOVE_COMMONTOKEN = 'REMOVE_COMMONTOKEN'
 // recipes
 export const ADD_RECIPES = 'ADD_RECIPES'
 export const UPDATE_RECIPES = 'UPDATE_RECIPES'
+
+// success stories
+export const ADD_SUCCESS_STORIES = 'ADD_SUCCESS_STORIES'
+export const UPDATE_SUCCESS_STORIES = 'UPDATE_SUCCESS_STORIES'
+
+// blogs
+export const ADD_BLOGS = 'ADD_BLOGS'
+export const UPDATE_BLOGS = 'UPDATE_BLOGS'

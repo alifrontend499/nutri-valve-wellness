@@ -3,7 +3,7 @@ import axios from "axios";
 
 const apiUrl = "http://api.dealshideal.com/api/";
 
-// check user
+// getting initial recipies
 export async function getRecipes(token, page) {
     if (token && page) {
         const stories = await axios.get(apiUrl + 'getposts/recipe?p=' + page, {
@@ -18,6 +18,7 @@ export async function getRecipes(token, page) {
     }
 }
 
+// getting more recipies
 export async function getRecipe(token, slug) {
     if (token && slug) {
         const stories = await axios.get(apiUrl + 'getpost/' + slug, {
