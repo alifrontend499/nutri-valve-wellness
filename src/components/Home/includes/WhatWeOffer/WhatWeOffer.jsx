@@ -137,7 +137,7 @@ class WhatWeOffer extends Component {
                         <div className="slider-container px-lg-2">
                             <Slider {...settings}>
                                 {/* slider-item */}
-                                {Array.isArray(posts) && posts.map((post, index) =>
+                                {Array.isArray(posts.items) && posts.items.map((post, index) =>
                                     <div className="slider-item pt-1" key={index}>
                                         <div className="slider-item-inner px-2 px-lg-3">
                                             {/* img sec */}
