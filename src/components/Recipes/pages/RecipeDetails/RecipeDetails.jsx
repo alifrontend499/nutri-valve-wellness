@@ -10,7 +10,12 @@ import RecipeDetailsSec from './includes/RecipeDetailsSec'
 import RelatedPosts from './includes/RelatedPosts'
 
 export default class recipes extends Component {
+    constructor(props) {
+        super(props)
+    }
+
     render() {
+        const props = this.props
         return (
             <>
                 {/* <Header /> */}
@@ -27,7 +32,7 @@ export default class recipes extends Component {
                     <RecipesSerach />
 
                     {/* RECIPE DETAILS SECTION */}
-                    <RecipeDetailsSec />
+                    <RecipeDetailsSec parentProps={props} />
 
                     {/* RELATED POSTS SECTION */}
                     <RelatedPosts />

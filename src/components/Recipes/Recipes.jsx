@@ -18,7 +18,7 @@ import { connect } from 'react-redux';
 // redux actions
 import { addRecipes, updateRecipes } from 'redux/actions/actionRecipes'
 
-// stories api
+// recipes api
 import { getRecipes } from 'utlis/apis/API_recipes'
 
 class Recipes extends Component {

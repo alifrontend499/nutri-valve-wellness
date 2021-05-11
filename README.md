@@ -94,3 +94,14 @@ https://react-redux.js.org/
 ```
 npm install react-redux
 ```
+
+## `6. react moment`
+for date management
+
+https://www.npmjs.com/package/react-moment
+
+```
+npm install --save moment react-moment
+
+npm install --save moment-timezone (optional)
+```

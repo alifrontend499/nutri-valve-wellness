@@ -1,11 +1,11 @@
 // ACTION CREATORS
 import {
     ADD_RECIPES,
-    UPDATE_RECIPES
+    UPDATE_RECIPES,
 } from "redux/actions/constants/action-types";
 
 const initialState = {
-    recipes: [],
+    recipes: []
 };
 
 function recipesReducer(state = initialState, action) {
@@ -15,12 +15,14 @@ function recipesReducer(state = initialState, action) {
             recipes: [...action.payload]
         }
     }
+
     if (action.type === UPDATE_RECIPES) {
         return {
             ...state,
             recipes: [...state.recipes, ...action.payload]
         }
     }
+
     return state
 }
 
