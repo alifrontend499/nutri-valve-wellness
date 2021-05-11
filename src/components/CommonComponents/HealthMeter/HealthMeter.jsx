@@ -174,16 +174,16 @@ class HealthMeter extends Component {
         // console.log('step1Data -> ', step1DataList)
 
         const step2DataList = this.state.step2Data
-        // console.log('step2Data -> ', step2DataList)
+        console.log('step2Data -> ', step2DataList)
 
         const step3DataList = this.state.step3Data
-        // console.log('step3Data -> ', step3DataList)
+        console.log('step3Data -> ', step3DataList)
 
         const step4DataList = this.state.step4Data
-        // console.log('step4Data -> ', step4DataList)
+        console.log('step4Data -> ', step4DataList)
 
         const step5DataList = this.state.step5Data
-        // console.log('step5Data -> ', step5DataList)
+        console.log('step5Data -> ', step5DataList)
 
         
         getBMIResult(
@@ -196,6 +196,9 @@ class HealthMeter extends Component {
             step4DataList.sleepDuration,
             step4DataList.alcoholConsumption,
             step5DataList.fruitConsumption,
+            step5DataList.waterConsumption,
+            step4DataList.smoking,
+            step4DataList.dailyActivityLevel,
         ).then(res => {
             this.setState({ result: res.data });
             // console.log('res  + ', res)

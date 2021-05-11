@@ -38,7 +38,7 @@ export async function getPost(token, slug) {
 }
 
 // get BMI result
-export async function getBMIResult(token, kg, height, body, health, sleep, alcohol, fruit) {
+export async function getBMIResult(token, kg, height, body, health, sleep, alcohol, fruit, water, smoking,activity) {
 	if (token) {
 		const bmiResult = await axios.post(
 			apiUrl + "/bmi",
@@ -49,7 +49,10 @@ export async function getBMIResult(token, kg, height, body, health, sleep, alcoh
 				health: health,
 				sleep: sleep,
 				alcohol: alcohol,
-				fruits: fruit
+				fruits: fruit,
+				water: water,
+				smoking: smoking,
+				activity: activity,
 			},
 			{
 				headers: {

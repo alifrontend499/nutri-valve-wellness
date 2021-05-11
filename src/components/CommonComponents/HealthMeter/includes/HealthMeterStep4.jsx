@@ -81,10 +81,10 @@ export default class HealthMeterStep4 extends Component {
                                         defaultValue={state.smoking}
                                         onChange={this.handleSmokingChange}>
                                         <option disabled value="-1">How Often Do You Smoke?</option>
-                                        <option value="naver" >Never</option>
-                                        <option value="quited" >Quited</option>
-                                        <option value="few-week" >A few times a week</option>
-                                        <option value="more-then-2-times-day" >More than 2 times a day</option>
+                                        <option value="never" >Never</option>
+                                        <option value="quited" >QUITED</option> 
+                                        <option value="aweek" >FEW TIMES A WEEK</option>
+                                        <option value="morethen2timeaday" >MORE THAN 2 TIMES A DAY</option>
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />
@@ -102,7 +102,7 @@ export default class HealthMeterStep4 extends Component {
                                         onChange={this.handleSmokingChange}>
                                         <option disabled value="-1">How Often Do You Consume Alcohol?</option>
                                         <option value="never" >Never</option>
-                                        <option value="Daily" >Daily</option> 
+                                        <option value="daily" >Daily</option> 
                                         <option value="occasionally" >Occasionally</option>
                                         <option value="year" >Quited</option>
                                     </select>
@@ -144,10 +144,11 @@ export default class HealthMeterStep4 extends Component {
                                         defaultValue={state.dailyActivityLevel}
                                         onChange={this.handleDailyActivityLevelChange}>
                                         <option disabled>Daily Activity Level: </option>
-                                        <option value="lightly-active" >Lightly Active</option>
-                                        <option value="moderately-active" >Moderately Active</option>
-                                        <option value="very-active" >Very Active</option>
-                                        <option value="sedentary" >Sedentary</option>
+                                        <option value="sedentary" >Sedentary Lifestyle</option>
+                                        <option value="lightly" >Lightly Active Lifestyle</option>
+                                        <option value="moderately" >Moderately Active Lifestyle</option>
+                                        <option value="active" >Active Lifestyle</option>
+                                        <option value="extra" >Extra Active Lifestyle</option>
                                         
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
