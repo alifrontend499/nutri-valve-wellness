@@ -41,43 +41,36 @@ export default class HealthMeterStep1 extends Component {
 
     // setting gender
     handleGenderChange(event) {
-        // console.log(event)
         this.setState({ gender: event.target.value });
     }
 
     // setting age | years
     handleAgeYearsChange(event) {
-        // console.log(event)
         this.setState({ ageYears: event.target.value });
     }
 
     // setting age | months
     handleAgeMonthsChange(event) {
-        // console.log(event)
         this.setState({ ageMonths: event.target.value });
     }
 
     // setting height | feet
     handleHeightFtChange(event) {
-        // console.log(event)
         this.setState({ heightFt: event.target.value });
     }
 
     // setting height | inches
     handleHeightInChange(event) {
-        // console.log(event)
         this.setState({ heightIn: event.target.value });
     }
 
     // setting weight | kilogram
     handleWeightKgChange(event) {
-        // console.log(event)
         this.setState({ weightKg: event.target.value });
     }
 
     // setting weight | gram
     handleWeightGmChange(event) {
-        // console.log(event)
         this.setState({ weightGm: event.target.value });
     }
 

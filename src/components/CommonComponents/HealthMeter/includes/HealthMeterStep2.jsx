@@ -40,7 +40,6 @@ export default class HealthMeterStep2 extends Component {
 
     // setting body type
     handleBodyTypeChange(event) {
-        // console.log(event.target.value)
         this.setState({ bodyType: event.target.value });
     }
 

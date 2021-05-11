@@ -44,7 +44,6 @@ export default class FinalResult extends Component {
                 this.setState({
                     result
                 }, () => {
-                    console.log("this.state.result ", this.state.result)
                 })
             }
         }

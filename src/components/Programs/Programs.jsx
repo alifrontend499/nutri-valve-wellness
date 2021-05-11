@@ -31,7 +31,6 @@ class Programs extends Component {
     state = {post: []};
     componentDidMount() {
         const { slug } = this.props.match.params;
-        // console.log(slug);
         // MAKING USER REQUEST
         getPost(            
             // localStorage.getItem('commanToken'),
@@ -39,11 +38,9 @@ class Programs extends Component {
             slug
         ).then(res => {
             this.setState({ post: res.data });
-            // console.log('res  + ', res)
         });
     }
     render() {
-        console.log(this.props.commonToken)
         const {post} = this.state;
         return (
             <>

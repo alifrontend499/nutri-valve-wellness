@@ -44,7 +44,7 @@ export default class AllRoutes extends Component {
                 <Route path="/about-us" component={About} />
 
                 <Route path="/blogs" component={Blogs} />
-                <Route path="/blog-details" component={BlogDetails} />
+                <Route path="/blog-details/:slug" component={BlogDetails} />
 
                 <Route path="/contact-us" component={ContactUs} />
 

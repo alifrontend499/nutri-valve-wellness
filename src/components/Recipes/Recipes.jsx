@@ -84,7 +84,6 @@ class Recipes extends Component {
             }, () => {
                 // GETTING MORE DATA
                 getRecipes(this.props.commonToken, this.state.currentPage).then(res => {
-                    console.log(res)
                     this.setState({
                         lastPage: res.data.lastPage,
                         // recipes: [...this.state.recipes, ...res.data.items],

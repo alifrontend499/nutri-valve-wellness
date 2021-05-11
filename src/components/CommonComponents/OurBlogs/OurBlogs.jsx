@@ -15,10 +15,8 @@ import {
     Spinner,
 } from 'react-bootstrap'
 
-// blog images
-import blogImg1 from 'assets/images/our-blogs/img1.jpg'
-import blogImg2 from 'assets/images/our-blogs/img2.jpg'
-import blogImg3 from 'assets/images/our-blogs/img3.jpg'
+// no data found image
+import noImgFound from 'assets/images/no-image-found-logo.png'
 
 // router
 import { Link } from 'react-router-dom';
@@ -31,6 +29,12 @@ import { addBlogs, updateBlogs } from 'redux/actions/actionBlogs'
 
 // stories api
 import { getBlogs } from 'utlis/apis/API_blogs'
+
+// moment
+import Moment from 'react-moment';
+
+// helpers common
+import { stripHTML } from 'utlis/helpers/Helpers_common'
 
 class OurBlogs extends Component {
 
@@ -53,7 +57,6 @@ class OurBlogs extends Component {
     }
 
     componentDidMount() {
-        console.log('object')
         // CHECKING IF GLOBAL RECIPES DATA IS EMPTY
         if (this.props.blogs && this.props.blogs.length === 0) {
             this.setState({
@@ -62,7 +65,7 @@ class OurBlogs extends Component {
 
             // GETTING INITIAL DATA
             getBlogs(this.props.commonToken, this.state.currentPage).then(res => {
-                console.log('res ', res)
+                console.log('blogs res ', res)
                 this.setState({
                     lastPage: res.data.lastPage,
                     loading: false
@@ -95,7 +98,7 @@ class OurBlogs extends Component {
             }, () => {
                 // GETTING MORE DATA
                 getBlogs(this.props.commonToken, this.state.currentPage).then(res => {
-                    console.log(res)
+                    console.log('blogs more res ', res)
                     this.setState({
                         lastPage: res.data.lastPage,
                         showMoreBtnDisabled: false,
@@ -122,6 +125,7 @@ class OurBlogs extends Component {
         const props = this.props
         const state = this.state
         const { includeHeading, limit } = props;
+
         return (
             <section id="our-blogs" className="ST_def-pad-TB st-bg-slate" >
                 <Container>
@@ -147,14 +151,27 @@ class OurBlogs extends Component {
                                         <Col xs={12} sm={6} lg={4} className="blog-item mb-3 mb-md-4 mb-lg-5">
                                             <div className="blog-item-inner bg-white">
                                                 {/* IMG SEC */}
-                                                <Link to="/blog-details" className="img-sec d-block position-relative">
-                                                    <Image src={item.blogImg} fluid className="w-100" />
+                                                <Link to={'/blog-details/' + item.slug} className="img-sec d-block position-relative">
+                                                    {/* <Image src={item.blogImg} fluid  /> */}
+                                                    {
+                                                        (item.coverImage === null) ? (
+                                                            <Image src={noImgFound} fluid />
+                                                        ) : (
+                                                            <Image src={item.fullUrlImage} className="w-100" />
+                                                        )
+                                                    }
                                                     {/* caption */}
                                                     <div className="caption position-absolute blog-date-caption">
                                                         <div className="caption-inner">
                                                             <p className="text-center text-white">
-                                                                <span className="d-block date font-size-19 mb-1">{item.blogDate}</span>
-                                                                <span className="d-block month font-size-14">{item.BlogMonth}</span>
+                                                                <span className="d-block date font-size-19 mb-1">
+                                                                    {
+                                                                        <Moment format="DD">{item.createdAt.date}</Moment>
+                                                                    }
+                                                                </span>
+                                                                <span className="d-block month font-size-14">
+                                                                    {<Moment format="MMM">{item.createdAt.date}</Moment>}
+                                                                </span>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -162,24 +179,24 @@ class OurBlogs extends Component {
 
                                                 {/* text sec */}
                                                 <div className="text-sec mt-3">
-                                                    <Link to="/blog-details" className="head font-size-20 font-family-secondary-medium st-text-light text-decoration-none d-inline-block border-bottom st-border-gray pb-3 mb-3">
+                                                    <Link to={'/blog-details/' + item.slug} className="head font-size-20 font-family-secondary-medium st-text-light text-decoration-none d-inline-block border-bottom st-border-gray pb-3 mb-3">
                                                         {item.blogHeading}
                                                     </Link>
 
                                                     <div className="links d-flex mb-2">
-                                                        <Link to="/blog-details" className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13 mr-3">
+                                                        {/* <Link to={'/blog-details/' + item.slug} className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13 mr-3">
                                                             <FeatherIcon
                                                                 icon="message-circle"
                                                                 size="15"
                                                             />
                                                             <span className="ml-2">{item.blogCommentCount} comments</span>
-                                                        </Link>
-                                                        <Link to="/blog-details" className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13">
+                                                        </Link> */}
+                                                        <Link to={'/blog-details/' + item.slug} className="link-with-icon d-inline-flex align-items-center st-text-secondary font-family-secondary-medium font-size-13">
                                                             <FeatherIcon
                                                                 icon="user"
                                                                 size="15"
                                                             />
-                                                            <span className="ml-2">{item.blogAuther}</span>
+                                                            <span className="ml-2">{item.auther.firstName + " " + item.auther.lastName}</span>
                                                         </Link>
                                                     </div>
                                                 </div>

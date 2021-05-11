@@ -9,34 +9,18 @@ import {
     Row,
     Col,
     Image,
-    Spinner
+    Spinner,
+    Modal
 } from 'react-bootstrap'
 
-// components
-// import Header from 'components/CommonComponents/Header/Header'
-// import Footer from 'components/CommonComponents/Footer/Footer'
 import PageBanner from 'components/CommonComponents/PageBanner/PageBanner'
 
 // section img
 import sec1Img from 'assets/images/story-of-success/sec1-right-img.jpg'
-import secImg1 from 'assets/images/story-of-success/story-of-success-img1.png'
-import secImg2 from 'assets/images/story-of-success/story-of-success-img2.jpg'
-import secImg3 from 'assets/images/story-of-success/story-of-success-img3.jpg'
-
-// icons : fontawesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faFacebook,
-    faInstagram,
-    faTwitter,
-    faYoutube,
-    faLinkedinIn,
-    faPinterest
-} from '@fortawesome/free-brands-svg-icons'
-
+// no data found image
+import noImgFound from 'assets/images/no-image-found-logo.png'
 
 // router
-import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 // redux
@@ -48,11 +32,16 @@ import { addSuccessStories, updateSuccessStories } from 'redux/actions/actionSuc
 // stories api
 import { getSuccessStories } from 'utlis/apis/API_successStories'
 
+// helpers common
+import { limitText, stripHTML } from 'utlis/helpers/Helpers_common'
+
 
 class SuccessStories extends Component {
 
     constructor(props) {
         super(props)
+
+        this.STORY_TEXT_LIMIT = 300
 
         this.state = {
             loading: false,
@@ -63,14 +52,21 @@ class SuccessStories extends Component {
             showMoreBtnDisabled: false,
             showMoreBtnLoading: false,
             showMoreBtnText: 'show more',
+
+            selectedStory: null,
+
+            readMoreModalVisibility: false
         }
 
         // bindings
         this.getMoreSuccessStories = this.getMoreSuccessStories.bind(this)
+
+        this.handleModalOpening = this.handleModalOpening.bind(this)
+        this.handleModalClosing = this.handleModalClosing.bind(this)
+        this.onModalClose = this.onModalClose.bind(this)
     }
 
     componentDidMount() {
-        console.log('object')
         // CHECKING IF GLOBAL RECIPES DATA IS EMPTY
         if (this.props.successStories && this.props.successStories.length === 0) {
             this.setState({
@@ -79,7 +75,6 @@ class SuccessStories extends Component {
 
             // GETTING INITIAL DATA
             getSuccessStories(this.props.commonToken, this.state.currentPage).then(res => {
-                console.log('res ', res)
                 this.setState({
                     lastPage: res.data.lastPage,
                     loading: false
@@ -112,7 +107,6 @@ class SuccessStories extends Component {
             }, () => {
                 // GETTING MORE DATA
                 getSuccessStories(this.props.commonToken, this.state.currentPage).then(res => {
-                    console.log(res)
                     this.setState({
                         lastPage: res.data.lastPage,
                         // recipes: [...this.state.recipes, ...res.data.items],
@@ -133,8 +127,33 @@ class SuccessStories extends Component {
                 showMoreBtnLoading: false,
             })
         }
-
     }
+
+    // opening modal
+    handleModalOpening = (ev, selectedStory) => {
+        ev.preventDefault()
+        this.setState({
+            readMoreModalVisibility: true,
+            selectedStory
+        })
+    }
+
+    // closing modal
+    handleModalClosing = ev => {
+        ev.preventDefault()
+        this.setState({
+            readMoreModalVisibility: false
+        })
+    }
+
+    // execute when modal closes
+    onModalClose = () => {
+        this.setState({
+            readMoreModalVisibility: false
+        })
+    }
+
+
 
     render() {
         const props = this.props
@@ -222,81 +241,43 @@ class SuccessStories extends Component {
                                                         <Col xs={12} className="ss2-item mb-3 mb-lg-5">
                                                             <div className="inner ss2-item-inner bg-white st-block-box-shadow p-3 d-flex flex-wrap">
                                                                 <div className="img-sec">
-                                                                    <Image src={secImg1} fluid />
+                                                                    {
+                                                                        (item.frontImage === null) ? (
+                                                                            <Image src={noImgFound} fluid />
+                                                                        ) : (
+                                                                            <Image src={item.frontImage} fluid />
+                                                                        )
+                                                                    }
                                                                 </div>
                                                                 <div className="text-sec media-body pl-md-3 pt-3 pt-md-0">
                                                                     {/* top sec */}
                                                                     <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
                                                                         <p className="head font-weight-600 font-size-20">
                                                                             <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
-                                                                            Hunter Hobbs
+                                                                            {item.clientName}
                                                                         </p>
-                                                                        {/* social icons */}
-                                                                        <ul className="social-links-icons d-flex align-items-center align-self-end ml-auto">
-                                                                            <li>
-                                                                                <a
-                                                                                    href="#"
-                                                                                    target="_blank"
-                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                                                    title="Facebook">
-                                                                                    <FontAwesomeIcon icon={faFacebook} />
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="#"
-                                                                                    target="_blank"
-                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                                                    title="Instagram">
-                                                                                    <FontAwesomeIcon icon={faInstagram} />
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="#"
-                                                                                    target="_blank"
-                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                                                    title="Twitter">
-                                                                                    <FontAwesomeIcon icon={faTwitter} />
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="#"
-                                                                                    target="_blank"
-                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                                                    title="Youtube">
-                                                                                    <FontAwesomeIcon icon={faYoutube} />
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="#"
-                                                                                    target="_blank"
-                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                                                    title="Linkedin">
-                                                                                    <FontAwesomeIcon icon={faLinkedinIn} />
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="#"
-                                                                                    target="_blank"
-                                                                                    className="text-decoration-none st-text-light font-size-20 text-center d-flex align-items-center justify-content-center"
-                                                                                    title="Pinterest">
-                                                                                    <FontAwesomeIcon icon={faPinterest} />
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
                                                                     </div>
 
                                                                     {/* bottom sec */}
                                                                     <div className="bottom-sec">
                                                                         <div className="inner">
-                                                                            <p className="desc st-text-light font-size-15 mb-2">
-                                                                                Let me start by saying the overall journey was a  very good experience and the takeaways will stay with me life long. The intiative to join the program was mine after I heard about it from a social contact in Bahrain but all the research whether to join or not and all doubts were raised and cleared by my wife. Once i was into the program initially it was difficult but once u see your efforts and dedication paying off it is worth giving it your best.
-                                                                            </p>
-                                                                            <a href="#" className="font-weight-600 st-text-light font-size-14">Read More...</a>
+                                                                            {
+                                                                                // (stripHTML(item.content).length >= this.STORY_TEXT_LIMIT) ? (
+                                                                                (stripHTML(item.content).length >= this.STORY_TEXT_LIMIT) ? (
+                                                                                    <React.Fragment>
+                                                                                        <p className="desc st-text-light font-size-15 mb-2">
+                                                                                            {limitText(stripHTML(item.content), this.STORY_TEXT_LIMIT)}
+                                                                                        </p>
+                                                                                        <a href="#" className="font-weight-600 st-text-light font-size-14 text-capitalize" onClick={ev => this.handleModalOpening(ev, item)}>read more</a>
+                                                                                    </React.Fragment>
+                                                                                ) : (
+                                                                                    <p className="desc st-text-light font-size-15 mb-2">
+                                                                                        {
+                                                                                            stripHTML(item.content)
+                                                                                        }
+                                                                                    </p>
+                                                                                )
+                                                                            }
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -332,6 +313,65 @@ class SuccessStories extends Component {
                                 }
                             </Row>
                         </Container>
+
+                        {/* MODALS */}
+                        <Modal
+                            size="lg"
+                            show={state.readMoreModalVisibility}
+                            onHide={this.onModalClose}
+                            centered
+                            keyboard>
+                            <Modal.Header
+                                closeButton
+                                className="st-heading heading-xs font-family-secondary-bold">
+                                <Modal.Title>
+                                    {
+                                        (state.selectedStory && state.selectedStory.clientName) ? (
+                                            state.selectedStory.clientName + "'s Success Story"
+                                        ) : "Success Story"
+                                    }
+                                </Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                {
+                                    state.selectedStory ? (
+                                        <div className="ss2-item">
+                                            <div className="inner ss2-item-inner bg-white st-block-box-shadow p-3 d-flex flex-wrap">
+                                                <div className="img-sec" style={{ width: 150 }}>
+                                                    {
+                                                        (state.selectedStory.frontImage === null) ? (
+                                                            <Image src={noImgFound} fluid />
+                                                        ) : (
+                                                            <Image src={state.selectedStory.frontImage} fluid />
+                                                        )
+                                                    }
+                                                </div>
+                                                <div className="text-sec media-body pl-md-3 pt-3 pt-md-0">
+                                                    {/* top sec */}
+                                                    <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
+                                                        <p className="head font-weight-600 font-size-20">
+                                                            <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
+                                                            {state.selectedStory.clientName}
+                                                        </p>
+                                                    </div>
+
+                                                    {/* bottom sec */}
+                                                    <div className="bottom-sec">
+                                                        <div className="inner">
+                                                            <p className="desc st-text-light font-size-15 mb-2">
+                                                                {stripHTML(state.selectedStory.content)}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : null
+                                }
+
+
+                            </Modal.Body>
+                        </Modal>
                     </div>
 
                     {/* footer */}

@@ -13,7 +13,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 // images
-import recipeImg1 from 'assets/images/recipes/recipe-img1.jpg'
+// no data found image
+import noImgFound from 'assets/images/no-image-found-logo.png'
 
 
 class RecipesList extends Component {
@@ -39,16 +40,18 @@ class RecipesList extends Component {
                                                 <Col xs={12} sm={6} md={4} lg={3} className="recipe-item mb-3 mb-lg-5">
                                                     <Link to={'/recipe-details/' + item.slug} className="inner d-block text-decoration-none bg-white st-block-box-shadow overflow-hidden">
                                                         {/* img sec */}
-                                                        <div className="img-sec text-center overflow-hidden">
-                                                            {
-                                                                (item.coverImage === null) ? (
-                                                                    <Image src={recipeImg1} />
-                                                                ) : (
+                                                        {
+                                                            (item.coverImage === null) ? (
+                                                                <div className="img-sec text-center overflow-hidden bg-white">
+                                                                    <Image src={noImgFound} fluid style={{ maxHeight: '100%' }} />
+                                                                </div>
+                                                            ) : (
+                                                                <div className="img-sec text-center overflow-hidden">
                                                                     <Image src={item.fullUrlImage} />
-                                                                )
-                                                            }
+                                                                </div>
+                                                            )
+                                                        }
 
-                                                        </div>
                                                         {/* text sec */}
                                                         <div className="text-sec py-3 px-1 text-center">
                                                             <p className="text-uppercase font-size-17 font-weight-600">

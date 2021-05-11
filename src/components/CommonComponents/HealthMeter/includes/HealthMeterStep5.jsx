@@ -27,13 +27,11 @@ export default class HealthMeterStep5 extends Component {
 
     // setting | water consumption
     handleWaterConsumptionChange(event) {
-        // console.log(event)
         this.setState({ waterConsumption: event.target.value });
     }
 
     // setting | fruit consumption
     handleFruitConsumptionChange(event) {
-        // console.log(event)
         this.setState({ fruitConsumption: event.target.value });
     }
 

@@ -118,7 +118,6 @@ class HealthMeter extends Component {
             this.setState({
                 step1Data: { ...userData }
             }, () => {
-                // console.log("step1Data ", this.state.step1Data)
             })
         }
     }
@@ -129,7 +128,6 @@ class HealthMeter extends Component {
             this.setState({
                 step2Data: { ...userData }
             }, () => {
-                // console.log("step2Data ", this.state.step2Data)
             })
         }
     }
@@ -140,7 +138,6 @@ class HealthMeter extends Component {
             this.setState({
                 step3Data: { ...userData }
             }, () => {
-                // console.log("step3Data ", this.state.step3Data)
             })
         }
     }
@@ -151,7 +148,6 @@ class HealthMeter extends Component {
             this.setState({
                 step4Data: { ...userData }
             }, () => {
-                // console.log("step4Data ", this.state.step4Data)
             })
         }
     }
@@ -162,7 +158,6 @@ class HealthMeter extends Component {
             this.setState({
                 step5Data: { ...userData }
             }, () => {
-                // console.log("step5Data ", this.state.step5Data)
             })
         }
     }
@@ -171,19 +166,14 @@ class HealthMeter extends Component {
     handleGetResult() {
         this.setState({ result: '' });
         const step1DataList = this.state.step1Data
-        // console.log('step1Data -> ', step1DataList)
 
         const step2DataList = this.state.step2Data
-        console.log('step2Data -> ', step2DataList)
 
         const step3DataList = this.state.step3Data
-        console.log('step3Data -> ', step3DataList)
 
         const step4DataList = this.state.step4Data
-        console.log('step4Data -> ', step4DataList)
 
         const step5DataList = this.state.step5Data
-        console.log('step5Data -> ', step5DataList)
 
         
         getBMIResult(
@@ -201,7 +191,6 @@ class HealthMeter extends Component {
             step4DataList.dailyActivityLevel,
         ).then(res => {
             this.setState({ result: res.data });
-            // console.log('res  + ', res)
         });
     }
 

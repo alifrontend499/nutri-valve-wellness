@@ -27,9 +27,45 @@ import FeatherIcon from 'feather-icons-react';
 // router
 import { Link } from 'react-router-dom';
 
+// redux
+import { connect } from 'react-redux';
 
-export default class BlogDetails extends Component {
+// blogs api
+import { getBlog } from 'utlis/apis/API_blogs'
+
+
+class BlogDetails extends Component {
+    constructor(props) {
+        super(props)
+
+        // state
+        this.state = {
+            loading: true,
+            recipe: null,
+            recipeSlug: ''
+        }
+    }
+
+    componentDidMount() {
+        const props = this.props
+        const recipeSlug = props.match.params.slug ?? null
+        if (recipeSlug) {
+            getBlog(props.commonToken, recipeSlug).then(res => {
+
+                console.log("asd res", res)
+                this.setState({
+                    recipe: res.data,
+                    loading: false
+                })
+            })
+        } else {
+
+        }
+    }
     render() {
+        const props = this.props
+        const state = this.state
+
         return (
             <>
                 {/* <Header /> */}
@@ -377,3 +413,12 @@ export default class BlogDetails extends Component {
         )
     }
 }
+
+
+const getDataFromStore = state => {
+    return {
+        commonToken: state.auth.commonToken
+    };
+}
+
+export default connect(getDataFromStore, null)(BlogDetails)

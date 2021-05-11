@@ -36,4 +36,9 @@
 }
 .success-stories-sec2 .ss2-item .bottom-sec .desc {
     /* line-height: 22px; */
+
+}
+.success-stories-sec2 .ss2-item .bottom-sec .desc:not(.expanded) {
+    /* max-height: 70px;
+    overflow: hidden; */
 }

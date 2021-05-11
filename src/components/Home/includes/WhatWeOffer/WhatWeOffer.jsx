@@ -69,11 +69,9 @@ class WhatWeOffer extends Component {
         let commonToken = this.props.commonToken
         if (commonToken) {
             getPosts(commonToken, "program").then(res => {
-                // console.log('res ', res.data)
                 this.setState({ posts: res.data });
             });
         } else {
-            // console.log('no token from the local storage')
         }
     }
     render() {

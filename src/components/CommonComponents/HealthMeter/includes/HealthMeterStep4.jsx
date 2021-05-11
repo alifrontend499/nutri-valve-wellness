@@ -31,25 +31,21 @@ export default class HealthMeterStep4 extends Component {
 
     // setting | smoking
     handleSmokingChange(event) {
-        // console.log(event)
         this.setState({ smoking: event.target.value });
     }
 
     // setting | alcohol consumption
     handleAlcoholConsumptionChange(event) {
-        // console.log(event)
         this.setState({ alcoholConsumption: event.target.value });
     }
 
     // setting | sleep duration
     handleSleepDurationChange(event) {
-        // console.log(event)
         this.setState({ sleepDuration: event.target.value });
     }
 
     // setting | daily activity level
     handleDailyActivityLevelChange(event) {
-        // console.log(event)
         this.setState({ dailyActivityLevel: event.target.value });
     }
 

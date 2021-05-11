@@ -15,15 +15,14 @@ import {
 // images
 import recipeBigImg from 'assets/images/recipes/recipe-big-img.jpg'
 import recipeImgdescription from 'assets/images/recipes/right-img.jpg'
+// no data found image
+import noImgFound from 'assets/images/no-image-found-logo.png'
 
 // icons : feather
 import FeatherIcon from 'feather-icons-react';
 
 // redux
 import { connect } from 'react-redux';
-
-// redux actions
-import { getSingleRecipe } from 'redux/actions/actionRecipes'
 
 // recipes api
 import { getRecipe } from 'utlis/apis/API_recipes'
@@ -85,7 +84,7 @@ class RecipeDetailsSec extends Component {
                                                 <div className="recipe-details-img position-relative">
                                                     {
                                                         (state.recipe.coverImage === null) ? (
-                                                            <Image src={recipeBigImg} fluid className="w-100" />
+                                                            <Image src={noImgFound} fluid className="d-block mx-auto" />
                                                         ) : (
                                                             <Image src={state.recipe.fullUrlImage} fluid className="w-100" />
                                                         )
