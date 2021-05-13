@@ -53,10 +53,10 @@ export default class ForgotPassword extends Component {
                                     className="font-size-14 st-text-dark d-inline-block mb-1"
                                     onClick={(ev) => this.props.openLoginTab(ev)}
                                 >Sign In instead</a> <br />
-                                <a href="#"
+                                {/* <a href="#"
                                     className="font-size-14 st-text-dark d-inline-block"
                                     onClick={(ev) => this.props.openRegisterTab(ev)}
-                                >Create a new Account</a>
+                                >Create a new Account</a> */}
                             </div>
                         </div>
                     </div>

@@ -105,3 +105,21 @@ npm install --save moment react-moment
 
 npm install --save moment-timezone (optional)
 ```
+
+## `6. formik`
+for forms validation and management
+
+https://formik.org/docs/overview
+
+```
+npm install formik --save
+```
+
+## `6. yup`
+for validations schema
+
+https://www.npmjs.com/package/yup
+
+```
+npm install yup
+```

@@ -28,7 +28,7 @@ import twoMeter from 'assets/images/icons/2.jpg';
 import threeMeter from 'assets/images/icons/3.jpg';
 import fourMeter from 'assets/images/icons/4.jpg';
 
-import { getBMIResult } from 'utlis/apis/common';
+import { getBMIResult } from 'utlis/apis/API_common';
 import FinalResult from './includes/FinalResult'
 
 // redux

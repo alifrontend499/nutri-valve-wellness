@@ -16,7 +16,7 @@ import ProgramsSearch from './includes/ProgramsSearch'
 import ProgramPlans from './includes/ProgramPlans'
 
 // api: common
-import { getPost } from 'utlis/apis/common'
+import { getPost } from 'utlis/apis/API_common'
 // local storage
 import { getItemFromLocalStorage } from 'utlis/localStorage/localStorage'
 
@@ -28,27 +28,27 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
 class Programs extends Component {
-    state = {post: []};
+    state = { post: [] };
     componentDidMount() {
         const { slug } = this.props.match.params;
         // MAKING USER REQUEST
-        getPost(            
+        getPost(
             // localStorage.getItem('commanToken'),
             this.props.commonToken,
             slug
         ).then(res => {
-            this.setState({ post: res.data });
+            this.setState({ post: res && res.data });
         });
     }
     render() {
-        const {post} = this.state;
+        const { post } = this.state;
         return (
             <>
-            <Helmet>
-                <title>Nutri Health Care | Programs</title>
-                <link rel="canonical" href="" />
-                <meta name="description" content="Programs" />
-            </Helmet>
+                <Helmet>
+                    <title>Nutri Health Care | Programs</title>
+                    <link rel="canonical" href="" />
+                    <meta name="description" content="Programs" />
+                </Helmet>
                 {/* <Header /> */}
 
                 <section id="st-wrapper">
@@ -67,9 +67,9 @@ class Programs extends Component {
                             <Row className="program-weight-loss-challenge">
                                 {/* header */}
                                 <Col xs={12} className="st-heading-wrapper text-center mb-3 mb-lg-4">
-                                    <p className="st-heading heading-xs font-family-secondary-bold mb-3 mb-lg-4">{post.title}</p>
+                                    <p className="st-heading heading-xs font-family-secondary-bold mb-3 mb-lg-4">{post && post.title}</p>
                                     <p className="desc font-size-15 st-text-gray">
-                                    {HTMLparser(`${post.content}`)}
+                                        {HTMLparser(`${post && post.content}`)}
                                     </p>
                                 </Col>
 

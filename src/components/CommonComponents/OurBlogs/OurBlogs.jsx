@@ -180,7 +180,7 @@ class OurBlogs extends Component {
                                                 {/* text sec */}
                                                 <div className="text-sec mt-3">
                                                     <Link to={'/blog-details/' + item.slug} className="head font-size-20 font-family-secondary-medium st-text-light text-decoration-none d-inline-block border-bottom st-border-gray pb-3 mb-3">
-                                                        {item.blogHeading}
+                                                        {item.heading}
                                                     </Link>
 
                                                     <div className="links d-flex mb-2">

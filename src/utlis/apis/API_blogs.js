@@ -20,7 +20,7 @@ export async function getBlogs(token, page) {
 // getting more blogs
 export async function getBlog(token, slug) {
     if (token && slug) {
-        const stories = await axios.get(apiUrl + 'getposts/post/' + slug, {
+        const stories = await axios.get(apiUrl + 'getposts/' + slug, {
             headers: {
                 'Authorization': `Bearer ${token}`
             },

@@ -34,17 +34,23 @@ import FinalResult from 'components/CommonComponents/HealthMeter/includes/FinalR
 import PageNotFound from 'components/PageNotFound/PageNotFound'
 
 
+import ProtectedRoute from './ProtectedRoute'
+
 export default class AllRoutes extends Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
+        const props = this.props
         return (
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/home" component={Home} />
+                <ProtectedRoute authLoading={props.authLoading} exact path="/" component={Home} />
+                <ProtectedRoute authLoading={props.authLoading} path="/home" component={Home} />
 
                 <Route path="/about-us" component={About} />
 
-                <Route path="/blogs" component={Blogs} />
-                <Route path="/blog-details/:slug" component={BlogDetails} />
+                <ProtectedRoute authLoading={props.authLoading} path="/blogs" component={Blogs} />
+                <ProtectedRoute authLoading={props.authLoading} path="/blog-details/:slug" component={BlogDetails} />
 
                 <Route path="/contact-us" component={ContactUs} />
 
@@ -52,19 +58,19 @@ export default class AllRoutes extends Component {
 
                 <Route path="/tearms-and-privacy-policies" component={TermsAndPrivacyPolicies} />
 
-                <Route path="/success-story" component={SuccessStories} />
+                <ProtectedRoute authLoading={props.authLoading} path="/success-story" component={SuccessStories} />
 
                 <Route path="/auth" component={Authentication} />
 
                 <Route path="/programs" component={Programs} />
                 <Route path="/program/:slug" component={Programs} />
 
-                <Route path="/recipes" component={Recipes} />
-                <Route path="/recipe-details/:slug" component={RecipeDetails} />
+                <ProtectedRoute authLoading={props.authLoading} path="/recipes" component={Recipes} />
+                <ProtectedRoute authLoading={props.authLoading} path="/recipe-details/:slug" component={RecipeDetails} />
 
-                <Route path="/health-meter" component={HealthMeterPage} />
-                <Route path="/bmi-result" component={FinalResult} />
-                <Route path="/my-account" component={MyAccount} />
+                <ProtectedRoute authLoading={props.authLoading} path="/health-meter" component={HealthMeterPage} />
+                <ProtectedRoute authLoading={props.authLoading} path="/bmi-result" component={FinalResult} />
+                <ProtectedRoute authLoading={props.authLoading} path="/my-account" component={MyAccount} />
 
 
                 <Route path="**" component={PageNotFound} />

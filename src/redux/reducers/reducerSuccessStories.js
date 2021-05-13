@@ -2,6 +2,7 @@
 import {
     ADD_SUCCESS_STORIES,
     UPDATE_SUCCESS_STORIES,
+    EMPTY_SUCCESS_STORIES
 } from "redux/actions/constants/action-types";
 
 const initialState = {
@@ -20,6 +21,13 @@ function successStoriesReducer(state = initialState, action) {
         return {
             ...state,
             successStories: [...state.successStories, ...action.payload]
+        }
+    }
+
+    if (action.type === EMPTY_SUCCESS_STORIES) {
+        return {
+            ...state,
+            successStories: []
         }
     }
 

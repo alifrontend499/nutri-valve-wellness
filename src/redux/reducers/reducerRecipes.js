@@ -2,6 +2,7 @@
 import {
     ADD_RECIPES,
     UPDATE_RECIPES,
+    EMPTY_RECIPES
 } from "redux/actions/constants/action-types";
 
 const initialState = {
@@ -20,6 +21,13 @@ function recipesReducer(state = initialState, action) {
         return {
             ...state,
             recipes: [...state.recipes, ...action.payload]
+        }
+    }
+    
+    if (action.type === EMPTY_RECIPES) {
+        return {
+            ...state,
+            recipes: []
         }
     }
 

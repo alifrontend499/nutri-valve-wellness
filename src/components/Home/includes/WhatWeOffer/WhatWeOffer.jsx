@@ -24,7 +24,7 @@ import blankSpot from 'assets/images/program-girl-img.png'
 // import sliderImg3 from 'assets/images/what-we-offer/slider-img3.jpg'
 // import sliderImg4 from 'assets/images/what-we-offer/slider-img4.jpg'
 // import sliderImg5 from 'assets/images/what-we-offer/slider-img5.jpg'
-import { getPosts } from 'utlis/apis/common';
+import { getPosts } from 'utlis/apis/API_common';
 
 // router
 import { Link } from 'react-router-dom'

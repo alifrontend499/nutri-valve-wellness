@@ -25,8 +25,31 @@ import {
 // router
 import { Link } from 'react-router-dom'
 
-export default class HeaderTopSec extends Component {
+// redux
+import { connect } from 'react-redux';
+
+// common helpers
+import { globalLogout } from 'utlis/helpers/Helpers_common'
+
+class HeaderTopSec extends Component {
+
+    constructor(props) {
+        super(props)
+
+        // bindings
+        this.handleLogout = this.handleLogout.bind(this)
+    }
+
+    // logout 
+    handleLogout = ev => {
+        ev.preventDefault()
+        console.log("logout")
+
+        globalLogout()
+    }
+
     render() {
+        const props = this.props
         return (
             <Container>
                 <div className="header-top-sec border-bottom st-border-gray d-flex flex-wrap align-items-center">
@@ -121,17 +144,41 @@ export default class HeaderTopSec extends Component {
                             {/* link */}
                             <div
                                 className="ht-link-login-and-register link-with-icon d-flex align-items-center font-size-15 ml-auto ml-md-0">
-                                <FeatherIcon
-                                    icon="lock"
-                                    size="18"
-                                    className="mr-2 st-text-secondary" />
-                                <Link to="/auth" className="st-text-light">Login</Link>
-                                {/* <Link to="/home" className="st-text-light">Register</Link> */}
+                                {
+                                    props.currentUser ? (
+                                        <React.Fragment>
+                                            <FeatherIcon
+                                                icon="user"
+                                                size="18"
+                                                className="mr-2 st-text-secondary" />
+                                            <Link to="/my-account" className="st-text-light">Account</Link>
+                                            <a href="#" className="st-text-light" onClick={this.handleLogout}>Logout</a>
+                                        </React.Fragment>
+                                    ) : (
+                                        <React.Fragment>
+                                            <FeatherIcon
+                                                icon="lock"
+                                                size="18"
+                                                className="mr-2 st-text-secondary" />
+                                            <Link to="/auth" className="st-text-light">Login</Link>
+                                            {/* <Link to="/home" className="st-text-light">Register</Link> */}
+                                        </React.Fragment>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
-            </Container>
+            </Container >
         )
     }
 }
+
+const getDataFromStore = state => {
+    return {
+        currentUser: state.auth.currentUser
+    };
+
+}
+
+export default connect(getDataFromStore, null)(HeaderTopSec)

@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 
 // styles
 import './styles/authentication-styles.css'
-
-// components
-// import Header from 'components/CommonComponents/Header/Header'
-// import Footer from 'components/CommonComponents/Footer/Footer'
-
+// redux
+import { connect } from 'react-redux';
 
 import LoginTab from './includes/Login'
 import RegisterTab from './includes/Register'
@@ -24,7 +21,7 @@ import {
 // img
 import authImg from 'assets/images/auth/auth-page-left-img.jpg'
 
-export default class Authentication extends Component {
+class Authentication extends Component {
 
     constructor(props) {
         super(props)
@@ -38,6 +35,22 @@ export default class Authentication extends Component {
         this.openLoginTab = this.openLoginTab.bind(this)
         this.openRegisterTab = this.openRegisterTab.bind(this)
         this.openForgotPasswordTab = this.openForgotPasswordTab.bind(this)
+    }
+
+    componentDidMount() {
+        // check if some user is already logged in
+        // if (this.props.currentUser) {
+        //     this.props.history.push('/home')
+        // }
+    }
+
+    componentDidUpdate(prevProps) {
+        // check if some user is already logged in
+        if (this.props.currentUser !== prevProps.currentUser) {
+            if (this.props.currentUser) {
+                this.props.history.push('/home')
+            }
+        }
     }
 
     // opening login tab
@@ -74,6 +87,7 @@ export default class Authentication extends Component {
     }
 
     render() {
+        const props = this.props
         return (
             <>
                 {/* <Header /> */}
@@ -116,6 +130,7 @@ export default class Authentication extends Component {
                                                     openRegisterTab={(ev) => this.openRegisterTab(ev)}
                                                     openForgotPasswordTab={(ev) => this.openForgotPasswordTab(ev)}
                                                     authImg={authImg}
+                                                    parentProps={props}
                                                 />
                                             </Tab.Pane>
 
@@ -126,6 +141,7 @@ export default class Authentication extends Component {
                                                     openRegisterTab={(ev) => this.openRegisterTab(ev)}
                                                     openForgotPasswordTab={(ev) => this.openForgotPasswordTab(ev)}
                                                     authImg={authImg}
+                                                    parentProps={props}
                                                 />
                                             </Tab.Pane>
 
@@ -136,6 +152,7 @@ export default class Authentication extends Component {
                                                     openRegisterTab={(ev) => this.openRegisterTab(ev)}
                                                     openForgotPasswordTab={(ev) => this.openForgotPasswordTab(ev)}
                                                     authImg={authImg}
+                                                    parentProps={props}
                                                 />
 
                                             </Tab.Pane>
@@ -153,3 +170,12 @@ export default class Authentication extends Component {
         )
     }
 }
+
+const getDataFromStore = state => {
+    return {
+        currentUser: state.auth.currentUser
+    };
+
+}
+
+export default connect(getDataFromStore, null)(Authentication)

@@ -2,6 +2,7 @@
 import {
     ADD_SUCCESS_STORIES,
     UPDATE_SUCCESS_STORIES,
+    EMPTY_SUCCESS_STORIES
 } from "redux/actions/constants/action-types";
 
 // ALL FUNCTIONS
@@ -16,5 +17,12 @@ export function updateSuccessStories(successStoriesArray) {
     return {
         type: UPDATE_SUCCESS_STORIES,
         payload: successStoriesArray
+    }
+}
+
+export function emptySuccessStories() {
+    return {
+        type: EMPTY_SUCCESS_STORIES,
+        payload: "empty success stories"
     }
 }

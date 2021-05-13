@@ -14,6 +14,18 @@ export async function checkUser(userEmail, userPassword) {
 	}
 }
 
+// check user
+export async function userLogin(userEmail, userPassword) {
+	if (userEmail && userPassword) {
+		const user = await axios.post(apiUrl + "/login_check", {
+			username: userEmail,
+			password: userPassword,
+		});
+		
+		return user;
+	}
+}
+
 // get posts
 export async function getPosts(token, type) {
 	if (token) {

@@ -16,13 +16,11 @@ import ScrollToTop from './ScrollToTop'
 import Header from 'components/CommonComponents/Header/Header'
 import Footer from 'components/CommonComponents/Footer/Footer'
 
-// api: common
-import { checkUser } from 'utlis/apis/common'
+// actions
+import { saveCommonTokenToStore, saveCurrentUserToStore, authenticateUser } from 'redux/actions/actionAuth'
 
-// local storage
-import { setItemToLocalStorage } from 'utlis/localStorage/localStorage'
-
-import { saveCommonTokenToStore } from 'redux/actions/actionAuth'
+// helpers
+import { getCurrentUserFromLocalStorage } from 'utlis/helpers/Helpers_common'
 
 class AppRoot extends Component {
 
@@ -30,45 +28,51 @@ class AppRoot extends Component {
         super(props)
 
         this.state = {
-            loader: true
+            loading: true
         }
     }
 
     componentDidMount() {
-        // MAKING USER REQUEST
-        checkUser('sysadmin@admin.com', 'SysAdmin123').then(res => {
 
-            // SAVING TOKEN TO THE STORE
-            this.props.saveCommonTokenToStore(res.data.token.toString())
+        const currentUser = getCurrentUserFromLocalStorage()
+        // console.log('currentUser ', currentUser)
+        if (currentUser) {
+            // saving user details to the local storage
+            this.props.saveCommonTokenToStore(currentUser.userToken)
+            this.props.saveCurrentUserToStore(currentUser)
+            this.props.authenticateUser(true)
 
-            // LOADING FALSE
-            this.setState({ loader: false });
-        })
+            setTimeout(() => {
+                // loading false
+                this.setState({
+                    loading: false
+                })
+            }, 500);
+        } else {
+            // saving user details to the local storage
+            this.props.saveCommonTokenToStore("")
+            this.props.saveCurrentUserToStore(null)
+            this.props.authenticateUser(false)
+
+            setTimeout(() => {
+                // loading false
+                this.setState({
+                    loading: false
+                })
+            }, 500);
+        }
     }
 
     render() {
-        const { loader } = this.state;
+        const state = this.state;
         return (
             <div className="app-root">
-                {
-                    /* loading */
-                    (loader) ? (
-                        <div className="d-flex justify-content-center align-items-center position-fixed h-100 w-100" style={{ top: 0, left: 0, zIndex: 99 }}>
-                            <div className="spinner-grow align-self-center" role="status">
-                                <span className="sr-only">Loading...</span>
-                            </div>
-                        </div>
-                    ) : (
-                        <React.Fragment>
-                            <Header />
+                <Header />
 
-                            <ScrollToTop />
-                            <AllRoutes />
+                <ScrollToTop />
+                <AllRoutes authLoading={state.loading} />
 
-                            <Footer />
-                        </React.Fragment>
-                    )
-                }
+                <Footer />
             </div>
         )
     }
@@ -76,7 +80,9 @@ class AppRoot extends Component {
 
 const dispatchActionsToProps = dispatch => {
     return {
-        saveCommonTokenToStore: comonToken => dispatch(saveCommonTokenToStore(comonToken))
+        saveCommonTokenToStore: comonToken => dispatch(saveCommonTokenToStore(comonToken)),
+        saveCurrentUserToStore: currentUser => dispatch(saveCurrentUserToStore(currentUser)),
+        authenticateUser: bool => dispatch(authenticateUser(bool)),
     }
 }
 
