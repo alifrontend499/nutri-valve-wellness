@@ -65,7 +65,7 @@ class OurBlogs extends Component {
 
             // GETTING INITIAL DATA
             getBlogs(this.props.commonToken, this.state.currentPage).then(res => {
-                console.log('blogs res ', res)
+                // console.log('blogs res ', res)
                 this.setState({
                     lastPage: res.data.lastPage,
                     loading: false

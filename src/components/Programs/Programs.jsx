@@ -69,7 +69,10 @@ class Programs extends Component {
                                 <Col xs={12} className="st-heading-wrapper text-center mb-3 mb-lg-4">
                                     <p className="st-heading heading-xs font-family-secondary-bold mb-3 mb-lg-4">{post && post.title}</p>
                                     <p className="desc font-size-15 st-text-gray">
-                                        {HTMLparser(`${post && post.content}`)}
+                                        {
+                                            (post && post.content) &&
+                                            HTMLparser(`${post.content}`)
+                                        }
                                     </p>
                                 </Col>
 

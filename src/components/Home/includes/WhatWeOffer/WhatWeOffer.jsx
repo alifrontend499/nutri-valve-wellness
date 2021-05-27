@@ -63,16 +63,28 @@ function SliderPrevArrow(props) {
 
 
 class WhatWeOffer extends Component {
-    state = { posts: {} };
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            posts: {}
+        };
+    }
     componentDidMount() {
         // let commonToken = getItemFromLocalStorage('commanToken')
         let commonToken = this.props.commonToken
-        if (commonToken) {
-            getPosts(commonToken, "program").then(res => {
-                this.setState({ posts: res.data });
-            });
-        } else {
-        }
+
+        getPosts(commonToken, "program").then(res => {
+            // console.log('program ', res)
+            if (res) {
+                this.setState({ posts: res.data.items });
+            }
+        }).catch(err => {
+            console.log('Some error occured ', err.message)
+        });
+        // if (commonToken) {
+        // } else {
+        // }
     }
     render() {
         const { posts } = this.state;
@@ -133,39 +145,46 @@ class WhatWeOffer extends Component {
 
                         {/* slider container */}
                         <div className="slider-container px-lg-2">
-                            <Slider {...settings}>
-                                {/* slider-item */}
-                                {Array.isArray(posts.items) && posts.items.map((post, index) =>
-                                    <div className="slider-item pt-1" key={index}>
-                                        <div className="slider-item-inner px-2 px-lg-3">
-                                            {/* img sec */}
-                                            <Link to={`/program/${post.slug}`} className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
+                            {
+                                (posts && posts.length) ? (
+                                    <Slider {...settings}>
+                                        {/* slider-item */}
+                                        {posts.map((post, index) =>
+                                            <div key={index} className="slider-item pt-1">
+                                                <div className="slider-item-inner px-2 px-lg-3">
+                                                    {/* img sec */}
+                                                    <Link to={`/program/${post.slug}`} className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
 
-                                                {post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />) : <Image src={blankSpot} fluid className="img-fluid-height" />}
-                                            </Link>
+                                                        {post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />) : <Image src={blankSpot} fluid className="img-fluid-height" />}
+                                                    </Link>
 
-                                            {/* text sec */}
-                                            <div className="text-sec text-center">
-                                                <Link to={`/program/${post.slug}`} className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
-                                                    {post.title}
-                                                </Link>
-                                                <p className="desc st-text-gray mb-3">
-                                                    {HTMLparser(`${post.content.substring(0, 100).replace(/(<([^>]+)>)/gi, "")}`)}
-                                                </p>
-                                                <Link to={`/program/${post.slug}`} className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
-                                                    <span>MORE</span>
-                                                    <FeatherIcon
-                                                        icon="arrow-right-circle"
-                                                        className="ml-2"
-                                                        size="18"
-                                                    />
-                                                </Link>
+                                                    {/* text sec */}
+                                                    <div className="text-sec text-center">
+                                                        <Link to={`/program/${post.slug}`} className="st-heading heading-xs font-family-sec d-inline-block text-decoration-none st-text-dark font-family-secondary-bold mb-3">
+                                                            {post.title}
+                                                        </Link>
+                                                        <p className="desc st-text-gray mb-3">
+                                                            {HTMLparser(`${post.content.substring(0, 100).replace(/(<([^>]+)>)/gi, "")}`)}
+                                                        </p>
+                                                        <Link to={`/program/${post.slug}`} className="link-with-icon d-inline-flex align-items-center st-text-primary font-family-secondary-bold font-size-13">
+                                                            <span>MORE</span>
+                                                            <FeatherIcon
+                                                                icon="arrow-right-circle"
+                                                                className="ml-2"
+                                                                size="18"
+                                                            />
+                                                        </Link>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        )}
+                                    </Slider>
+                                ) : (
+                                    <div className="no-data-found-p text-center">
+                                        <p className="st-text-gray font-weight-600">No programs found</p>
                                     </div>
-                                )}
-
-                            </Slider>
+                                )
+                            }
                         </div>
                     </div>
                 </Container>
