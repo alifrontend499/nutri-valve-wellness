@@ -30,7 +30,7 @@ import { connect } from 'react-redux';
 import { addSuccessStories, updateSuccessStories } from 'redux/actions/actionSuccessStories'
 
 // stories api
-import { getSuccessStories } from 'utlis/apis/API_successStories'
+import { getSuccessStories, cancelSuccessStoriesApi } from 'utlis/apis/API_successStories'
 
 // helpers common
 import { limitText, stripHTML } from 'utlis/helpers/Helpers_common'
@@ -88,6 +88,11 @@ class SuccessStories extends Component {
             })
         }
 
+    }
+
+    componentWillUnmount() {
+        // canceling api
+        cancelSuccessStoriesApi()
     }
 
     // GET MORE RECIPES
@@ -152,8 +157,6 @@ class SuccessStories extends Component {
             readMoreModalVisibility: false
         })
     }
-
-
 
     render() {
         const props = this.props
@@ -253,7 +256,7 @@ class SuccessStories extends Component {
                                                                     {/* top sec */}
                                                                     <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
                                                                         <p className="head font-weight-600 font-size-20">
-                                                                            <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
+                                                                            <span className="st-text-secondary d-block font-size-14 mb-2">Lost {item.weightLose && item.weightLose} KG</span>
                                                                             {item.clientName}
                                                                         </p>
                                                                     </div>
@@ -268,7 +271,7 @@ class SuccessStories extends Component {
                                                                                         <p className="desc st-text-light font-size-15 mb-2">
                                                                                             {limitText(stripHTML(item.content), this.STORY_TEXT_LIMIT)}
                                                                                         </p>
-                                                                                        <a href="#" className="font-weight-600 st-text-light font-size-14 text-capitalize" onClick={ev => this.handleModalOpening(ev, item)}>read more</a>
+                                                                                        <a href="/" className="font-weight-600 st-text-light font-size-14 text-capitalize" onClick={ev => this.handleModalOpening(ev, item)}>read more</a>
                                                                                     </React.Fragment>
                                                                                 ) : (
                                                                                     <p className="desc st-text-light font-size-15 mb-2">
@@ -350,7 +353,7 @@ class SuccessStories extends Component {
                                                     {/* top sec */}
                                                     <div className="top-sec d-flex border-bottom st-border-gray pb-2 mb-2">
                                                         <p className="head font-weight-600 font-size-20">
-                                                            <span className="st-text-secondary d-block font-size-14 mb-2">Lost 68 KG</span>
+                                                            <span className="st-text-secondary d-block font-size-14 mb-2">Lost {state.selectedStory.weightLose && state.selectedStory.weightLose} KG</span>
                                                             {state.selectedStory.clientName}
                                                         </p>
                                                     </div>

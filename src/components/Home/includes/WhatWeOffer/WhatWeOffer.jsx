@@ -19,21 +19,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // slider images
-import blankSpot from 'assets/images/program-girl-img.png'
-// import sliderImg2 from 'assets/images/what-we-offer/slider-img2.jpg'
-// import sliderImg3 from 'assets/images/what-we-offer/slider-img3.jpg'
-// import sliderImg4 from 'assets/images/what-we-offer/slider-img4.jpg'
-// import sliderImg5 from 'assets/images/what-we-offer/slider-img5.jpg'
 import { getPosts } from 'utlis/apis/API_common';
 
 // router
 import { Link } from 'react-router-dom'
 
-// local storage
-import { getItemFromLocalStorage } from 'utlis/localStorage/localStorage'
-
 // redux
 import { connect } from 'react-redux';
+
+// no data found image
+import noImgFound from 'assets/images/no-image-found-logo.png'
 
 function SliderNextArrow(props) {
     const { className, style, onClick } = props;
@@ -71,20 +66,14 @@ class WhatWeOffer extends Component {
         };
     }
     componentDidMount() {
-        // let commonToken = getItemFromLocalStorage('commanToken')
-        let commonToken = this.props.commonToken
-
-        getPosts(commonToken, "program").then(res => {
-            // console.log('program ', res)
+        getPosts().then(res => {
+            // console.log("red sdf ", res);
             if (res) {
                 this.setState({ posts: res.data.items });
             }
         }).catch(err => {
             console.log('Some error occured ', err.message)
         });
-        // if (commonToken) {
-        // } else {
-        // }
     }
     render() {
         const { posts } = this.state;
@@ -154,8 +143,7 @@ class WhatWeOffer extends Component {
                                                 <div className="slider-item-inner px-2 px-lg-3">
                                                     {/* img sec */}
                                                     <Link to={`/program/${post.slug}`} className="img-sec d-flex align-items-center justify-content-center rounded-circle overflow-hidden mx-auto mb-3 mb-lg-4">
-
-                                                        {post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />) : <Image src={blankSpot} fluid className="img-fluid-height" />}
+                                                        {post.coverImage ? (<Image src={post.fullUrlImage} fluid className="img-fluid-height" />) : <Image src={noImgFound} fluid className="img-fluid-height" />}
                                                     </Link>
 
                                                     {/* text sec */}

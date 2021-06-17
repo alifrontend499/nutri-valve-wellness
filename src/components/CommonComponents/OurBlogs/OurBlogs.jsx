@@ -72,7 +72,9 @@ class OurBlogs extends Component {
                 })
 
                 // adding recipes data to the redux store
-                this.props.addBlogs(res.data.items)
+                if (res.data.items && res.data.items.length) {
+                    this.props.addBlogs(res.data.items)
+                }
 
             }).catch(err => {
                 console.log('error occured ', err.message)

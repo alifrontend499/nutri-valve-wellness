@@ -14,6 +14,15 @@
 #program-weight-loss-challenge {
 }
 .program-weight-loss-challenge {
+    
+}
+.program-weight-loss-challenge .nd-sec .rt-sec ol {
+    list-style: decimal;
+    padding-left: 20px;
+}
+.program-weight-loss-challenge .nd-sec .rt-sec ol > li {
+    color: gray !important;
+    margin-bottom: .5rem!important;
 }
 
 .program-weight-loss-challenge .st-heading-wrapper .desc {

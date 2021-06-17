@@ -1,11 +1,16 @@
 // AXIOS
 import axios from "axios";
 
-const apiUrl = "http://api.dealshideal.com";
+// api url
+import { apiUrl } from "./constants";
+
+// cancel token
+const CancelToken = axios.CancelToken;
+
 // check user
 export async function checkUser(userEmail, userPassword) {
     if (userEmail && userPassword) {
-        const user = await axios.post(apiUrl + "/api/login_check", {
+        const user = await axios.post(apiUrl + "api/login_check", {
             username: userEmail,
             password: userPassword,
         });
@@ -17,7 +22,7 @@ export async function checkUser(userEmail, userPassword) {
 // check user
 export async function userLogin(userEmail, userPassword) {
     if (userEmail && userPassword) {
-        const user = await axios.post(apiUrl + "/api/login_check", {
+        const user = await axios.post(apiUrl + "api/login_check", {
             username: userEmail,
             password: userPassword,
         });
@@ -27,26 +32,28 @@ export async function userLogin(userEmail, userPassword) {
 }
 
 // get posts
-export async function getPosts(token = "", type) {
-    const allPosts = await axios.get(apiUrl + `/getposts/${type}`, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
+export async function getPosts() {
+    const allPosts = await axios.get(apiUrl + "programs");
     return allPosts;
-    // if (token) {
-    // }
 }
+
 // get Single Post
-export async function getPost(token = "", slug) {
-    const post = await axios.get(apiUrl + `/getpost/${slug}`, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
+
+export let cancelGetPost;
+export async function getPost(slug) {
+    const post = await axios.get(apiUrl + `program/${slug}`, {
+        cancelToken: new CancelToken(function executor(c) {
+            // An executor function receives a cancel function as a parameter
+            cancelGetPost = c;
+        }),
     });
     return post;
-    // if (token) {
-    // }
+}
+
+// get daily tips
+export async function getDailyTips() {
+    const dailyTips = await axios.get(apiUrl + "daily-tips");
+    return dailyTips;
 }
 
 // get BMI result
