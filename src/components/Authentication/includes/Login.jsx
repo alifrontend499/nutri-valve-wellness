@@ -18,7 +18,7 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 
 // api: common
-import { userLogin } from 'utlis/apis/API_common'
+import { userLogin, getUserInfo } from 'utlis/apis/API_common'
 
 // helpers
 import { saveToLocalStorage } from 'utlis/helpers/Helpers_common'
@@ -66,36 +66,47 @@ class Login extends Component {
             }, () => {
                 // login api
                 userLogin(values.loginEmail, values.loginPassword).then(res => {
+                    const userRes = res
 
-                    this.setState({
-                        loginBtnDisabled: true,
-                        loginBtnLoading: false,
-                        userMessage: {
-                            msgType: "success", // danger or success
-                            msg: "Login Succesfull"
-                        }
+                    // getting user details
+                    getUserInfo(res.data.token.toString()).then(res => {
+                        console.log("user details ", res);
+                        console.log("user response ", userRes);
+
+                        this.setState({
+                            loginBtnDisabled: true,
+                            loginBtnLoading: false,
+                            userMessage: {
+                                msgType: "success", // danger or success
+                                msg: "Login Succesfull"
+                            }
+                        })
+
+                        // refreshing the page
+                        setTimeout(() => {
+                            // SAVING TOKEN TO THE STORE
+                            const currentUser = {
+                                userToken: userRes.data.token.toString(),
+                                userId: 1,
+                                userName: 'Super Admin',
+                            }
+
+                            // storing details to global store
+                            this.props.saveCommonTokenToStore(currentUser.userToken)
+                            this.props.saveCurrentUserToStore(currentUser)
+                            this.props.authenticateUser(true)
+
+                            // saving user details to the local storage
+                            saveToLocalStorage("__uu_dd", JSON.stringify(currentUser))
+                            // reload
+                            window.location.reload()
+                        }, 1000);
+                    }).catch(err => {
+                        console.log('error while fetching user details ', err.message);
                     })
 
-                    
-                    // refreshing the page
-                    setTimeout(() => {
-                        // SAVING TOKEN TO THE STORE
-                        const currentUser = {
-                            userToken: res.data.token.toString(),
-                            userId: 1,
-                            userName: 'Super Admin',
-                        }
-    
-                        // storing details to global store
-                        this.props.saveCommonTokenToStore(currentUser.userToken)
-                        this.props.saveCurrentUserToStore(currentUser)
-                        this.props.authenticateUser(true)
-    
-                        // saving user details to the local storage
-                        saveToLocalStorage("__uu_dd", JSON.stringify(currentUser))
-                        // reload
-                        window.location.reload()
-                    }, 1000);
+
+
                 }).catch(err => {
                     console.log('error ', err.message)
                     this.setState({

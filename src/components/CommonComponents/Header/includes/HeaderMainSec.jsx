@@ -32,6 +32,8 @@ import * as Yup from 'yup'
 // api: common
 import { bookConsultation } from 'utlis/apis/API_common'
 
+import { getPosts } from 'utlis/apis/API_common';
+
 export default class HeaderMainSec extends Component {
     constructor(props) {
         super(props)
@@ -55,7 +57,9 @@ export default class HeaderMainSec extends Component {
             userMessage: {
                 msgType: "", // danger or success
                 msg: ""
-            }
+            },
+
+            programsLinks: []
         }
 
         // BINDINGS
@@ -77,6 +81,30 @@ export default class HeaderMainSec extends Component {
             cons_dob: Yup.string().matches(/^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/, "Make sure you add the right DOB format i.e., ").required('This field is required'),
             cons_mobile: Yup.string().matches(/^\+[1-9]{1}[0-9]{11,11}$/, "Make sure you add the country code before the mobile number ").required('This field is required'),
         })
+    }
+
+    componentDidMount() {
+        getPosts().then(res => {
+            // console.log('program ', res)
+            if (res) {
+                const programsData = res.data
+                if (programsData) {
+                    let linksData = []
+
+                    programsData.items.forEach(item => {
+                        linksData.push({
+                            title: item.title,
+                            slug: item.slug,
+                        })
+                    });
+                    this.setState({
+                        programsLinks: linksData
+                    });
+                }
+            }
+        }).catch(err => {
+            console.log('Some error occured ', err.message)
+        });
     }
 
     // EXECUTES WHEN MENU TOGGLES
@@ -205,53 +233,22 @@ export default class HeaderMainSec extends Component {
                                         title="Programs"
                                         className="font-weight-700"
                                         id="header-nav-dropdown">
-                                        {/* dropdown link */}
-                                        <NavDropdown.Item
-                                            as={NavLink}
-                                            activeClassName="active"
-                                            to="/programs"
-                                            className=""
-                                        >Weight Loss Challenge</NavDropdown.Item>
-
-                                        {/* dropdown link */}
-                                        <NavDropdown.Item
-                                            as={NavLink}
-                                            activeClassName="active"
-                                            to="/programs"
-                                            className=""
-                                        >Battle PCOS</NavDropdown.Item>
-
-                                        {/* dropdown link */}
-                                        <NavDropdown.Item
-                                            as={NavLink}
-                                            activeClassName="active"
-                                            to="/programs"
-                                            className=""
-                                        >Body Transformation</NavDropdown.Item>
-
-                                        {/* dropdown link */}
-                                        <NavDropdown.Item
-                                            as={NavLink}
-                                            activeClassName="active"
-                                            to="/programs"
-                                            className=""
-                                        >Weight Gain</NavDropdown.Item>
-
-                                        {/* dropdown link */}
-                                        <NavDropdown.Item
-                                            as={NavLink}
-                                            activeClassName="active"
-                                            to="/programs"
-                                            className=""
-                                        >Pregnancy and Motherhood</NavDropdown.Item>
-
-                                        {/* dropdown link */}
-                                        <NavDropdown.Item
-                                            as={NavLink}
-                                            activeClassName="active"
-                                            to="/programs"
-                                            className=""
-                                        >Reshape Intermittent</NavDropdown.Item>
+                                        {
+                                            (state.programsLinks && state.programsLinks.length) ? state.programsLinks.map((item, key) => (
+                                                // dropdown link
+                                                <NavDropdown.Item
+                                                    key={key}
+                                                    as={NavLink}
+                                                    activeClassName="active"
+                                                    to={"/program/" + item.slug}
+                                                    className=""
+                                                >{item.title}</NavDropdown.Item>
+                                            )) : (
+                                                <div className="nav-dropdown-loading text-center py-3">
+                                                    <Spinner animation="border" size="sm" className="position-relative mr-2" style={{ top: 1 }} />
+                                                </div>
+                                            )
+                                        }
                                     </NavDropdown>
 
                                     {/* link */}
