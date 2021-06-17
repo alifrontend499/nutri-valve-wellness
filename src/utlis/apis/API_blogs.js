@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // const apiUrl = "http://api.dealshideal.com/api/";
-const apiUrl = "http://api.dealshideal.com/";
+const apiUrl = "http://portal.nutrivalvewellness.com/";
 
 // getting initial blogs
 export async function getBlogs(token, page) {

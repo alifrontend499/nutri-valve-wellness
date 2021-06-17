@@ -1,7 +1,7 @@
 // AXIOS
 import axios from "axios";
 
-const apiUrl = "http://api.dealshideal.com/";
+const apiUrl = "http://portal.nutrivalvewellness.com/";
 
 // getting initial recipies
 export async function getRecipes(token, page) {

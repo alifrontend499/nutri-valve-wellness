@@ -1,7 +1,7 @@
 // AXIOS
 import axios from "axios";
 
-const apiUrl = "http://api.dealshideal.com";
+const apiUrl = "http://portal.nutrivalvewellness.com/";
 // check user
 export async function checkUser(userEmail, userPassword) {
     if (userEmail && userPassword) {
