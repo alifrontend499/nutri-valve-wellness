@@ -31,6 +31,19 @@ export async function userLogin(userEmail, userPassword) {
     }
 }
 
+// check user
+export async function getUserInfo(token) {
+    if (token) {
+        const user = await axios.get(apiUrl + "api/user", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+
+        return user;
+    }
+}
+
 // get posts
 export async function getPosts() {
     const allPosts = await axios.get(apiUrl + "programs");
