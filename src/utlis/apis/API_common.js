@@ -84,7 +84,7 @@ export async function getBMIResult(
     activity
 ) {
     const bmiResult = await axios.post(
-        apiUrl + "/bmi",
+        apiUrl + "bmi",
         {
             kg: kg,
             height: height,

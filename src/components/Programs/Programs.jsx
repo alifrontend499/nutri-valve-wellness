@@ -106,7 +106,8 @@ class Programs extends Component {
                         lastLinkPath="/programs"
                     />
                     {/* P SEARCH */}
-                    <ProgramsSearch />
+                    <ProgramsSearch
+                        parentProps={this.props} />
 
                     {
                         this.state.loading ? (
