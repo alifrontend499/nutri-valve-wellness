@@ -1,1 +1,1 @@
-export const apiUrl = "http://portal.nutrivalvewellness.com/"
+export const apiUrl = "https://portal.nutrivalvewellness.com/"
