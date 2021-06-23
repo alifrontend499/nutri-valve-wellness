@@ -15,8 +15,8 @@ export default class HealthMeterStep4 extends Component {
 
         // state
         this.state = {
-            smoking:  -1,
-            alcoholConsumption: -1,
+            smoking: "never",
+            alcoholConsumption: "never",
             sleepDuration: '6-disturbed',
             dailyActivityLevel: 'sedentary',
         }
@@ -78,7 +78,7 @@ export default class HealthMeterStep4 extends Component {
                                         onChange={this.handleSmokingChange}>
                                         <option disabled value="-1">How Often Do You Smoke?</option>
                                         <option value="never" >Never</option>
-                                        <option value="quited" >QUITED</option> 
+                                        <option value="quited" >QUITED</option>
                                         <option value="aweek" >FEW TIMES A WEEK</option>
                                         <option value="morethen2timeaday" >MORE THAN 2 TIMES A DAY</option>
                                     </select>
@@ -98,7 +98,7 @@ export default class HealthMeterStep4 extends Component {
                                         onChange={this.handleSmokingChange}>
                                         <option disabled value="-1">How Often Do You Consume Alcohol?</option>
                                         <option value="never" >Never</option>
-                                        <option value="daily" >Daily</option> 
+                                        <option value="daily" >Daily</option>
                                         <option value="occasionally" >Occasionally</option>
                                         <option value="year" >Quited</option>
                                     </select>
@@ -120,7 +120,7 @@ export default class HealthMeterStep4 extends Component {
                                         defaultValue={state.sleepDuration}
                                         onChange={this.handleSleepDurationChange}>
                                         <option disabled>Duration Of Sleep:</option>
-                                        <option value="6-disturbed" >≤ 6 hours disturbed sleep</option> 
+                                        <option value="6-disturbed" >≤ 6 hours disturbed sleep</option>
                                         <option value="6-peaceful" >≤ 6 hours peaceful sleep</option>
                                         <option value="6-9" >6 – 9 hours</option>
                                         <option value="10-0" >≥ 10 hours</option>
@@ -145,7 +145,7 @@ export default class HealthMeterStep4 extends Component {
                                         <option value="moderately" >Moderately Active Lifestyle</option>
                                         <option value="active" >Active Lifestyle</option>
                                         <option value="extra" >Extra Active Lifestyle</option>
-                                        
+
                                     </select>
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconGender} fluid width={17} />

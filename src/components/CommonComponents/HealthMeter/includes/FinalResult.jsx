@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import HTMLparser from "html-react-parser";
 // styles
 import '../styles/health-meter-styles.css'
 
@@ -50,7 +51,7 @@ export default class FinalResult extends Component {
 
     }
 
-    render() { 
+    render() {
         const result = this.state.result && this.state.result
         // const meter = this.props.meter
         return (
@@ -71,10 +72,10 @@ export default class FinalResult extends Component {
                                             <Col xs={12} lg={7} className="st-heading-wrapper pb-3 pb-lg-4 mx-auto text-center">
                                                 <p className="st-heading heading-sm font-family-secondary-bold mb-2 mb-lg-4">
                                                     Results
-                                            </p>
+                                                </p>
                                                 <p className="desc font-size-17 st-text-gray mb-3">
                                                     Know your ideal weight, BMI & a score describing your current health status curated by the nutritionists at
-                                            </p>
+                                                </p>
                                             </Col>
 
                                             {/* CONTENT SEC */}
@@ -93,7 +94,7 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 What Your BMI Says About Your Health
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
                                                                 {result.weight && result.weight.message}
                                                             </p>
@@ -115,7 +116,7 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 What Body Shape Says About Your Health
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
                                                                 {result.body}
                                                             </p>
@@ -137,7 +138,7 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 Your Health Issues
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
                                                                 {result.health}
                                                             </p>
@@ -159,10 +160,10 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 Health Effects of Cigarette Smoking
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima accusamus molestiae aliquid obcaecati aspernatur hic quisquam deleniti optio reiciendis! Beatae dicta eligendi a eius non consectetur fugit quasi eos nam?
-                                                        </p>
+                                                            {HTMLparser(`${result.smoking}`)}
+                                                            </p>
                                                         </div>
                                                     </Col>
                                                 </div>
@@ -181,7 +182,7 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 Alcohol's Effects on the Body
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
                                                                 {result.alcohol}
                                                             </p>
@@ -203,7 +204,7 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 How sleep habits effects on your health
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
                                                                 {result.sleep}
                                                             </p>
@@ -225,10 +226,10 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 Lifestyle :- Daily acivity level
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                                                Congratulate your self for taking a step towards healthy lifestyle. Staying away from alcohol consumption can keep you away from indigestion issues. Also you are at lower risk of developing heart diseases, obesity and better cholesterol levels.
-                                                        </p>
+                                                                {result.activity}
+                                                            </p>
                                                         </div>
                                                     </Col>
                                                 </div>
@@ -247,10 +248,10 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 How much water you should you drink per day
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                                                Congratulate your self for taking a step towards healthy lifestyle. Staying away from alcohol consumption can keep you away from indigestion issues. Also you are at lower risk of developing heart diseases, obesity and better cholesterol levels.
-                                                        </p>
+                                                                {HTMLparser(`${result.water}`)}
+                                                            </p>
                                                         </div>
                                                     </Col>
                                                 </div>
@@ -269,7 +270,7 @@ export default class FinalResult extends Component {
                                                         <div className="inner">
                                                             <p className="head st-heading heading-xs font-family-secondary-medium mb-2">
                                                                 Consumption of fruit and veg per day
-                                                        </p>
+                                                            </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
                                                                 {result.fruits}
                                                             </p>
