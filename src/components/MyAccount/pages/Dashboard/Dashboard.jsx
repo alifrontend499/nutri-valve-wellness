@@ -106,13 +106,7 @@ export default class Dashboard extends Component {
                                                 <li className="w-100 menu-item">
                                                     <Link to="my-account" className="menu-link d-flex text-decoration-none border-bottom py-2 px-3">
                                                         <FeatherIcon icon="chevron-right" size="17" className="mt-1" />
-                                                        <span className="ml-2">Account Information</span>
-                                                    </Link>
-                                                </li>
-                                                <li className="w-100 menu-item">
-                                                    <Link to="my-account" className="menu-link d-flex text-decoration-none border-bottom py-2 px-3">
-                                                        <FeatherIcon icon="chevron-right" size="17" className="mt-1" />
-                                                        <span className="ml-2">Personal Information</span>
+                                                        <span className="ml-2">Session</span>
                                                     </Link>
                                                 </li>
                                             </ul>

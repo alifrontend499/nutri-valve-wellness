@@ -112,7 +112,7 @@ export async function getBMIResult(
 // get posts
 export async function bookConsultation(name, email, dob, phone) {
     if (name && email && dob && phone) {
-        const returnedDetails = await axios.post(apiUrl + `/book-consulation`, {
+        const returnedDetails = await axios.post(apiUrl + `book-consulation`, {
             name,
             email,
             dob,
