@@ -26,9 +26,15 @@ import Recipes from "components/Recipes/Recipes";
 import RecipeDetails from "components/Recipes/pages/RecipeDetails/RecipeDetails";
 
 import HealthMeterPage from "components/HealthMeterPage/HealthMeterPage";
-import MyAccount from "components/MyAccount/MyAccount";
 import FinalResult from "components/CommonComponents/HealthMeter/includes/FinalResult";
 import PageNotFound from "components/PageNotFound/PageNotFound";
+
+import MyAccount from "components/MyAccount/MyAccount";
+
+import LoginInfo from "components/MyAccount/pages/LoginInformation/LoginInformation";
+import PersonalInfo from "components/MyAccount/pages/PersonalInformation/PersonalInformation";
+import Sessions from "components/MyAccount/pages/Sessions/Sessions";
+import DietPlan from "components/MyAccount/pages/DietPlan/DietPlan";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -69,11 +75,36 @@ export default class AllRoutes extends Component {
 
                 <Route path="/health-meter" component={HealthMeterPage} />
                 <Route path="/bmi-result" component={FinalResult} />
-                
+
                 <ProtectedRoute
                     authLoading={props.authLoading}
-                    path="/my-account"
+                    path="/my-account/"
                     component={MyAccount}
+                    exact
+                />
+                <ProtectedRoute
+                    authLoading={props.authLoading}
+                    path="/my-account/edit/login-info"
+                    component={LoginInfo}
+                    exact
+                />
+                <ProtectedRoute
+                    authLoading={props.authLoading}
+                    path="/my-account/edit/personal-info"
+                    component={PersonalInfo}
+                    exact
+                />
+                <ProtectedRoute
+                    authLoading={props.authLoading}
+                    path="/my-account/sessions"
+                    component={Sessions}
+                    exact
+                />
+                <ProtectedRoute
+                    authLoading={props.authLoading}
+                    path="/my-account/diet-plan"
+                    component={DietPlan}
+                    exact
                 />
 
                 <Route path="**" component={PageNotFound} />

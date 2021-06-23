@@ -70,8 +70,7 @@ class Login extends Component {
 
                     // getting user details
                     getUserInfo(res.data.token.toString()).then(res => {
-                        console.log("user details ", res);
-                        console.log("user response ", userRes);
+                        const moreUserDetails = res.data
 
                         this.setState({
                             loginBtnDisabled: true,
@@ -87,8 +86,12 @@ class Login extends Component {
                             // SAVING TOKEN TO THE STORE
                             const currentUser = {
                                 userToken: userRes.data.token.toString(),
-                                userId: 1,
-                                userName: 'Super Admin',
+                                userId: moreUserDetails && moreUserDetails.id,
+                                userName: moreUserDetails && moreUserDetails.name,
+                                isVerified: moreUserDetails && moreUserDetails.isVerified,
+                                status: moreUserDetails && moreUserDetails.status,
+                                profilePic: moreUserDetails && moreUserDetails.profilePic,
+
                             }
 
                             // storing details to global store
@@ -99,7 +102,7 @@ class Login extends Component {
                             // saving user details to the local storage
                             saveToLocalStorage("__uu_dd", JSON.stringify(currentUser))
                             // reload
-                            window.location.reload()
+                            // window.location.reload()
                         }, 1000);
                     }).catch(err => {
                         console.log('error while fetching user details ', err.message);

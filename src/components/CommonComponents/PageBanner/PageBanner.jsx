@@ -24,7 +24,7 @@ export default class PageBanner extends Component {
     }
 
     render() {
-        const { bannerImgPath, pageTitle, lastLinkName, lastLinkPath } = this.props;
+        const { bannerImgPath, pageTitle, lastLinkName, lastLinkPath, lastLinkName2, lastLinkPath2 } = this.props;
         return (
             <section id="page-banner" style={{ backgroundImage: `url(${bannerImgPath ? bannerImgPath : this.defaultBannerImgPath})` }}>
                 <Container fluid className="px-0">
@@ -41,6 +41,13 @@ export default class PageBanner extends Component {
                                         <li>
                                             <Link to={lastLinkPath} className="font-weight-600 text-decoration-none st-text-dark font-size-17">{lastLinkName}</Link>
                                         </li>
+                                        {
+                                            (lastLinkPath2 && lastLinkName2) && (
+                                                <li>
+                                                    <Link to={lastLinkPath2} className="font-weight-600 text-decoration-none st-text-dark font-size-17">{lastLinkName2}</Link>
+                                                </li>
+                                            )
+                                        }
                                     </ul>
                                 </div>
                             </div>

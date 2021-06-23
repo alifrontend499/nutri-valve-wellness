@@ -10,7 +10,7 @@
     .ma-leftbar {
         width: 285px;
     }
-    
+
     .ma-content {
         margin-left: 285px;
         width: calc(100% - 285px);
@@ -46,10 +46,8 @@
     color: var(--textLightColor);
 }
 
-
 /* MA DASHBOARD CONTENT */
 .ma-content.dashboard-content {
-    
 }
 .ma-content.dashboard-content .frac > .inner {
     transition: var(--defaultTransitionTiming);
@@ -60,5 +58,12 @@
 
 /* MA LOGIN INFORMATION CONTENT */
 .ma-content.login-information-content {
-    
+}
+
+/* diet plan */
+.diet-plan-container {
+}
+.diet-plan-container ul {
+    list-style: disc;
+    padding-left: 20px;
 }
