@@ -68,10 +68,12 @@ class Login extends Component {
                 userLogin(values.loginEmail, values.loginPassword).then(res => {
                     const userRes = res
 
+                    
                     // getting user details
                     getUserInfo(res.data.token.toString()).then(res => {
                         const moreUserDetails = res.data
-
+                        console.log("moreUserDetails ", moreUserDetails);
+                        
                         this.setState({
                             loginBtnDisabled: true,
                             loginBtnLoading: false,
@@ -91,7 +93,7 @@ class Login extends Component {
                                 isVerified: moreUserDetails && moreUserDetails.isVerified,
                                 status: moreUserDetails && moreUserDetails.status,
                                 profilePic: moreUserDetails && moreUserDetails.profilePic,
-
+                                activeSession: moreUserDetails && moreUserDetails.activeSession,
                             }
 
                             // storing details to global store
@@ -102,7 +104,7 @@ class Login extends Component {
                             // saving user details to the local storage
                             saveToLocalStorage("__uu_dd", JSON.stringify(currentUser))
                             // reload
-                            // window.location.reload()
+                            window.location.reload()
                         }, 1000);
                     }).catch(err => {
                         console.log('error while fetching user details ', err.message);
