@@ -54,7 +54,7 @@ class AccountLeftMenu extends Component {
                                         <span className="ml-2">Dashboard</span>
                                     </Link>
                                 </li>
-                                <li className="w-100 menu-item">
+                                {/* <li className="w-100 menu-item">
                                     <NavLink activeClassName="active"
                                         to="/my-account/edit/login-info"
                                         className="menu-link d-flex text-decoration-none border-bottom py-2 px-3">
@@ -69,7 +69,7 @@ class AccountLeftMenu extends Component {
                                         <FeatherIcon icon="chevron-right" size="17" className="mt-1" />
                                         <span className="ml-2">Personal Information</span>
                                     </NavLink>
-                                </li>
+                                </li> */}
                                 <li className="w-100 menu-item">
                                     <NavLink activeClassName="active"
                                         to="/my-account/sessions"

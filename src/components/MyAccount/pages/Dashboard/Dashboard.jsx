@@ -82,29 +82,29 @@ class Dashboard extends Component {
                                     <div className="inner p-3 p-lg-5">
                                         <div className="st-heading-wrapper mb-3 mb-lg-4">
                                             <p className="st-heading heading-xs st-text-primary font-family-sec font-family-secondary-medium">Welcome {this.props.currentUser.userName}</p>
-                                            <p className="desc mt-1">Welcome to your customer area. Use left menu to navigate around.</p>
+                                            {/* <p className="desc mt-1">Welcome to your customer area. Use left menu to navigate around.</p> */}
                                         </div>
 
                                         <div className="ma-content-main">
                                             {/* frac */}
-                                            <div className="frac mb-3">
+                                            {/* <div className="frac mb-3">
                                                 <Link to="/my-account/edit/login-info" className="inner d-flex align-items-center border bg-white text-decoration-none st-text-dark p-2 px-3">
                                                     <div className="text-sec media-body">
                                                         <p className="head font-family-secondary-medium font-size-20 st-text-secondary mb-2">Login Information</p>
                                                         <p className="desc font-family-secondary-light">Welcome to your customer area. Use left menu to navigate around.</p>
                                                     </div>
                                                 </Link>
-                                            </div>
+                                            </div> */}
 
                                             {/* frac */}
-                                            <div className="frac mb-3">
+                                            {/* <div className="frac mb-3">
                                                 <Link to="/my-account/edit/personal-info" className="inner d-flex align-items-center border bg-white text-decoration-none st-text-dark p-2 px-3">
                                                     <div className="text-sec media-body">
                                                         <p className="head font-family-secondary-medium font-size-20 st-text-secondary mb-2">Personal Information</p>
                                                         <p className="desc font-family-secondary-light">Edit Your personal Information here.</p>
                                                     </div>
                                                 </Link>
-                                            </div>
+                                            </div> */}
 
                                             {/* frac */}
                                             <div className="frac mb-3">

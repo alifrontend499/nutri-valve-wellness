@@ -17,12 +17,14 @@ import { connect } from 'react-redux';
 
 // account left menu
 import AccountLeftMenu from '../../includes/AccountLeftMenu';
+import HTMLparser from "html-react-parser";
 
 class Sessions extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isMobileMenuVisible: false
+            isMobileMenuVisible: false,
+            data: ''
         }
 
         // FUNCTIONS BINDINGS
@@ -30,6 +32,7 @@ class Sessions extends Component {
     }
 
     componentDidMount() {
+        this.setState({ data: this.props.currentUser.activeSession })
         console.log("current User ", this.props.currentUser);
     }
 
@@ -46,6 +49,7 @@ class Sessions extends Component {
 
 
     render() {
+        const { data } = this.state;
         return (
             <>
                 {/* HEADER */}
@@ -84,11 +88,25 @@ class Sessions extends Component {
                                 <div className="inner p-3 p-lg-5">
                                     <div className="st-heading-wrapper mb-3 mb-lg-4">
                                         <p className="st-heading heading-xs st-text-primary font-family-sec font-family-secondary-medium">Sessions</p>
-                                        <p className="desc mt-1">Check your ongoing sessions.</p>
+                                        <p className="desc mt-1">
+                                            {HTMLparser(`${data && data.title}`)}</p>
                                     </div>
 
                                     <div className="sessions-container d-flex flex-wrap">
-                                        
+                                        <table class="table">
+                                            <tr>
+                                                <th>Session Start Date</th>
+                                                <td>{data.startDate}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Session End Date</th>
+                                                <td>{data.sessionEndDate}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Session Status</th>
+                                                <td>{data.sessionStatus}</td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

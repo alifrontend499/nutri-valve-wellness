@@ -18,12 +18,14 @@ import { connect } from 'react-redux';
 
 // account left menu
 import AccountLeftMenu from '../../includes/AccountLeftMenu';
+import HTMLparser from "html-react-parser";
 
 class DietPlan extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isMobileMenuVisible: false
+            isMobileMenuVisible: false,
+            data: ""
         }
 
         // FUNCTIONS BINDINGS
@@ -31,6 +33,7 @@ class DietPlan extends Component {
     }
 
     componentDidMount() {
+        this.setState({data:this.props.currentUser.activeSession})
         console.log("current User ", this.props.currentUser);
     }
 
@@ -47,6 +50,7 @@ class DietPlan extends Component {
 
 
     render() {
+        const {data} = this.state;
         return (
             <>
                 {/* HEADER */}
@@ -85,43 +89,17 @@ class DietPlan extends Component {
                                 <div className="inner p-3 p-lg-5">
                                     <div className="st-heading-wrapper mb-3 mb-lg-4">
                                         <p className="st-heading heading-xs st-text-primary font-family-sec font-family-secondary-medium">Diet Plan</p>
-                                        <p className="desc mt-1">Make sure to follow your diet plan</p>
                                     </div>
 
                                     <div className="diet-plan-container d-flex flex-wrap">
                                         <div className="frac mb-2">
                                             <div className="st-heading-wrapper mb-3">
-                                                <p className="st-heading heading-xs font-family-secondary-medium mb-3">Homemade diet Plan</p>
+                                                <p className="st-heading heading-xs font-family-secondary-medium mb-3">{data && data.dietPlan && data.dietPlan.title}</p>
                                             </div>
                                             <p className="desc desc st-text-light font-size-15 mb-2">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum placeat labore, mollitia alias vero aspernatur facilis, perspiciatis fugit possimus sapiente explicabo vel, suscipit fugiat ullam odit porro a amet ipsam!
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum placeat labore, mollitia alias vero aspernatur facilis, perspiciatis fugit possimus sapiente explicabo vel, suscipit fugiat ullam odit porro a amet ipsam!
+                                            {HTMLparser(`${data && data.dietPlan && data.dietPlan.content}`)}
                                             </p>
-                                            <ul className="mb-2">
-                                                <li>
-                                                    follow step 1
-                                                </li>
-                                                <li>
-                                                    follow step 1 and 2
-                                                </li>
-                                                <li>
-                                                    follow step 1 and 2
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis est doloremque quasi et.
-                                                </li>
-                                                <li>
-                                                    autem repellendus impedit cupiditate corrupti. Sapiente harum deleniti accusantium obcaecati soluta. Sit veritatis at fugiat aliquam est!
-                                                </li>
-                                            </ul>
-                                            <p className="desc desc st-text-light font-size-15 mb-2">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum placeat labore, mollitia alias vero aspernatur facilis, perspiciatis fugit possimus sapiente explicabo vel, suscipit fugiat ullam odit porro a amet ipsam!
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum placeat labore, mollitia alias vero aspernatur facilis, perspiciatis fugit possimus sapiente explicabo vel, suscipit fugiat ullam odit porro a amet ipsam!
-                                            </p>
-                                            <p className="desc desc st-text-light font-size-15 mb-2">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum placeat labore, mollitia alias vero aspernatur facilis, perspiciatis fugit possimus sapiente explicabo vel, suscipit fugiat ullam odit porro a amet ipsam!
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum placeat labore, mollitia alias vero aspernatur facilis, perspiciatis fugit possimus sapiente explicabo vel, suscipit fugiat ullam odit porro a amet ipsam!
-                                            </p>
+                                            
                                         </div>
                                     </div>
                                 </div>
