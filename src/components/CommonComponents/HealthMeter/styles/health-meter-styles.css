@@ -14,12 +14,10 @@
     top: 10px;
 }
 
-
-
 @media screen and (min-width: 768px) {
     .heath-meter-final-result {
         width: 90%;
-    }    
+    }
 }
 .heath-meter-final-result .item:nth-child(even) {
     flex-direction: row-reverse;
@@ -29,4 +27,11 @@
     .heath-meter-final-result .item:nth-child(even) {
         flex-direction: row-reverse;
     }
+}
+
+#health-meter-main .loader {
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
 }

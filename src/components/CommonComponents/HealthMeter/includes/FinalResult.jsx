@@ -16,6 +16,8 @@ import {
 // import Header from 'components/CommonComponents/Header/Header'
 // import Footer from 'components/CommonComponents/Footer/Footer'
 
+import { Link } from 'react-router-dom';
+
 // images
 import bgImg from 'assets/images/health-meter-result/bg.jpg'
 import alcohalImg from 'assets/images/health-meter-result/alcohal-img.jpg'
@@ -162,7 +164,7 @@ export default class FinalResult extends Component {
                                                                 Health Effects of Cigarette Smoking
                                                             </p>
                                                             <p className="desc font-size-16 font-weight-600 st-text-gray">
-                                                            {HTMLparser(`${result.smoking}`)}
+                                                                {HTMLparser(`${result.smoking}`)}
                                                             </p>
                                                         </div>
                                                     </Col>
@@ -279,7 +281,7 @@ export default class FinalResult extends Component {
                                                 </div>
 
                                                 <Col xs={12} className="mb-3 mb-lg-4">
-                                                    <a href="#" className="btn st-btn st-btn-lg st-btn-primary font-weight-700">Back</a>
+                                                    <Link to="/health-meter" className="btn st-btn st-btn-lg st-btn-primary font-weight-700">Back</Link>
                                                 </Col>
                                             </Row>
                                         </React.Fragment>

@@ -58,11 +58,11 @@ export default class HealthMeterStep3 extends Component {
             <div className="step3">
                 {/* HEAD SEC */}
                 <div className="st-heading-wrapper pb-3 pb-lg-4">
-                    <p className="st-heading heading-sm font-family-secondary-bold border-bottom pb-3 pb-lg-4 mb-3 mb-lg-4">
-                        Step 3
+                    <p className="st-heading heading-xs2 font-family-secondary-bold border-bottom pb-3 pb-lg-4 mb-3 mb-lg-4">
+                        Health Meter - <span className="st-text-primary">Step 3</span>
                     </p>
                     <p className="desc st-text-gray">
-                        Do You Currently Suffer From Any Of The Mentioned Health Issues?
+                        Do you currently suffer from any of the mentioned health issues?
                     </p>
                 </div>
 
@@ -142,6 +142,20 @@ export default class HealthMeterStep3 extends Component {
                                         size="15" />
                                 </span>
                                 <span className="text ml-2 position-relative">Acidity</span>
+                            </label>
+
+                            <label className="st-checkbox d-flex mb-2">
+                                <input type="checkbox" name="health_issues" className="d-none"
+                                    checked={(state.healthIssue && state.healthIssue.find(item => item === 'none')) ? true : false}
+                                    value="none"
+                                    onChange={this.handleHealthIssueChange}
+                                />
+                                <span className="box align-items-center d-flex justify-content-center position-relative">
+                                    <FeatherIcon
+                                        icon="check"
+                                        size="15" />
+                                </span>
+                                <span className="text ml-2 position-relative">None</span>
                             </label>
                         </div>
                     </div>

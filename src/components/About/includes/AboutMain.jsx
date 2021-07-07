@@ -31,7 +31,8 @@ export default class AboutMain extends Component {
                                 <div className="st-heading-wrapper mb-3 mb-lg-4">
                                     <p className="st-line-heading line-secondary d-inline-block font-family-primary-bold st-text-secondary position-relative mb-2">About Us</p>
                                     <p className="st-heading heading-sm font-family-sec font-family-secondary-bold">
-                                        Dr. Nurvi Kanani
+                                        {/* Dr. Nurvi Kanani */}
+                                        About Company Info
                                     </p>
                                 </div>
 

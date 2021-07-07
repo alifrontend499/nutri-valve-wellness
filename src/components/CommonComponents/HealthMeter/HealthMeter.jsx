@@ -12,7 +12,8 @@ import {
     Tab,
     Col,
     Container,
-    Row
+    Row,
+    Spinner
 } from 'react-bootstrap'
 
 // includes
@@ -45,7 +46,8 @@ class HealthMeter extends Component {
             step3Data: {},
             step4Data: {},
             step5Data: {},
-            result: {}
+            result: {},
+            sectionLoading: false
         }
 
         // tabs refs
@@ -164,7 +166,10 @@ class HealthMeter extends Component {
 
     // getting result
     handleGetResult() {
-        this.setState({ result: '' });
+        this.setState({
+            result: '',
+            sectionLoading: true
+        });
         const step1DataList = this.state.step1Data
 
         const step2DataList = this.state.step2Data
@@ -175,7 +180,7 @@ class HealthMeter extends Component {
 
         const step5DataList = this.state.step5Data
 
-        
+
         getBMIResult(
             // localStorage.getItem('commanToken'),
             this.props.commonToken,
@@ -190,7 +195,13 @@ class HealthMeter extends Component {
             step4DataList.smoking,
             step4DataList.dailyActivityLevel,
         ).then(res => {
-            this.setState({ result: res.data });
+            // scrolling window to top
+            window.scrollTo(0, 0)
+
+            this.setState({
+                result: res.data,
+                sectionLoading: false
+            });
         });
     }
 
@@ -227,7 +238,7 @@ class HealthMeter extends Component {
                 <Container>
                     <Row className="page-health-meter ST_def-pad-TB">
                         <Col xs={12} md={10} lg={8} className={`${this.props.fromHeader ? "ml-auto px-0" : "mx-auto"}`}>
-                            <div id="health-meter-main">
+                            <div id="health-meter-main" className="position-relative">
                                 <div className="health-meter-main-inner bg-white px-3 px-lg-4 py-4 py-lg-5">
                                     <Tab.Container
                                         id="st-auth-tabs"
@@ -346,6 +357,14 @@ class HealthMeter extends Component {
                                         </Tab.Content>
                                     </Tab.Container>
                                 </div>
+
+                                {
+                                    state.sectionLoading ? (
+                                        <div className="loader position-absolute h-100 w-100 d-flex align-items-center justify-content-center">
+                                            <Spinner animation="border" />
+                                        </div>
+                                    ) : null
+                                }
                             </div>
                         </Col>
                     </Row>

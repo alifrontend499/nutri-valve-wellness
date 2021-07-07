@@ -32,7 +32,7 @@ export default class About extends Component {
 
                     <AboutMain />
 
-                    <AboutSec3 />
+                    {/* <AboutSec3 /> */}
 
                     {/* <Footer /> */}
                 </section>

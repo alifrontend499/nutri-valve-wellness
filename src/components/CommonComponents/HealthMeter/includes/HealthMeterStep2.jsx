@@ -50,11 +50,11 @@ export default class HealthMeterStep2 extends Component {
             <div className="step2">
                 {/* HEAD SEC */}
                 <div className="st-heading-wrapper pb-3 pb-lg-4">
-                    <p className="st-heading heading-sm font-family-secondary-bold border-bottom pb-2 pb-lg-4 mb-2 mb-lg-4">
-                        Health Meter
+                    <p className="st-heading heading-xs2 font-family-secondary-bold border-bottom pb-2 pb-lg-4 mb-2 mb-lg-4">
+                        Health Meter - <span className="st-text-primary">Step 2</span>
                     </p>
                     <p className="desc st-text-gray">
-                        Select Your Body Type
+                        Select your body type
                     </p>
                 </div>
 
@@ -67,7 +67,7 @@ export default class HealthMeterStep2 extends Component {
                             // FOR MALE
                             <div className="for-men d-flex flex-wrap justify-content-center">
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "apple"}
                                         value="apple"
@@ -79,7 +79,7 @@ export default class HealthMeterStep2 extends Component {
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "hourglass"}
                                         value="hourglass"
@@ -91,7 +91,7 @@ export default class HealthMeterStep2 extends Component {
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "pear"}
                                         value="pear"
@@ -115,7 +115,7 @@ export default class HealthMeterStep2 extends Component {
                                 </label> */}
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "banana"}
                                         value="banana"
@@ -131,7 +131,7 @@ export default class HealthMeterStep2 extends Component {
                             // FOR FEMALE
                             <div className="for-women d-flex flex-wrap justify-content-center">
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "apple"}
                                         value="apple"
@@ -144,7 +144,7 @@ export default class HealthMeterStep2 extends Component {
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "hourglass"}
                                         value="hourglass"
@@ -157,7 +157,7 @@ export default class HealthMeterStep2 extends Component {
                                 </label>
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "pear"}
                                         value="pear"
@@ -183,7 +183,7 @@ export default class HealthMeterStep2 extends Component {
                                 </label> */}
 
                                 {/* radio */}
-                                <label className="st-img-radio text-center mx-1 mb-2" style={{width: 115}}>
+                                <label className="st-img-radio text-center mx-1 mb-2" style={{ width: 115 }}>
                                     <input type="radio" name="body_type" className="d-none"
                                         checked={state.bodyType == "banana"}
                                         value="banana"

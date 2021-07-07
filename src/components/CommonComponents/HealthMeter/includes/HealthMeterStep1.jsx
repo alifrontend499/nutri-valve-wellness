@@ -74,7 +74,7 @@ export default class HealthMeterStep1 extends Component {
         this.setState({ weightGm: event.target.value });
     }
 
-    dropdowNumbers = (n, name = '',start = 1) => {
+    dropdowNumbers = (n, name = '', start = 1) => {
         let option = [];
         for (let i = start; i <= n; i++) {
             option.push(<option value={i} key={i}>{i + ' ' + name}</option>);
@@ -90,13 +90,13 @@ export default class HealthMeterStep1 extends Component {
             <div className="step1">
                 {/* HEAD SEC */}
                 <div className="st-heading-wrapper pb-3 pb-lg-4">
-                    <p className="st-heading heading-sm font-family-secondary-bold border-bottom st-border-default pb-2 pb-lg-4 mb-2 mb-lg-4">
-                        Health Meter
+                    <p className="st-heading heading-xs2 font-family-secondary-bold border-bottom st-border-default pb-2 pb-lg-4 mb-2 mb-lg-4">
+                        Health Meter - <span className="st-text-primary">Step 1</span>
                     </p>
                     <p className="desc st-text-gray">
                         Know your ideal weight, BMI & a score describing your current health status
-                        curated by the nutritionists at
-                        </p>
+                        curated by the nutritionists at <a href="http://www.nutrivalvewellness.com/" target="_blank" rel="noreferrer" className="st-text-primary">www.nutrivalvewellness.com</a>
+                    </p>
                 </div>
 
                 {/* FORM SEC */}
@@ -170,7 +170,7 @@ export default class HealthMeterStep1 extends Component {
                                         defaultValue={state.heightIn}
                                         onChange={this.handleHeightInChange}>
                                         <option disabled>Select</option>
-                                        {this.dropdowNumbers(10, "(in)",0)}
+                                        {this.dropdowNumbers(10, "(in)", 0)}
                                     </select>
                                 </div>
                             </div>
@@ -180,24 +180,36 @@ export default class HealthMeterStep1 extends Component {
                             <div className="form-container d-flex border st-border-default">
                                 {/* field */}
                                 <div className="st-form w-50 pr-2 position-relative with-icon-left has-right-border">
-                                    <select name="" id="" className="form-control border-0"
+                                    {/* <select name="" id="" className="form-control border-0"
                                         defaultValue={state.weightKg}
                                         onChange={this.handleWeightKgChange}>
                                         <option value="0" disabled>Kg</option>
                                         {this.dropdowNumbers(150, 'kg')}
-                                    </select>
+                                    </select> */}
+                                    <input
+                                        type="number"
+                                        className="form-control hide-number-arrows border-0"
+                                        placeholder="kg"
+                                        defaultValue={state.weightKg}
+                                        onChange={this.handleWeightKgChange} />
                                     <div className="icon d-inline-block position-absolute">
                                         <Image src={iconKg} fluid width={17} />
                                     </div>
                                 </div>
                                 {/* field */}
                                 <div className="st-form w-50 pl-2 position-relative">
-                                    <select name="" id="" className="form-control border-0"
+                                    {/* <select name="" id="" className="form-control border-0"
                                         defaultValue={state.weightGm}
                                         onChange={this.handleWeightGmChange}>
                                         <option disabled>gm</option>
                                         {this.dropdowNumbers(100, 'gm')}
-                                    </select>
+                                    </select> */}
+                                    <input
+                                        type="number"
+                                        className="form-control hide-number-arrows border-0"
+                                        placeholder="gm"
+                                        defaultValue={state.weightGm}
+                                        onChange={this.handleWeightGmChange} />
                                 </div>
                             </div>
                         </div>

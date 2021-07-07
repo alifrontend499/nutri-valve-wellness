@@ -21,7 +21,8 @@
     padding-left: 20px;
 }
 .program-weight-loss-challenge .nd-sec .rt-sec ol > li {
-    color: gray !important;
+    /* color: gray !important; */
+    color: var(--textLightColor);
     margin-bottom: .5rem!important;
 }
 

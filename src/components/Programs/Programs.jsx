@@ -123,7 +123,7 @@ class Programs extends Component {
                                             {/* header */}
                                             <Col xs={12} className="st-heading-wrapper text-center mb-3 mb-lg-4">
                                                 <p className="st-heading heading-xs font-family-secondary-bold mb-3 mb-lg-4">{post && post.title}</p>
-                                                <div className="desc font-size-15 st-text-gray">
+                                                <div className="desc font-size-15 st-text-light">
                                                     {
                                                         (post && post.content) &&
                                                         HTMLparser(`${post.content}`)
@@ -146,13 +146,13 @@ class Programs extends Component {
                                                         {
                                                             post.features && HTMLparser(post.features)
                                                         }
-                                                        {/* <p className="desc st-text-gray mb-2">1. Customised, Easy and Effective Diet Plans </p>
-                                                        <p className="desc st-text-gray mb-2">2. Weight, Inch and Photo Trackers</p>
-                                                        <p className="desc st-text-gray mb-2">3. Arogya Access</p>
-                                                        <p className="desc st-text-gray mb-2">4. Periodic Calls with your nutritionist</p>
-                                                        <p className="desc st-text-gray mb-2">5. Unlimited queries on email</p>
-                                                        <p className="desc st-text-gray mb-2">6. 1500+ Healthy NW Recipes</p>
-                                                        <p className="desc st-text-gray mb-2">7. NW Wallet & Reward Points</p> */}
+                                                        {/* <p className="desc st-text-light mb-2">1. Customised, Easy and Effective Diet Plans </p>
+                                                        <p className="desc st-text-light mb-2">2. Weight, Inch and Photo Trackers</p>
+                                                        <p className="desc st-text-light mb-2">3. Arogya Access</p>
+                                                        <p className="desc st-text-light mb-2">4. Periodic Calls with your nutritionist</p>
+                                                        <p className="desc st-text-light mb-2">5. Unlimited queries on email</p>
+                                                        <p className="desc st-text-light mb-2">6. 1500+ Healthy NW Recipes</p>
+                                                        <p className="desc st-text-light mb-2">7. NW Wallet & Reward Points</p> */}
                                                     </div>
                                                 </Col>
                                             </Col>

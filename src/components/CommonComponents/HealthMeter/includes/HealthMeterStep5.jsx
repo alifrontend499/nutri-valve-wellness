@@ -43,8 +43,8 @@ export default class HealthMeterStep5 extends Component {
             <div className="step4">
                 {/* HEAD SEC */}
                 <div className="st-heading-wrapper pb-3 pb-lg-4">
-                    <p className="st-heading heading-sm font-family-secondary-bold border-bottom pb-3 pb-lg-4 mb-3 mb-lg-4">
-                        Step 5 (Final Step)
+                    <p className="st-heading heading-xs2 font-family-secondary-bold border-bottom pb-3 pb-lg-4 mb-3 mb-lg-4">
+                        Health Meter - <span className="st-text-primary">Final Step</span>
                     </p>
                     <p className="desc st-text-gray">
                         Know your ideal weight, BMI & a score describing your current health status
@@ -63,7 +63,7 @@ export default class HealthMeterStep5 extends Component {
                                     <select className="form-control border-0"
                                         defaultValue={state.waterConsumption}
                                         onChange={this.handleWaterConsumptionChange}>
-                                        <option disabled>Consumption Of Water Per Day:</option>
+                                        <option disabled>Consumption of water per day:</option>
                                         <option value="3" >{'< 4 glasses'}</option>
                                         <option value="6" >{'4 - 6 glasses'}</option>
                                         <option value="12" >{'6 - 12 glasses'}</option>
@@ -83,7 +83,7 @@ export default class HealthMeterStep5 extends Component {
                                     <select className="form-control border-0"
                                         defaultValue={state.fruitConsumption}
                                         onChange={this.handleFruitConsumptionChange}>
-                                        <option disabled>Consumption Of Fruits & Vegetables Per Day:</option>
+                                        <option disabled>Consumption of fruits & vegetables per day:</option>
                                         <option value="none">None</option>
                                         <option value="2" >{'1- 2 servings'}</option>
                                         <option value="4" >{'3 - 4 servings'}</option>
@@ -113,11 +113,8 @@ export default class HealthMeterStep5 extends Component {
 
                             setTimeout(() => {
                                 // final result
-                                props.getResult()                            
+                                props.getResult()
                             }, 200);
-
-                            // opening step 2
-                            this.props.openStep1Tab(ev)
                         }}
                     >Get Results</button>
                 </div>

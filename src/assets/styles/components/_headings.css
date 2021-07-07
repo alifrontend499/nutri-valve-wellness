@@ -57,6 +57,7 @@
 @media screen and (min-width: 992px) {
     .st-heading.heading-sm {
         font-size: 40px;
+        line-height: 40px;
     }
 }
 
