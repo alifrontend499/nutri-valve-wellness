@@ -13,7 +13,8 @@ import {
     Col,
     Container,
     Row,
-    Spinner
+    Spinner,
+    Modal
 } from 'react-bootstrap'
 
 // includes
@@ -23,14 +24,7 @@ import HealthMeterStep3 from './includes/HealthMeterStep3'
 import HealthMeterStep4 from './includes/HealthMeterStep4'
 import HealthMeterStep5 from './includes/HealthMeterStep5'
 
-
-import oneMeter from 'assets/images/icons/1.jpg';
-import twoMeter from 'assets/images/icons/2.jpg';
-import threeMeter from 'assets/images/icons/3.jpg';
-import fourMeter from 'assets/images/icons/4.jpg';
-
 import { getBMIResult } from 'utlis/apis/API_common';
-import FinalResult from './includes/FinalResult'
 
 // redux
 import { connect } from 'react-redux';
@@ -47,7 +41,9 @@ class HealthMeter extends Component {
             step4Data: {},
             step5Data: {},
             result: {},
-            sectionLoading: false
+            sectionLoading: false,
+
+            userDetailsModalVisibility: false
         }
 
         // tabs refs
@@ -63,6 +59,10 @@ class HealthMeter extends Component {
         this.openStep3Tab = this.openStep3Tab.bind(this)
         this.openStep4Tab = this.openStep4Tab.bind(this)
         this.openStep5Tab = this.openStep5Tab.bind(this)
+
+        this.handleModalOpening = this.handleModalOpening.bind(this)
+        this.handleModalClosing = this.handleModalClosing.bind(this)
+        this.onModalClose = this.onModalClose.bind(this)
 
         // getting data | one
         this.gettingDataFromStep1 = this.gettingDataFromStep1.bind(this)
@@ -220,6 +220,29 @@ class HealthMeter extends Component {
         }
     }
 
+    // opening modal
+    handleModalOpening = ev => {
+        ev.preventDefault()
+        this.setState({
+            userDetailsModalVisibility: true
+        })
+    }
+
+    // closing modal
+    handleModalClosing = ev => {
+        ev.preventDefault()
+        this.setState({
+            userDetailsModalVisibility: false
+        })
+    }
+
+    // execute when modal closes
+    onModalClose = () => {
+        this.setState({
+            userDetailsModalVisibility: false
+        })
+    }
+
     render() {
         const state = this.state;
         const props = this.props;
@@ -235,140 +258,191 @@ class HealthMeter extends Component {
                     state: { result }
                 }} />
             ) : (
-                <Container>
-                    <Row className="page-health-meter ST_def-pad-TB">
-                        <Col xs={12} md={10} lg={8} className={`${this.props.fromHeader ? "ml-auto px-0" : "mx-auto"}`}>
-                            <div id="health-meter-main" className="position-relative">
-                                <div className="health-meter-main-inner bg-white px-3 px-lg-4 py-4 py-lg-5">
-                                    <Tab.Container
-                                        id="st-auth-tabs"
-                                        defaultActiveKey="step1"
-                                        mountOnEnter={true}
-                                        unmountOnExit={true}>
-                                        {/* tab links */}
-                                        <Nav variant="tabs" className='d-none'>
-                                            {/* nav item : Step 1 */}
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="step1" ref={tab => this.step1Ref = tab}>Step 1</Nav.Link>
-                                            </Nav.Item>
 
-                                            {/* nav item : Step 2 */}
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="step2" ref={tab => this.step2Ref = tab}>Step 2</Nav.Link>
-                                            </Nav.Item>
+                <React.Fragment>
+                    <Container>
+                        <Row className="page-health-meter ST_def-pad-TB">
+                            <Col xs={12} md={10} lg={8} className={`${this.props.fromHeader ? "ml-auto px-0" : "mx-auto"}`}>
+                                <div id="health-meter-main" className="position-relative">
+                                    <div className="health-meter-main-inner bg-white px-3 px-lg-4 py-4 py-lg-5">
+                                        <Tab.Container
+                                            id="st-auth-tabs"
+                                            defaultActiveKey="step1"
+                                            mountOnEnter={true}
+                                            unmountOnExit={true}>
+                                            {/* tab links */}
+                                            <Nav variant="tabs" className='d-none'>
+                                                {/* nav item : Step 1 */}
+                                                <Nav.Item>
+                                                    <Nav.Link eventKey="step1" ref={tab => this.step1Ref = tab}>Step 1</Nav.Link>
+                                                </Nav.Item>
 
-                                            {/* nav item : Step 3 */}
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="step3" ref={tab => this.step3Ref = tab}>Step 3</Nav.Link>
-                                            </Nav.Item>
+                                                {/* nav item : Step 2 */}
+                                                <Nav.Item>
+                                                    <Nav.Link eventKey="step2" ref={tab => this.step2Ref = tab}>Step 2</Nav.Link>
+                                                </Nav.Item>
 
-                                            {/* nav item : Step 4 */}
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="step4" ref={tab => this.step4Ref = tab}>Step 4</Nav.Link>
-                                            </Nav.Item>
+                                                {/* nav item : Step 3 */}
+                                                <Nav.Item>
+                                                    <Nav.Link eventKey="step3" ref={tab => this.step3Ref = tab}>Step 3</Nav.Link>
+                                                </Nav.Item>
 
-                                            {/* nav item : Step 5 */}
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="step5" ref={tab => this.step5Ref = tab}>Step 5</Nav.Link>
-                                            </Nav.Item>
-                                        </Nav>
+                                                {/* nav item : Step 4 */}
+                                                <Nav.Item>
+                                                    <Nav.Link eventKey="step4" ref={tab => this.step4Ref = tab}>Step 4</Nav.Link>
+                                                </Nav.Item>
 
-                                        {/* tab content */}
-                                        <Tab.Content>
-                                            {/* tab page : step1 */}
-                                            <Tab.Pane eventKey="step1">
-                                                <HealthMeterStep1
-                                                    openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                    openStep2Tab={(ev) => this.openStep2Tab(ev)}
-                                                    openStep3Tab={(ev) => this.openStep3Tab(ev)}
-                                                    openStep4Tab={(ev) => this.openStep4Tab(ev)}
-                                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
+                                                {/* nav item : Step 5 */}
+                                                <Nav.Item>
+                                                    <Nav.Link eventKey="step5" ref={tab => this.step5Ref = tab}>Step 5</Nav.Link>
+                                                </Nav.Item>
+                                            </Nav>
 
-                                                    // getting data
-                                                    gettingDataFromStep1={data => this.gettingDataFromStep1(data)}
-                                                />
-                                            </Tab.Pane>
+                                            {/* tab content */}
+                                            <Tab.Content>
+                                                {/* tab page : step1 */}
+                                                <Tab.Pane eventKey="step1">
+                                                    <HealthMeterStep1
+                                                        openStep1Tab={(ev) => this.openStep1Tab(ev)}
+                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep3Tab={(ev) => this.openStep3Tab(ev)}
+                                                        openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                                        openStep5Tab={(ev) => this.openStep5Tab(ev)}
 
-                                            {/* tab page : step2 */}
-                                            <Tab.Pane eventKey="step2">
-                                                <HealthMeterStep2
-                                                    openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                    openStep2Tab={(ev) => this.openStep2Tab(ev)}
-                                                    openStep3Tab={(ev) => this.openStep3Tab(ev)}
-                                                    openStep4Tab={(ev) => this.openStep4Tab(ev)}
-                                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
+                                                        // getting data
+                                                        gettingDataFromStep1={data => this.gettingDataFromStep1(data)}
+                                                    />
+                                                </Tab.Pane>
 
-                                                    // sending required data for step 2
-                                                    selectedGender={state.step1Data && state.step1Data.gender}
+                                                {/* tab page : step2 */}
+                                                <Tab.Pane eventKey="step2">
+                                                    <HealthMeterStep2
+                                                        openStep1Tab={(ev) => this.openStep1Tab(ev)}
+                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep3Tab={(ev) => this.openStep3Tab(ev)}
+                                                        openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                                        openStep5Tab={(ev) => this.openStep5Tab(ev)}
 
-                                                    // getting data
-                                                    gettingDataFromStep2={data => this.gettingDataFromStep2(data)}
-                                                />
-                                            </Tab.Pane>
+                                                        // sending required data for step 2
+                                                        selectedGender={state.step1Data && state.step1Data.gender}
 
-                                            {/* tab page : step3 */}
-                                            <Tab.Pane eventKey="step3">
-                                                <HealthMeterStep3
-                                                    openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                    openStep2Tab={(ev) => this.openStep2Tab(ev)}
-                                                    openStep3Tab={(ev) => this.openStep3Tab(ev)}
-                                                    openStep4Tab={(ev) => this.openStep4Tab(ev)}
-                                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
+                                                        // getting data
+                                                        gettingDataFromStep2={data => this.gettingDataFromStep2(data)}
+                                                    />
+                                                </Tab.Pane>
 
-                                                    // getting data
-                                                    gettingDataFromStep3={data => this.gettingDataFromStep3(data)}
-                                                />
-                                            </Tab.Pane>
+                                                {/* tab page : step3 */}
+                                                <Tab.Pane eventKey="step3">
+                                                    <HealthMeterStep3
+                                                        openStep1Tab={(ev) => this.openStep1Tab(ev)}
+                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep3Tab={(ev) => this.openStep3Tab(ev)}
+                                                        openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                                        openStep5Tab={(ev) => this.openStep5Tab(ev)}
 
-                                            {/* tab page : step4 */}
-                                            <Tab.Pane eventKey="step4">
-                                                <HealthMeterStep4
-                                                    openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                    openStep2Tab={(ev) => this.openStep2Tab(ev)}
-                                                    openStep3Tab={(ev) => this.openStep3Tab(ev)}
-                                                    openStep4Tab={(ev) => this.openStep4Tab(ev)}
-                                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
+                                                        // getting data
+                                                        gettingDataFromStep3={data => this.gettingDataFromStep3(data)}
+                                                    />
+                                                </Tab.Pane>
 
-                                                    // getting data
-                                                    gettingDataFromStep4={data => this.gettingDataFromStep4(data)}
-                                                />
-                                            </Tab.Pane>
+                                                {/* tab page : step4 */}
+                                                <Tab.Pane eventKey="step4">
+                                                    <HealthMeterStep4
+                                                        openStep1Tab={(ev) => this.openStep1Tab(ev)}
+                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep3Tab={(ev) => this.openStep3Tab(ev)}
+                                                        openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                                        openStep5Tab={(ev) => this.openStep5Tab(ev)}
 
-                                            {/* tab page : step5 */}
-                                            <Tab.Pane eventKey="step5">
-                                                <HealthMeterStep5
-                                                    openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                    openStep2Tab={(ev) => this.openStep2Tab(ev)}
-                                                    openStep3Tab={(ev) => this.openStep3Tab(ev)}
-                                                    openStep4Tab={(ev) => this.openStep4Tab(ev)}
-                                                    openStep5Tab={(ev) => this.openStep5Tab(ev)}
+                                                        // getting data
+                                                        gettingDataFromStep4={data => this.gettingDataFromStep4(data)}
+                                                    />
+                                                </Tab.Pane>
 
-
-                                                    // getting data
-                                                    gettingDataFromStep5={data => this.gettingDataFromStep5(data)}
-
-                                                    // submit data
-                                                    getResult={this.handleGetResult}
-
-                                                />
-                                            </Tab.Pane>
+                                                {/* tab page : step5 */}
+                                                <Tab.Pane eventKey="step5">
+                                                    <HealthMeterStep5
+                                                        openStep1Tab={(ev) => this.openStep1Tab(ev)}
+                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep3Tab={(ev) => this.openStep3Tab(ev)}
+                                                        openStep4Tab={(ev) => this.openStep4Tab(ev)}
+                                                        openStep5Tab={(ev) => this.openStep5Tab(ev)}
 
 
-                                        </Tab.Content>
-                                    </Tab.Container>
+                                                        // getting data
+                                                        gettingDataFromStep5={data => this.gettingDataFromStep5(data)}
+
+                                                        // submit data
+                                                        getResult={this.handleGetResult}
+
+                                                    />
+                                                </Tab.Pane>
+
+
+                                            </Tab.Content>
+                                        </Tab.Container>
+                                    </div>
+
+                                    {
+                                        state.sectionLoading ? (
+                                            <div className="loader position-absolute h-100 w-100 d-flex align-items-center justify-content-center">
+                                                <Spinner animation="border" />
+                                            </div>
+                                        ) : null
+                                    }
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+
+                    {/* MODALS */}
+                    <Modal
+                        show={state.userDetailsModalVisibility}
+                        onHide={this.onModalClose}
+                        centered
+                        keyboard>
+                        <Modal.Header
+                            closeButton
+                            className="st-heading heading-xs font-family-secondary-bold">
+                            <Modal.Title>Enter Details</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <p className="mb-2">Enter the details to get your result</p>
+                            <div className="buy-plan-form">
+
+                                {/* form field */}
+                                <div className="st-form mb-3">
+                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">Your Name</label>
+                                    <input type="text" className="form-control bg-transparent" />
                                 </div>
 
-                                {
-                                    state.sectionLoading ? (
-                                        <div className="loader position-absolute h-100 w-100 d-flex align-items-center justify-content-center">
-                                            <Spinner animation="border" />
-                                        </div>
-                                    ) : null
-                                }
+                                {/* form field */}
+                                <div className="st-form mb-3">
+                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">Your Email</label>
+                                    <input type="email" className="form-control bg-transparent" />
+                                </div>
+
+                                {/* form field */}
+                                <div className="st-form mb-3">
+                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">Plan Details</label>
+                                    <textarea rows="3" className="form-control bg-transparent"></textarea>
+                                </div>
+
+                                {/* form button */}
+                                <div className="btns d-flex justify-content-center pt-2">
+                                    <button className="btn st-btn st-btn-primary st-btn-lg font-size-13 font-weight-800 text-uppercase">
+                                        Buy Now
+                                    </button>
+                                </div>
                             </div>
-                        </Col>
-                    </Row>
-                </Container>
+                        </Modal.Body>
+                        {/* <Modal.Footer>
+                            <button
+                                className="btn st-btn st-btn-lg no-min-width font-size-13 text-uppercase"
+                                onClick={this.handleModalClosing}>Cancel</button>
+                        </Modal.Footer> */}
+                    </Modal>
+                </React.Fragment>
             )
         )
     }

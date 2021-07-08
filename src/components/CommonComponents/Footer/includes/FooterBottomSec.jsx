@@ -21,7 +21,8 @@ import {
     Container,
     Row,
     Col,
-    Image
+    Image,
+    Spinner
 } from 'react-bootstrap'
 
 // footer logo
@@ -30,8 +31,46 @@ import logoFooter from 'assets/images/logo-footer.png'
 // router
 import { Link } from 'react-router-dom';
 
+// api 
+import { getPosts } from 'utlis/apis/API_common';
+
 export default class FooterBottomSec extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            programsLinks: []
+        };
+    }
+
+    componentDidMount() {
+
+        // getting programs links
+        getPosts().then(res => {
+            console.log('program ', res)
+            if (res) {
+                const programsData = res.data
+                if (programsData) {
+                    let linksData = []
+
+                    programsData.items.forEach(item => {
+                        linksData.push({
+                            title: item.title,
+                            slug: item.slug,
+                        })
+                    });
+                    this.setState({
+                        programsLinks: linksData
+                    });
+                }
+            }
+        }).catch(err => {
+            console.log('Some error occured ', err.message)
+        });
+    }
+
     render() {
+        const state = this.state;
         return (
             <>
                 <Container>
@@ -150,17 +189,21 @@ export default class FooterBottomSec extends Component {
 
                                 {/* footer links */}
                                 <div className="footer-links">
-                                    <a href="#" className="d-block mb-2 font-size-14">Weight Loss Challenge</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Weight Loss Challenge</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Battle PCOS</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Body Transformation</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Weight Gain</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Pregnancy and Motherhood</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Reshape Intermittent</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Plateau Breaker</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Cleanse & Detox</a>
-                                    <a href="#" className="d-block mb-2 font-size-14">Bridal Diet Plan</a>
+                                    {
+                                        (state?.programsLinks?.length) ? state.programsLinks.map((item, key) => (
+                                            // link
+                                            <Link
+                                                key={key}
+                                                to={"/program/" + item.slug}
+                                                className="d-block mb-2 font-size-14">{item.title}</Link>
+                                        )) : (
+                                            <div className="nav-dropdown-loading text-center py-3">
+                                                <Spinner animation="border" size="sm" className="position-relative mr-2" style={{ top: 1 }} />
+                                            </div>
+                                        )
+                                    }
                                 </div>
+
                             </div>
                         </Col>
 

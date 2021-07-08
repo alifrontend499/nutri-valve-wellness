@@ -19,7 +19,7 @@ export default class FooterTopSec extends Component {
                 <Container>
                     <div className="footer-top-sec position-relative">
                         <p className="desc text-white-50 font-family-secondary-light text-center">
-                            <span className="text-white">Disclaimer. </span>
+                            {/* <span className="text-white">Disclaimer. </span> */}
                             {
                                 props.plansText && props.plansText
                             }

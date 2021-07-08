@@ -8,89 +8,127 @@ import {
     Container,
     Row,
     Col,
-    Image
+    Image,
+    Spinner
 } from 'react-bootstrap'
 
-// images
-import relatedPostImg1 from 'assets/images/related-posts/img1.jpg'
-import relatedPostImg2 from 'assets/images/related-posts/img2.jpg'
-import relatedPostImg3 from 'assets/images/related-posts/img3.jpg'
+// router
+import { Link } from 'react-router-dom'
 
-export default class RelatedPosts extends Component {
+// images
+// no data found image
+import noImgFound from 'assets/images/no-image-found-logo.png'
+
+// redux
+import { connect } from 'react-redux';
+
+// recipes api
+import { getRecipes } from 'utlis/apis/API_recipes'
+
+// moment
+import Moment from 'react-moment';
+
+// helpers
+import { stripHTML } from 'utlis/helpers/Helpers_common'
+
+class RelatedPosts extends Component {
+    constructor(props) {
+        super(props)
+
+        // state
+        this.state = {
+            loading: false,
+            currentPage: 1,
+
+            recipes: [],
+        }
+    }
+
+    componentDidMount() {
+        this.setState({
+            loading: true,
+        })
+        // GETTING RECIPES DATA
+        getRecipes(this.props.commonToken, this.state.currentPage).then(res => {
+            const recipesData = [...res.data.items]
+            recipesData.sort(() => Math.random() - 0.5)
+            this.setState({
+                recipes: recipesData.slice(0, 3),
+                loading: false
+            })
+        }).catch(err => {
+            console.log('error occured ', err.message)
+        })
+    }
+
+
+
     render() {
+        const { recipes, loading } = this.state
         return (
             <section id="recipe-details" className="ST_def-pad-TB st-bg-slate">
                 <Container>
                     <Row className="recipe-details">
                         <Col xs={12} className="st-heading-wrapper text-center mb-3 mb-lg-5">
-                            <p className="st-heading heading-sm font-family-secondary-bold mb-3">Related Post</p>
+                            <p className="st-heading heading-sm font-family-secondary-bold mb-3">More Recipes</p>
                         </Col>
+                        {
+                            loading ? (
+                                <Col xs={12} className="loading text-center mb-3">
+                                    <Spinner animation="border" />
+                                </Col>
+                            ) : (
+                                <React.Fragment>
+                                    {
+                                        /* item */
+                                        recipes?.length && recipes.map(item => (
+                                            <Col key={item.id} xs={12} md={4} className="item mb-3 mb-md-2">
+                                                <Link to={'/recipe-details/' + item.slug} className="inner text-decoration-none st-text-light">
+                                                    {/* img sec */}
+                                                    <div className="img-sec position-relative">
+                                                        {
+                                                            (item.coverImage === null) ? (
+                                                                <div className="img-sec text-center overflow-hidden bg-white">
+                                                                    <Image src={noImgFound} fluid style={{ maxHeight: '100%' }} />
+                                                                </div>
+                                                            ) : (
+                                                                <div className="img-sec text-center overflow-hidden">
+                                                                    <Image src={item.fullUrlImage} fluid />
+                                                                </div>
+                                                            )
+                                                        }
+                                                        <div className="date position-absolute st-bg-primary text-white px-2 py-1 font-size-14">
+                                                            {<Moment format="DD MMM YYYY">{item?.createdAt?.date}</Moment>}
+                                                        </div>
+                                                    </div>
 
-                        {/* item */}
-                        <Col xs={12} md={4} className="item mb-3 mb-md-2">
-                            <a href="#" className="inner text-decoration-none st-text-light">
-                                {/* img sec */}
-                                <div className="img-sec position-relative">
-                                    <Image src={relatedPostImg1} fluid />
-                                    <div className="date position-absolute st-bg-primary text-white px-2 py-1 font-size-14">
-                                        <p>Dec 24 2021</p>
-                                    </div>
-                                </div>
+                                                    {/* text sec */}
+                                                    <div className="text-sec position-relative mt-3 mt-lg-4">
+                                                        <p className="head st-heading heading-xs font-family-secondary-medium mb-2">{item.title}</p>
+                                                        <div className="desc">
+                                                            {stripHTML(item.content)}
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+                                        ))
+                                    }
+                                </React.Fragment>
+                            )
+                        }
 
-                                {/* text sec */}
-                                <div className="text-sec position-relative mt-3 mt-lg-4">
-                                    <p className="head st-heading heading-xs font-family-secondary-medium mb-2">MUTTON ROLL</p>
-                                    <div className="desc">
-                                        Curd and mutton are rich in protein. Cucumber is low in calories and rich in minerals potassium and magnesium; also has a high water content that cools the body and also aids in weight loss.
-                                    </div>
-                                </div>
-                            </a>
-                        </Col>
-
-                        {/* item */}
-                        <Col xs={12} md={4} className="item mb-3 mb-md-2">
-                            <a href="#" className="inner text-decoration-none st-text-light">
-                                {/* img sec */}
-                                <div className="img-sec position-relative">
-                                    <Image src={relatedPostImg2} fluid />
-                                    <div className="date position-absolute st-bg-primary text-white px-2 py-1 font-size-14">
-                                        <p>Dec 24 2021</p>
-                                    </div>
-                                </div>
-
-                                {/* text sec */}
-                                <div className="text-sec position-relative mt-3 mt-lg-4">
-                                    <p className="head st-heading heading-xs font-family-secondary-medium mb-2">BAKED FISH</p>
-                                    <div className="desc">
-                                        Fish is among the healthiest foods on the planet. Fish is the best lean protein meat that can be consumed in any form. It is loaded with important nutrients, such as protein and vitamin D. Intake of fish rich in omega-3 fat is associated with
-                                    </div>
-                                </div>
-                            </a>
-                        </Col>
-
-                        {/* item */}
-                        <Col xs={12} md={4} className="item mb-3 mb-md-2">
-                            <a href="#" className="inner text-decoration-none st-text-light">
-                                {/* img sec */}
-                                <div className="img-sec position-relative">
-                                    <Image src={relatedPostImg3} fluid />
-                                    <div className="date position-absolute st-bg-primary text-white px-2 py-1 font-size-14">
-                                        <p>Dec 24 2021</p>
-                                    </div>
-                                </div>
-
-                                {/* text sec */}
-                                <div className="text-sec position-relative mt-3 mt-lg-4">
-                                    <p className="head st-heading heading-xs font-family-secondary-medium mb-2">CHICKEN KEBAB</p>
-                                    <div className="desc">
-                                        Chicken kebab is delicious and easy to prepare. Chicken thigh is a good source of lean protein. The spices used in this kebab like garlic cloves, ginger and cinnamon provide the necessary nutrients and taste and also provides anti-inflammatory properties as well.
-                                    </div>
-                                </div>
-                            </a>
-                        </Col>
                     </Row>
                 </Container>
             </section>
         )
     }
 }
+
+
+const getDataFromStore = state => {
+    return {
+        commonToken: state.auth.commonToken,
+    };
+}
+
+export default connect(getDataFromStore, null)(RelatedPosts)

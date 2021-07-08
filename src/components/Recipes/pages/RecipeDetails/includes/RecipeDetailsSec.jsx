@@ -43,6 +43,9 @@ class RecipeDetailsSec extends Component {
     }
 
     componentDidMount() {
+        this.setState({
+            loading: true,
+        })
         const props = this.props
         const recipeSlug = props.parentProps.match.params.slug ?? null
         if (recipeSlug) {
@@ -52,11 +55,24 @@ class RecipeDetailsSec extends Component {
                     loading: false
                 })
             })
-            // if (this.state.recipeSlug !== recipeSlug) {
-            //     this.setState({ recipeSlug })
-            // }
-        } else {
+        }
+    }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.parentProps !== prevProps.parentProps) {
+            this.setState({
+                loading: true,
+            })
+            const props = this.props
+            const recipeSlug = props.parentProps.match.params.slug ?? null
+            if (recipeSlug) {
+                getRecipe(props.commonToken, recipeSlug).then(res => {
+                    this.setState({
+                        recipe: res.data,
+                        loading: false
+                    })
+                })
+            }
         }
     }
 
@@ -201,7 +217,7 @@ class RecipeDetailsSec extends Component {
                                         <div className="categories-list">
                                             <p className="st-heading heading-xs font-weight-600 position-relative mb-3 mb-lg-4">
                                                 All Categories
-                                                    </p>
+                                            </p>
                                             {/* item */}
                                             <div className="categories-list-item item-primary">
                                                 <a href="#" className="d-flex align-items-center text-decoration-none categories-list-item-inner st-text-dark font-size-15 mb-3">
@@ -301,7 +317,7 @@ class RecipeDetailsSec extends Component {
                                     <div className="frac-inner">
                                         <p className="st-heading heading-xs font-weight-600 position-relative mb-2">
                                             Most Read
-                                                </p>
+                                        </p>
                                         <a href="#" className="d-block text-decoration-none">
                                             <Image src={recipeImgdescription} fluid className="w-100" />
                                         </a>
