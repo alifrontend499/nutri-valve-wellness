@@ -50,6 +50,12 @@ export async function getPosts() {
     return allPosts;
 }
 
+// get sliders
+export async function getSliders() {
+    const sliders = await axios.get(apiUrl + "slider");
+    return sliders;
+}
+
 // get Single Post
 
 export let cancelGetPost;
@@ -81,21 +87,29 @@ export async function getBMIResult(
     fruit,
     water,
     smoking,
-    activity
+    activity,
+
+    userName,
+    userEmail,
+    userNumber
 ) {
     const bmiResult = await axios.post(
         apiUrl + "bmi",
         {
-            kg: kg,
-            height: height,
-            body: body,
-            health: health,
-            sleep: sleep,
-            alcohol: alcohol,
+            kg,
+            height,
+            body,
+            health,
+            sleep,
+            alcohol,
             fruits: fruit,
-            water: water,
-            smoking: smoking,
-            activity: activity,
+            water,
+            smoking,
+            activity,
+
+            userName,
+            userEmail,
+            userNumber,
         },
         {
             headers: {

@@ -43,7 +43,11 @@ class HealthMeter extends Component {
             result: {},
             sectionLoading: false,
 
-            userDetailsModalVisibility: false
+            userDetailsModalVisibility: false,
+
+            userDetails__userName: '',
+            userDetails__userEmail: '',
+            userDetails__userNumber: '',
         }
 
         // tabs refs
@@ -90,8 +94,8 @@ class HealthMeter extends Component {
     }
 
     // opening step2 tab
-    openStep2Tab = (ev) => {
-        ev.preventDefault()
+    openStep2Tab = () => {
+        // ev.preventDefault()
         this.step2Ref.click()
     }
 
@@ -194,7 +198,14 @@ class HealthMeter extends Component {
             step5DataList.waterConsumption,
             step4DataList.smoking,
             step4DataList.dailyActivityLevel,
+
+            this.state.userDetails__userName,
+            this.state.userDetails__userEmail,
+            this.state.userDetails__userNumber,
         ).then(res => {
+
+            console.log("eres ", res);
+
             // scrolling window to top
             window.scrollTo(0, 0)
 
@@ -255,7 +266,10 @@ class HealthMeter extends Component {
                 // />
                 <Redirect to={{
                     pathname: '/bmi-result',
-                    state: { result }
+                    state: {
+                        result,
+                        step1Data: this.state.step1Data
+                    }
                 }} />
             ) : (
 
@@ -304,7 +318,7 @@ class HealthMeter extends Component {
                                                 <Tab.Pane eventKey="step1">
                                                     <HealthMeterStep1
                                                         openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep2Tab={this.openStep2Tab}
                                                         openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                                         openStep4Tab={(ev) => this.openStep4Tab(ev)}
                                                         openStep5Tab={(ev) => this.openStep5Tab(ev)}
@@ -318,7 +332,7 @@ class HealthMeter extends Component {
                                                 <Tab.Pane eventKey="step2">
                                                     <HealthMeterStep2
                                                         openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep2Tab={this.openStep2Tab}
                                                         openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                                         openStep4Tab={(ev) => this.openStep4Tab(ev)}
                                                         openStep5Tab={(ev) => this.openStep5Tab(ev)}
@@ -335,7 +349,7 @@ class HealthMeter extends Component {
                                                 <Tab.Pane eventKey="step3">
                                                     <HealthMeterStep3
                                                         openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep2Tab={this.openStep2Tab}
                                                         openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                                         openStep4Tab={(ev) => this.openStep4Tab(ev)}
                                                         openStep5Tab={(ev) => this.openStep5Tab(ev)}
@@ -349,7 +363,7 @@ class HealthMeter extends Component {
                                                 <Tab.Pane eventKey="step4">
                                                     <HealthMeterStep4
                                                         openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep2Tab={this.openStep2Tab}
                                                         openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                                         openStep4Tab={(ev) => this.openStep4Tab(ev)}
                                                         openStep5Tab={(ev) => this.openStep5Tab(ev)}
@@ -363,7 +377,7 @@ class HealthMeter extends Component {
                                                 <Tab.Pane eventKey="step5">
                                                     <HealthMeterStep5
                                                         openStep1Tab={(ev) => this.openStep1Tab(ev)}
-                                                        openStep2Tab={(ev) => this.openStep2Tab(ev)}
+                                                        openStep2Tab={this.openStep2Tab}
                                                         openStep3Tab={(ev) => this.openStep3Tab(ev)}
                                                         openStep4Tab={(ev) => this.openStep4Tab(ev)}
                                                         openStep5Tab={(ev) => this.openStep5Tab(ev)}
@@ -373,7 +387,9 @@ class HealthMeter extends Component {
                                                         gettingDataFromStep5={data => this.gettingDataFromStep5(data)}
 
                                                         // submit data
-                                                        getResult={this.handleGetResult}
+                                                        // getResult={this.handleGetResult}
+
+                                                        openUserDetailsModal={this.handleModalOpening}
 
                                                     />
                                                 </Tab.Pane>
@@ -382,14 +398,6 @@ class HealthMeter extends Component {
                                             </Tab.Content>
                                         </Tab.Container>
                                     </div>
-
-                                    {
-                                        state.sectionLoading ? (
-                                            <div className="loader position-absolute h-100 w-100 d-flex align-items-center justify-content-center">
-                                                <Spinner animation="border" />
-                                            </div>
-                                        ) : null
-                                    }
                                 </div>
                             </Col>
                         </Row>
@@ -407,34 +415,68 @@ class HealthMeter extends Component {
                             <Modal.Title>Enter Details</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <p className="mb-2">Enter the details to get your result</p>
+                            <p className="mb-2">Enter your details to get the result</p>
                             <div className="buy-plan-form">
 
                                 {/* form field */}
-                                <div className="st-form mb-3">
-                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">Your Name</label>
-                                    <input type="text" className="form-control bg-transparent" />
+                                <div className="st-form position-relative mb-4">
+                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">
+                                        Your Full Name
+                                        <span className="d-block font-size-12 st-text-secondary font-weight-400">e.g., John Doe</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="form-control bg-transparent"
+                                        onChange={ev => this.setState({ userDetails__userName: ev.target.value })}
+                                    />
                                 </div>
 
                                 {/* form field */}
-                                <div className="st-form mb-3">
-                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">Your Email</label>
-                                    <input type="email" className="form-control bg-transparent" />
+                                <div className="st-form position-relative mb-4">
+                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">
+                                        Your Email
+                                        <span className="d-block font-size-12 st-text-secondary font-weight-400">e.g., email@example.com</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        className="form-control bg-transparent"
+                                        onChange={ev => this.setState({ userDetails__userEmail: ev.target.value })}
+                                    />
                                 </div>
 
                                 {/* form field */}
-                                <div className="st-form mb-3">
-                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">Plan Details</label>
-                                    <textarea rows="3" className="form-control bg-transparent"></textarea>
+                                <div className="st-form hide-number-arrows position-relative mb-4">
+                                    <label className="font-size-15 font-family-secondary-medium mb-2 st-text-light">
+                                        Your Contact Number
+                                        <span className="d-block font-size-12 st-text-secondary font-weight-400">Please enter country code before the number</span>
+                                    </label>
+                                    <input
+                                        type="number"
+                                        className="form-control bg-transparent hide-number-arrows"
+                                        onChange={ev => this.setState({ userDetails__userNumber: ev.target.value })}
+                                    />
                                 </div>
 
                                 {/* form button */}
                                 <div className="btns d-flex justify-content-center pt-2">
-                                    <button className="btn st-btn st-btn-primary st-btn-lg font-size-13 font-weight-800 text-uppercase">
-                                        Buy Now
+                                    <button
+                                        className="btn st-btn st-btn-primary st-btn-lg font-size-13 font-weight-800 text-uppercase"
+                                        disabled={
+                                            (!state.userDetails__userName) || (!state.userDetails__userEmail) || (!state.userDetails__userNumber)
+                                        }
+                                        onClick={this.handleGetResult}>
+                                        Get Result Now
                                     </button>
                                 </div>
                             </div>
+
+                            {
+                                state.sectionLoading ? (
+                                    <div className="modal-loader position-absolute h-100 w-100 d-flex align-items-center justify-content-center">
+                                        <Spinner animation="border" />
+                                    </div>
+                                ) : null
+                            }
                         </Modal.Body>
                         {/* <Modal.Footer>
                             <button

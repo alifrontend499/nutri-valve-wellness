@@ -19,9 +19,6 @@ import hourglassWomen from 'assets/images/icons/hourglass-girl.jpg'
 import pearMen from 'assets/images/icons/pair.jpg'
 import pearWomen from 'assets/images/icons/pair-girl.jpg'
 
-import menSquare from 'assets/images/icons/men-square.jpg'
-import womenSquare from 'assets/images/icons/women-square.jpg'
-
 
 
 

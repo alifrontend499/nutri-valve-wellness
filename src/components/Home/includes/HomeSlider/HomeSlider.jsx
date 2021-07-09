@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 // bootstrap
 import {
-    Container
+    Container, Spinner
 } from 'react-bootstrap';
 
 // home style
@@ -13,12 +13,42 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// slider images
-import sliderImg1 from 'assets/images/homeslider/slider-img1.jpg'
-import sliderImg2 from 'assets/images/homeslider/slider-img2.jpg'
-import sliderImg3 from 'assets/images/homeslider/slider-img3.jpg'
+import HTMLparser from "html-react-parser";
+
+// api: common
+import { getSliders } from 'utlis/apis/API_common'
 
 export default class HomeSlider extends Component {
+
+    constructor(props) {
+        super(props)
+
+        // STATE
+        this.state = {
+            slidersData: [],
+            loading: false
+        }
+    }
+
+
+    componentDidMount() {
+        if (!this.state.slidersData.length) {
+            this.setState({ loading: true })
+            getSliders().then(res => {
+
+                this.setState({
+                    loading: false,
+                    slidersData: [...res.data]
+                }, () => {
+                    console.log(this.state.slidersData);
+                })
+            }).catch(err => {
+                console.log("erroro ", err.message);
+            })
+        }
+    }
+
+
     render() {
         // settings for slider
         const settings = {
@@ -31,70 +61,43 @@ export default class HomeSlider extends Component {
             slidesToShow: 1,
             slidesToScroll: 1
         };
+
+
         return (
             <div id="home-slider" className="overflow-hidden">
                 <Container fluid className="px-0">
                     <div className="home-slider">
+                        {
+                            this.state.loading &&
+                            <div className="my-3 text-center">
+                                <Spinner animation="border" />
+                            </div>
+                        }
                         <Slider {...settings}>
-                            {/* slider-item */}
-                            <div className="slider-item">
-                                <div
-                                    className="slider-item-inner"
-                                    style={{ backgroundImage: `url(${sliderImg1})` }}>
-                                    <Container>
-                                        {/* slider caption */}
-                                        <div className="caption">
-                                            <p className="st-line-heading line-secondary font-family-primary-bold st-text-secondary position-relative mb-2 mb-lg-3">
-                                                Welcome to Nutri Valve
-                                            </p>
-                                            <p className="st-heading font-family-secondary-bold">
-                                                Loss The <span className="underline-it underline-secondary position-relative st-text-secondary">Fat!</span> <br />
-                                                Eat Right, Be Bright!
-                                            </p>
+                            {
+                                /* slider-item */
+                                this.state?.slidersData?.length && this.state.slidersData.map((item, id) => (
+                                    <>
+                                        <div className="slider-item" key={id}>
+                                            <div
+                                                className="slider-item-inner"
+                                                style={{ backgroundImage: `url(${item.image})` }}>
+                                                <Container>
+                                                    {/* slider caption */}
+                                                    <div className="caption">
+                                                        <p className="st-line-heading line-secondary font-family-primary-bold st-text-secondary position-relative mb-2 mb-lg-3">
+                                                            Welcome to Nutri Valve
+                                                        </p>
+                                                        <p className="st-heading font-family-secondary-bold">
+                                                            {HTMLparser(`${item.title}`)}
+                                                        </p>
+                                                    </div>
+                                                </Container>
+                                            </div>
                                         </div>
-                                    </Container>
-                                </div>
-                            </div>
-
-                            {/* slider-item */}
-                            <div className="slider-item">
-                                <div
-                                    className="slider-item-inner"
-                                    style={{ backgroundImage: `url(${sliderImg2})` }}>
-                                    <Container>
-                                        {/* slider caption */}
-                                        <div className="caption">
-                                            <p className="st-line-heading line-secondary font-family-primary-bold st-text-secondary position-relative mb-3">
-                                                Welcome to Nutri Valve
-                                            </p>
-                                            <p className="st-heading font-family-secondary-bold">
-                                                Loss The <span className="underline-it underline-secondary position-relative st-text-secondary">Fat!</span> <br />
-                                                Eat Right, Be Bright!
-                                            </p>
-                                        </div>
-                                    </Container>
-                                </div>
-                            </div>
-
-                            {/* slider-item */}
-                            <div className="slider-item">
-                                <div
-                                    className="slider-item-inner"
-                                    style={{ backgroundImage: `url(${sliderImg3})` }}>
-                                    <Container>
-                                        {/* slider caption */}
-                                        <div className="caption">
-                                            <p className="st-line-heading line-secondary font-family-primary-bold st-text-secondary position-relative mb-3">
-                                                Welcome to Nutri Valve
-                                            </p>
-                                            <p className="st-heading font-family-secondary-bold">
-                                                Loss The <span className="underline-it underline-secondary position-relative st-text-secondary">Fat!</span> <br />
-                                                Eat Right, Be Bright!
-                                            </p>
-                                        </div>
-                                    </Container>
-                                </div>
-                            </div>
+                                    </>
+                                ))
+                            }
                         </Slider>
                     </div>
                 </Container>

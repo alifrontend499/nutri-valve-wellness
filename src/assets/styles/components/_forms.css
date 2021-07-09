@@ -101,3 +101,12 @@
 .st-form > .hide-number-arrows[type="number"] {
     -moz-appearance: textfield;
 }
+
+/* error messages */
+.form-error {
+    position: absolute;
+    bottom: -20px;}
+.form-error p {
+    font-size: 13px;
+    color: #f74343;
+}

@@ -30,23 +30,39 @@ import smokingImg from 'assets/images/health-meter-result/smoking-img.jpg'
 import vegeImg from 'assets/images/health-meter-result/vegetable.jpg'
 import waterImg from 'assets/images/health-meter-result/water.jpg'
 
+import appleMen from 'assets/images/icons/apple.jpg'
+import appleWomen from 'assets/images/icons/apple-girl.jpg'
+
+import bananaMen from 'assets/images/icons/banana.jpg'
+import bananaWomen from 'assets/images/icons/banana-girl.jpg'
+
+import hourglassMen from 'assets/images/icons/hourglass.jpg'
+import hourglassWomen from 'assets/images/icons/hourglass-girl.jpg'
+
+import pearMen from 'assets/images/icons/pair.jpg'
+import pearWomen from 'assets/images/icons/pair-girl.jpg'
+
+
 export default class FinalResult extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            result: null
+            result: null,
+            step1Data: null
         }
     }
 
     componentDidMount() {
-
         if ((this.props.location && this.props.location.state)) {
             const result = this.props.location.state.result
+            const step1Data = this.props.location.state.step1Data
             if (result) {
                 this.setState({
-                    result
+                    result,
+                    step1Data
                 }, () => {
+                    console.log(this.state.step1Data);
                 })
             }
         }
@@ -55,6 +71,7 @@ export default class FinalResult extends Component {
 
     render() {
         const result = this.state.result && this.state.result
+        const gender = this?.state?.step1Data?.gender
         // const meter = this.props.meter
         return (
             <React.Fragment>
@@ -109,7 +126,49 @@ export default class FinalResult extends Component {
                                                     {/* LT SEC */}
                                                     <Col xs={12} md={5} className="lt-sec">
                                                         <div className="inner text-center">
-                                                            <Image src={bodyImg} fluid />
+                                                            {
+                                                                // body type: apple
+                                                                (result.bodyShape === "apple") && (
+                                                                    gender === "male" ? (
+                                                                        <Image src={appleMen} fluid width={150} />
+                                                                    ) : (
+                                                                        <Image src={appleWomen} fluid width={150} />
+                                                                    )
+                                                                )
+                                                            }
+
+                                                            {
+                                                                // body type: hourglass
+                                                                (result.bodyShape === "hourglass") && (
+                                                                    gender === "male" ? (
+                                                                        <Image src={hourglassMen} fluid width={150} />
+                                                                    ) : (
+                                                                        <Image src={hourglassWomen} fluid width={150} />
+                                                                    )
+                                                                )
+                                                            }
+
+                                                            {
+                                                                // body type: pear
+                                                                (result.bodyShape === "pear") && (
+                                                                    gender === "male" ? (
+                                                                        <Image src={pearMen} fluid width={150} />
+                                                                    ) : (
+                                                                        <Image src={pearWomen} fluid width={150} />
+                                                                    )
+                                                                )
+                                                            }
+
+                                                            {
+                                                                // body type: banana
+                                                                (result.bodyShape === "banana") && (
+                                                                    gender === "male" ? (
+                                                                        <Image src={bananaMen} fluid width={150} />
+                                                                    ) : (
+                                                                        <Image src={bananaWomen} fluid width={150} />
+                                                                    )
+                                                                )
+                                                            }
                                                         </div>
                                                     </Col>
 

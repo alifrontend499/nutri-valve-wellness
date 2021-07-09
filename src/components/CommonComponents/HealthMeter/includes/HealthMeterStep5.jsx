@@ -113,7 +113,10 @@ export default class HealthMeterStep5 extends Component {
 
                             setTimeout(() => {
                                 // final result
-                                props.getResult()
+                                // props.getResult()
+
+                                props.openUserDetailsModal(ev)
+
                             }, 200);
                         }}
                     >Get Results</button>

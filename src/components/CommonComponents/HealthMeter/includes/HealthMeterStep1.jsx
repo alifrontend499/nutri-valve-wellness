@@ -220,6 +220,7 @@ export default class HealthMeterStep1 extends Component {
                 <div className="btn-sec d-flex justify-content-end border-top st-border-default pt-3 pt-lg-4 mt-3 mt-lg-5">
                     <button
                         className="btn st-btn st-btn-primary text-uppercase font-family-secondary-bold font-size-14"
+                        disabled={(!state.weightKg) || (!state.weightGm)}
                         onClick={ev => {
                             // sending data to main component
                             props.gettingDataFromStep1(state)

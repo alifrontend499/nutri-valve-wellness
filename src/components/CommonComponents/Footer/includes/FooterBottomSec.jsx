@@ -47,7 +47,7 @@ export default class FooterBottomSec extends Component {
 
         // getting programs links
         getPosts().then(res => {
-            console.log('program ', res)
+            // console.log('program ', res)
             if (res) {
                 const programsData = res.data
                 if (programsData) {
